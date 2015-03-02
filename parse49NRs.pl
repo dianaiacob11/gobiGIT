@@ -5,6 +5,10 @@ use diagnostics;
 
 use Getopt::Long;
 use LWP::Simple;
+use DBI;
+
+my $database = "gobi";
+my $db = &connectToDB($database);
 
 my ($file, $debug);
 if (@ARGV < 1){ die "Usage: $0 --file <path_to_NR_file> [--d|debug]\n";}
@@ -32,10 +36,10 @@ foreach my $line (@fileContent){
     $gene_id        =~ s/\"//g;
     $transcript_id  =~ s/\"//g;
     $protein_id     =~ s/\"//g;
-    gene_name       =~ s/\"//g;
+    $gene_name       =~ s/\"//g;
     $sequence       =~ s/\"//g;
     
-    print $gene_id."\n".$transcript_id."\n".$protein_id."\n".$gene_name."\n".$sequence."\n".$mouse_id."\n\n";
+    insertToDB($gene_id,$transcript_id,$protein_id,$gene_name,$sequence,$mouse_id);
 }
 
 sub usage{
@@ -46,9 +50,9 @@ sub usage{
 sub connectToDB{
     
     my $database    = $_[0];
-    my $host        = "192.168.1.47";
-    my $user        = "diacob";
-    my $pw          = "Z6545NPJn5Z968B";
+    my $host        = "164.177.170.83";
+    my $user        = "root";
+    my $pw          = "";
     
     my $dsn         = "dbi:mysql:$database:$host";
     my $dbh = DBI->connect($dsn, $user, $pw) or die "Error connecting to database.";
@@ -56,14 +60,13 @@ sub connectToDB{
     return $dbh;
 }
 
-my $db = &connectToDB($database);
-
 sub insertToDB{
     
-    
-    my $query = "INSERT IGNORE INTO ".$dbTable."(  col1, col2, ) VALUES ( '". ."'   ";
+    my $dbTable = "nr_mapping";
+    my $query = "INSERT IGNORE INTO ".$dbTable."(gene_id, transcript_id, protein_id, gene_name, sequence, mouse_id ) VALUES (?,?,?,?,?,?)";
+    print $query."\n";
     my $sth = $db->prepare($query);
-    $sth->execute();
+    $sth->execute($_[0], $_[1], $_[2], $_[3], $_[4], $_[5]);    
 }
 
 __END__
