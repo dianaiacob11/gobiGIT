@@ -29,18 +29,20 @@ foreach my $file (@dir) {
     
     foreach my $line (@fileContent){
         my @line_array = split(/\t/,$line);
-        my $allele_id         = defined($line_array[0]) ? $line_array[0] : "" ;
-        my $allele_name       = defined($line_array[2]) ? $line_array[2] : "" ;
-        my $chr               = defined($line_array[3]) ? $line_array[3] : "" ;
-        my $allele_type       = defined($line_array[5]) ? $line_array[5] : "" ;
-        my $allele_attributes = defined($line_array[6]) ? $line_array[6] : "" ;
-        my $transmission      = defined($line_array[7]) ? $line_array[7] : "" ;
-        my $phenotype         = defined($line_array[8]) ? $line_array[8] : "" ;
+        my $allele_id         = defined($line_array[0]) ? $line_array[0] : '' ;
+        $allele_id            =~ s/\s+//g;
+        my $len               = length($allele_id);
+        my $allele_name       = defined($line_array[2]) ? $line_array[2] : '' ;
+        my $chr               = defined($line_array[3]) ? $line_array[3] : '' ;
+        my $allele_type       = defined($line_array[5]) ? $line_array[5] : '' ;
+        my $allele_attributes = defined($line_array[6]) ? $line_array[6] : '' ;
+        my $transmission      = defined($line_array[7]) ? $line_array[7] : '' ;
+        my $phenotype         = defined($line_array[8]) ? $line_array[8] : '' ;
         
-        #print $allele_id."\n".$allele_name."\n".$chr."\n".$allele_type."\n".$allele_attributes."\n".$transmission."\n".$phenotype."\n";
-        #insert in mgi db
-        
-        &parsePhenotype($phenotype, $allele_id);
+        if($len > 0 ){
+            print $allele_id.", ".$allele_name.", ".$chr.", ".$allele_type.", ".$allele_attributes.", ".$transmission."\n";
+            #&parsePhenotype($phenotype, $allele_id);
+        }
     }
 
 }
