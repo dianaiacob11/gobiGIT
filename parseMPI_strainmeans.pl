@@ -5,6 +5,11 @@ use diagnostics;
 
 use Getopt::Long;
 use LWP::Simple;
+use DBI;
+
+my $database = "gobi";
+my $db = &connectToDB($database);
+
 
 my ($file, $debug);
 if (@ARGV < 1){ die "Usage: $0 --file <path_to_strainmean_file> [--d|debug]\n";}
@@ -32,12 +37,34 @@ foreach my $line (@fileContent){
     my $maxval     = defined($line_array[11]) ? $line_array[11] : '' ;
     my $zscore     = defined($line_array[14]) ? $line_array[14] : '' ;
 
-    print $phenotype.",  ".$strain.",  ".$strain_id.",  ".$sex.",  ".$mean.",  ".$nmice.",  ". $minval.",  ".$maxval.",  ".$zscore."\n";
+    insertToDB($phenotype, $strain, $strain_id, $sex, $mean, $nmice, $minval, $maxval, $zscore);
 }
 
 sub usage{
     print "Incorrect parameters \n";
     print "Usage: ./parseMPI_strainmean.pl --file <path_to_strainmean_file> [--d|debug]\n";
+}
+
+sub connectToDB{
+    
+    my $database    = $_[0];
+    my $host        = "164.177.170.83";
+    my $user        = "root";
+    my $pw          = "";
+    
+    my $dsn         = "dbi:mysql:$database:$host";
+    my $dbh = DBI->connect($dsn, $user, $pw) or die "Error connecting to database.";
+    
+    return $dbh;
+}
+
+sub insertToDB{
+    
+    my $dbTable = "mpi_strainmeans";
+    my $query = "INSERT IGNORE INTO ".$dbTable."(measnum, strain, strain_id, sex, mean, number_mice, minval, maxval, score) VALUES (?,?,?,?,?,?,?,?,?)";
+    print $query."\n";
+    my $sth = $db->prepare($query);
+    $sth->execute($_[0], $_[1], $_[2], $_[3], $_[4], $_[5], $_[6], $_[7], $_[8]);    
 }
 
 
