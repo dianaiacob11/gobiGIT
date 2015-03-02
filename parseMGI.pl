@@ -17,7 +17,7 @@ my $result = GetOptions (
 );
 
 &usage() unless defined($dir);
-
+my $count = 0;
 opendir(DIR, $dir) or die "Cannot open $dir!";
 my @dir = readdir DIR;
 
@@ -40,8 +40,8 @@ foreach my $file (@dir) {
         my $phenotype         = defined($line_array[8]) ? $line_array[8] : '' ;
         
         if($len > 0 ){
-            print $allele_id.", ".$allele_name.", ".$chr.", ".$allele_type.", ".$allele_attributes.", ".$transmission."\n";
-            #&parsePhenotype($phenotype, $allele_id);
+            #print $allele_id.", ".$allele_name.", ".$chr.", ".$allele_type.", ".$allele_attributes.", ".$transmission."\n";
+            &parsePhenotype($phenotype, $allele_id);
         }
     }
 
@@ -52,6 +52,8 @@ sub usage{
     print "Usage: ./parseMGI --dir <path_to_MGI_file_directory> [--d|debug]\n";
 }
 
+
+
 sub parsePhenotype{
     my $pheno_string = $_[0]; # e.g. growth/size/body | homeostasis | limbs/digits/tail | skeleton
     my $allele_id    = $_[1]; # e.g. MGI:3604810
@@ -61,12 +63,15 @@ sub parsePhenotype{
         if($phenotype ne "|")
         {
             my $phenotype_id = &getMD5ForPhenotype($phenotype);
-            print $phenotype."\n".$phenotype_id."\n".$allele_id."\n";
+            print $phenotype.",  ".$phenotype_id.",   ".$allele_id."\n";
+            $count++;
             # insert in mgi_phenotype db
         }
     }
 
 }
+
+print $count."\n";
 
 sub getMD5ForPhenotype{
     my $phenotype = $_[0];
