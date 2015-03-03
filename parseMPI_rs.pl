@@ -5,10 +5,10 @@ use diagnostics;
 
 use Getopt::Long;
 use LWP::Simple;
-#use DBI;
+use DBI;
 
-#my $database = "gobi";
-#my $db = &connectToDB($database);
+my $database = "gobi";
+my $db = &connectToDB($database);
 
 
 my ($file, $debug);
