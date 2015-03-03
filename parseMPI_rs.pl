@@ -55,7 +55,7 @@ foreach my $line (@fileContent){
             if(defined($line_array[$j]) && $line_array[$j] ne $expected && length($gene_name)>0 && defined($strain)){
                 $observed = $line_array[$j];
                 print $gene_name.", ".$rs.", ".$substitution.", ".$expected.", ".$observed.", ".$strain."\n";
-                &insertToDB($gene_name, $rs, $substitution, $expected, $observed, $strain);
+                &insertToDB($gene_name, $rs, $expected, $observed, $strain, $substitution);
             }
         }
     }
@@ -75,7 +75,7 @@ sub connectToDB{
 
 sub insertToRSStrainDB{
     my $dbTable = "mpi_rs_strains";
-    my $query = "INSERT IGNORE INTO ".$dbTable."(strain) VALUES (?,)";
+    my $query = "INSERT IGNORE INTO ".$dbTable."(strain_name) VALUES (?,)";
     print $query."\n";
     my $sth = $db->prepare($query);
     $sth->execute($_[0]);
@@ -89,7 +89,7 @@ sub usage{
 sub insertToDB{
     
     my $dbTable = "mpi_rs";
-    my $query = "INSERT IGNORE INTO ".$dbTable."(gene_name, rs, substitution, expected, observed, strain) VALUES (?,?,?,?,?,?)";
+    my $query = "INSERT IGNORE INTO ".$dbTable."(gene_name, rs_id, expected, observed, strain_name, substitution) VALUES (?,?,?,?,?,?)";
     print $query."\n";
     my $sth = $db->prepare($query);
     $sth->execute($_[0], $_[1], $_[2], $_[3], $_[4], $_[5]);
