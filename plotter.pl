@@ -74,7 +74,7 @@ sub plotString_Dataset_vs_Reference_Stacked{
 }
 =cut
 &plotString();
-# perl /mnt/project/microbium/scripts/analysisSEQUENCE_residue_distribution.pl
+
 sub plotString{
     #my $rowNames                = $_[0];
     #my $dataset                 = $_[1];
@@ -84,18 +84,19 @@ sub plotString{
     #my $legendText              = $_[5];
     #my $label                   = $_[6];
     
-    my $rowNames = "'pheno1', 'pheno2', 'pheno3'";
-    my $dataset = "'nr1', 'nr2', 'nr3', 'nr4'";
+    my $phenotypes= "'pheno1','pheno2','pheno3'";
+    my $count_phenotypes_per_nr = "1,2,3";
+    my $label = "'nr1','nr2','nr3'";
     my $filename = "/Users/DianaIacob/Desktop/plotTest.pdf";
     my $xlab = "Phenotypes";
     my $ylab = "Nuclear receptors";
     my $legendText = "MGI Phenotypes for Nuclear Receptors";
 
     
-    $R->send(qq (mydata <- data.frame(row.names = c($rowNames), Dataset = c($dataset))));
-    $R->send(qq (c(png("$filename", width=1500, height=900), x<-barplot(t(as.matrix(mydata)), col="lightblue", border=NA, ylab= "$ylab", xlab = "$xlab"))));
+    $R->send(qq (mydata <- data.frame(row.names = c($phenotypes), Dataset = c($count_phenotypes_per_nr))));
+    $R->send(qq (c(pdf("$filename"), x<-barplot(t(as.matrix(mydata)), col="lightblue", border=NA, ylab= "$ylab", xlab = "$xlab"))));
     $R->send(qq (legend("topright", c("$legendText"), fill = "lightblue")));
-    #$R->send(qq (text(x, 0, labels = c($label), cex = 0.8, pos=3, offset=3)));
+    $R->send(qq (text(x, 0, labels = c($label), cex = 0.8, pos=3, offset=3)));
     $R->send(qq (dev.off()));
     
     print "Plot done: ".$filename."!\n";
