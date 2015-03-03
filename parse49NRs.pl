@@ -2,30 +2,33 @@
 use strict;
 use warnings;
 use diagnostics;
-
-use Getopt::Long;
+use Getopt::Long qw(GetOptions);
+use Pod::Usage;
 use LWP::Simple;
-use DBI;
 
-my $database = "gobi";
-my $db = &connectToDB($database);
+require MODULES::Database;
 
-my ($file, $debug);
-if (@ARGV < 1){ die "Usage: $0 --file <path_to_NR_file> [--d|debug]\n";}
+my ($file, $debug, $help, $man);
+&usage() unless @ARGV > 0;
 
-my $result = GetOptions (
+GetOptions (
 'file=s' => \$file,
-'d|debug' => \$debug
+'d|debug' => \$debug,
+'h|help' => \$help,
+'m|man' => \$man
 );
 
-&usage() unless defined($file);
+pod2usage( -verbose => 1 ) if $help;
+pod2usage( -verbose => 2 ) if $man;
+
+&usage() unless defined $file;
 
 open (DATEI, $file) or die "Cannot open $file!\n";
 my @fileContent = <DATEI>;
 shift(@fileContent);
 
 foreach my $line (@fileContent){
-    my @line_array = split(/,/,$line);
+    my @line_array      = split(/,/,$line);
     my $gene_id         = defined($line_array[0]) ? $line_array[0] : "" ;
     my $transcript_id   = defined($line_array[1]) ? $line_array[1] : "" ;
     my $protein_id      = defined($line_array[2]) ? $line_array[2] : "" ;
@@ -36,38 +39,63 @@ foreach my $line (@fileContent){
     $gene_id        =~ s/\"//g;
     $transcript_id  =~ s/\"//g;
     $protein_id     =~ s/\"//g;
-    $gene_name       =~ s/\"//g;
+    $gene_name      =~ s/\"//g;
     $sequence       =~ s/\"//g;
     
-    insertToDB($gene_id,$transcript_id,$protein_id,$gene_name,$sequence,$mouse_id);
+    MODULE::Database::insert_nr_mapping_db($gene_id, $transcript_id, $protein_id, $gene_name, $sequence, $mouse_id);
 }
 
 sub usage{
     print "Incorrect parameters \n";
-    print "Usage: ./getMGI --gene_id_file <path_to_gene_id_file> --dir <path_to_mgi_folder> [--d|debug]\n";
-}
-
-sub connectToDB{
-    
-    my $database    = $_[0];
-    my $host        = "164.177.170.83";
-    my $user        = "root";
-    my $pw          = "";
-    
-    my $dsn         = "dbi:mysql:$database:$host";
-    my $dbh = DBI->connect($dsn, $user, $pw) or die "Error connecting to database.";
-    
-    return $dbh;
-}
-
-sub insertToDB{
-    
-    my $dbTable = "nr_mapping";
-    my $query = "INSERT IGNORE INTO ".$dbTable."(gene_id, transcript_id, protein_id, gene_name, sequence, mouse_id ) VALUES (?,?,?,?,?,?)";
-    print $query."\n";
-    my $sth = $db->prepare($query);
-    $sth->execute($_[0], $_[1], $_[2], $_[3], $_[4], $_[5]);    
+    print "Usage: perl parse49NRs.pl -file <path_to_nr_file> [--d|debug]\n";
+    print "       $0 --help \n";
+    print "       $0 --man \n";
+    exit;
 }
 
 __END__
-#TODO: write pom
+
+=head1 NAME
+ 
+ parse49NRs.pl - populates the nr_mapping table in the database with information regarding the 49 nuclear receptors
+ 
+ =head1 SYNOPSYS
+ 
+ parse49NRs.pl [OPTIONS]
+ 
+ Options:
+ -debug debug message
+ -help brief help message
+ -man full documentation
+ 
+ =head1 OPTIONS
+ 
+ =over 8
+ 
+ =item B<-h|--help>
+ 
+ Prints a brief help message and exits
+ 
+ =item B<-m|--man>
+ 
+ Prints the manual page and exits
+ 
+ =item B<-d|--debug>
+ 
+ Prints the debug message and exits
+ 
+ =item B<--file>
+ 
+ Absolute path to file of nuclear receptors
+ 
+ =back
+ 
+ =head1 DESCRIPTION
+ 
+ B<parse49NRs.pl> populates the nr_mapping table in the database with information regarding the 49 nuclear receptors
+ 
+ =head1 EXAMPLE
+ 
+ Usage: perl parse49NRs.pl --file <path_to_nr_file> [--d|debug]
+ 
+ =cut
