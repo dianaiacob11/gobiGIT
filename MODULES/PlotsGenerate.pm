@@ -9,9 +9,9 @@ use Statistics::R;
 
 my $R = Statistics::R->new();
 
-sub                 plotMPI_phenotypes_distribution{
-    my $phenotypes              = $_[0];
-    my $count                   = $_[1];
+sub                 plotVerticalString{
+    my $x_axis                  = $_[0];
+    my $y_axis                  = $_[1];
     my $filename                = $_[2];
     my $xlab                    = $_[3];
     my $ylab                    = $_[4];
@@ -19,8 +19,8 @@ sub                 plotMPI_phenotypes_distribution{
     my $legend_nr               = $_[6];
     my $label                   = $_[7];
 
-    $R->send(qq (x_labels <- c($phenotypes)));
-    $R->send(qq (mydata <- data.frame(row.names = c($phenotypes), Count = c($count))));
+    $R->send(qq (x_labels <- c($x_axis)));
+    $R->send(qq (mydata <- data.frame(row.names = c($x_axis), Count = c($y_axis))));
     $R->send(qq (c(pdf("$filename", width=25, height=12),mp <- par(mar=c(13,7,4,2)))));
     $R->send(qq (mp <- barplot(t(as.matrix(mydata)), col="lightblue", border=NA, axes = FALSE, axisnames = FALSE, ylab="$ylab")));
     $R->send(qq (text(mp, par('usr')[3], labels = x_labels, srt = 45, adj = 1, xpd = TRUE, cex=.6)));
@@ -31,7 +31,7 @@ sub                 plotMPI_phenotypes_distribution{
     print "Plot done: ".$filename."!\n";
 }
 
-sub                 plotMPI_phenotypes_nr{
+sub                 plotHeatmap{
     my $csv      = $_[0];
     my $filename = $_[1];
     
@@ -39,7 +39,6 @@ sub                 plotMPI_phenotypes_nr{
     $R->send(qq (source("http://bioconductor.org/biocLite.R")));
     $R->send(qq (biocLite("Heatplus")));
     $R->send(qq (library(Heatplus)));
-    $R->send(qq (library(vegan)));
     $R->send(qq (library(RColorBrewer)));
     
     $R->send(qq (data <- read.csv("$csv", comment.char="#")));

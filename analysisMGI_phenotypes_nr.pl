@@ -35,7 +35,7 @@ sub usage{
 my $csv = MODULES::PlotsExtract::get_analysisMGI_phenotypes_nr();
 
 #generate plots
-MODULES::PlotsGenerate::plotMPI_phenotypes_nr($csv, $outputFile);
+MODULES::PlotsGenerate::plotHeatmap($csv, $outputFile);
 
 
 __END__
