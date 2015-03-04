@@ -4,8 +4,8 @@ use strict;
 use warnings;
 use diagnostics;
 
-use DBI;
-use DBD::mysql;
+#use DBI;
+#use DBD::mysql;
 
 sub                 connectToDB{
     my $database    = $_[0];
@@ -88,6 +88,17 @@ sub                 insert_mpi_strainmeans_db{
     #print $query."\n";
     my $sth = $db->prepare($query);
     $sth->execute($_[0], $_[1], $_[2], $_[3], $_[4], $_[5], $_[6], $_[7], $_[8]);
+}
+
+
+sub                 insert_mgi_stains_db{
+    my $dbTable = "mgi_strains";
+    my $db = &connectToDB("gobi");
+    
+    my $query = " INSERT IGNORE INTO ".$dbTable." (mgi_id, strain_name, strain_type) VALUES (?,?,?)";
+    #print $query."\n";
+    my $sth = $db->prepare($query);
+    $sth->execute($_[0], $_[1], $_[2]);
 }
 
 1;

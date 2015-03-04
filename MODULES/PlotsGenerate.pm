@@ -18,14 +18,41 @@ sub                 plotMPI_phenotypes_nr{
     my $legend_phenotypes       = $_[5];
     my $legend_nr               = $_[6];
     my $label                   = $_[7];
-    
+
+    $R->send(qq (x_labels <- c($phenotypes)));
     $R->send(qq (mydata <- data.frame(row.names = c($phenotypes), Count = c($count))));
-    $R->send(qq (c(pdf("$filename"), x<-barplot(t(as.matrix(mydata)), col="lightblue", border=NA, ylab= "$ylab", xlab = "$xlab"))));
-    $R->send(qq (legend("topright", c("$legend_phenotypes", "$legend_nr"), fill = c("blue", "lightgreen"))));
-    $R->send(qq (text(x, 0, labels = c($label), cex = 0.8, pos=3, offset=3)));
+    $R->send(qq (c(pdf("$filename", width=25, height=12),mp <- par(mar=c(13,7,4,2)))));
+    $R->send(qq (mp <- barplot(t(as.matrix(mydata)), col="lightblue", border=NA, axes = FALSE, axisnames = FALSE, ylab="$ylab")));
+    $R->send(qq (text(mp, par('usr')[3], labels = x_labels, srt = 45, adj = 1, xpd = TRUE, cex=.6)));
+    $R->send(qq (axis(2)));
+    $R->send(qq (text(mp, 0, labels = c($label), cex = 0.8, pos=3, offset=3)));
     $R->send(qq (dev.off()));
     
     print "Plot done: ".$filename."!\n";
+}
+
+sub                 plotHeatmap{
+    my $phenotypes              = $_[0];
+    my $count                   = $_[1];
+    my $filename                = $_[2];
+    my $xlab                    = $_[3];
+    my $ylab                    = $_[4];
+    my $legend_phenotypes       = $_[5];
+    my $legend_nr               = $_[6];
+    my $label                   = $_[7];
+    
+    $R->send(qq (library(gplots)));
+    $R->send(qq (source("http://bioconductor.org/biocLite.R")));
+    $R->send(qq (biocLite("Heatplus")));
+    $R->send(qq (library(Heatplus)));
+    $R->send(qq (library(vegan)));
+    $R->send(qq (library(RColorBrewer)));
+    
+    $R->send(qq (mydata <- data.frame(row.names = c($phenotypes), NR = c($label), Count = c($count))));
+    $R->send(qq (scaleyellowred <- colorRampPalette(c("lightyellow", "red"), space = "rgb")(100)));
+    $R->send(qq (heatmap(as.matrix(mydata), Rowv = NA, Colv = NA, col = scaleyellowred)));
+
+    
 }
 =co
 

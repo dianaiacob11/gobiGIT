@@ -8,7 +8,6 @@ use Pod::Usage;
 
 require MODULES::PlotsExtract;
 require MODULES::PlotsGenerate;
-require MODULES::Functions;
 
 my ($outputFile, $debug, $help, $man);
 
@@ -47,7 +46,8 @@ my $label                   = $plotlabel;
 print $rowNames."\n".$count."\n".$xlab."\n".$ylab."\n".$legend_count_phenotypes."\n".$legend_count_nr."\n".$label."\n";
 
 #generate plots
-MODULES::PlotsGenerate::plotMPI_phenotypes_nr($rowNames, $count, $outputFile, $xlab, $ylab, $legend_count_phenotypes, $legend_count_nr, $label);
+#MODULES::PlotsGenerate::plotMPI_phenotypes_nr($rowNames, $count, $outputFile, $xlab, $ylab, $legend_count_phenotypes, $legend_count_nr, $label);
+MODULES::PlotsGenerate::plotHeatmap($rowNames, $count, $outputFile, $xlab, $ylab, $legend_count_phenotypes, $legend_count_nr, $label);
 
 
 __END__

@@ -4,14 +4,13 @@ use strict;
 use warnings;
 use diagnostics;
 
-use DBI;
-use DBD::mysql;
+#use DBI;
+#use DBD::mysql;
 
 use lib '.';
 require MODULES::Database;
-require MODULES::Functions;
 
-my $db = MODULES::Database::connectToDB("gobi");
+#my $db = MODULES::Database::connectToDB("gobi");
 
 
 sub                 get_analysisMGI_phenotypes_nr{
