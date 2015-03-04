@@ -2,24 +2,26 @@
 use strict;
 use warnings;
 use diagnostics;
-
-use Getopt::Long;
+use Getopt::Long qw(GetOptions);
+use Pod::Usage;
 use LWP::Simple;
-use DBI;
 
-my $database = "gobi";
-my $db = &connectToDB($database);
+require MODULES::Database;
 
+my ($file, $debug, $help, $man);
+&usage() unless @ARGV > 0;
 
-my ($file, $debug);
-if (@ARGV < 1){ die "Usage: $0 --file <path_to_strainmean_file> [--d|debug]\n";}
-
-my $result = GetOptions (
+GetOptions (
 'file=s' => \$file,
-'d|debug' => \$debug
+'d|debug' => \$debug,
+'h|help' => \$help,
+'m|man' => \$man
 );
 
-&usage() unless defined($file);
+pod2usage( -verbose => 1 ) if $help;
+pod2usage( -verbose => 2 ) if $man;
+
+&usage() unless defined $file;
 
 open (DATEI, $file) or die "Cannot open $file\n";
 my @fileContent = <DATEI>;
@@ -37,36 +39,61 @@ foreach my $line (@fileContent){
     my $maxval     = defined($line_array[11]) ? $line_array[11] : '' ;
     my $zscore     = defined($line_array[14]) ? $line_array[14] : '' ;
 
-    insertToDB($phenotype, $strain, $strain_id, $sex, $mean, $nmice, $minval, $maxval, $zscore);
+    MODULES::Database::insert_mpi_strainmeans_db($phenotype, $strain, $strain_id, $sex, $mean, $nmice, $minval, $maxval, $zscore);
 }
 
 sub usage{
     print "Incorrect parameters \n";
-    print "Usage: ./parseMPI_strainmean.pl --file <path_to_strainmean_file> [--d|debug]\n";
+    print "Usage: perl parseMPI_strainmean.pl --file <path_to_strainmean_file> [--d|debug]\n";
+    print "       $0 --help \n";
+    print "       $0 --man \n";
+    exit;
 }
-
-sub connectToDB{
-    
-    my $database    = $_[0];
-    my $host        = "164.177.170.83";
-    my $user        = "root";
-    my $pw          = "";
-    
-    my $dsn         = "dbi:mysql:$database:$host";
-    my $dbh = DBI->connect($dsn, $user, $pw) or die "Error connecting to database.";
-    
-    return $dbh;
-}
-
-sub insertToDB{
-    
-    my $dbTable = "mpi_strainmeans";
-    my $query = "INSERT IGNORE INTO ".$dbTable."(measnum, strain, strain_id, sex, mean, number_mice, minval, maxval, score) VALUES (?,?,?,?,?,?,?,?,?)";
-    print $query."\n";
-    my $sth = $db->prepare($query);
-    $sth->execute($_[0], $_[1], $_[2], $_[3], $_[4], $_[5], $_[6], $_[7], $_[8]);    
-}
-
 
 __END__
-#TODO: write pom
+
+=head1 NAME
+ 
+ parseMPI_strainmeans.pl - populates the mpi_strainmeans table in the database with strain information regarding the 49 nuclear receptors
+ 
+ =head1 SYNOPSYS
+ 
+ parseMPI_strainmeans.pl [OPTIONS]
+ 
+ Options:
+ -debug debug message
+ -help brief help message
+ -man full documentation
+ 
+ =head1 OPTIONS
+ 
+ =over 8
+ 
+ =item B<-h|--help>
+ 
+ Prints a brief help message and exits
+ 
+ =item B<-m|--man>
+ 
+ Prints the manual page and exits
+ 
+ =item B<-d|--debug>
+ 
+ Prints the debug message and exits
+ 
+ =item B<--file>
+ 
+ Absolute path to file containing information regarding the strain means for the nuclear receptors
+ 
+ =back
+ 
+ =head1 DESCRIPTION
+ 
+ B<parseMPI_strainmeans.pl> populates the mpi_strainmeans table in the database with strain information regarding the 49 nuclear receptors
+ 
+ =head1 EXAMPLE
+ 
+ Usage: perl parseMPI_strainmeans.pl --file <path_to_strainmeans_file> [--d|debug]
+ 
+ =cut
+
