@@ -4,17 +4,31 @@ use strict;
 use warnings;
 use diagnostics;
 
-#use DBI;
-#use DBD::mysql;
+use DBI;
+use DBD::mysql;
 
 use lib '.';
 require MODULES::Database;
 
-#my $db = MODULES::Database::connectToDB("gobi");
+my $db = MODULES::Database::connectToDB("gobi");
 
 
 sub                 get_analysisMGI_phenotypes_nr{
-    
+
+    my $tableMGIphenotypes = 'mgi_phenotypes'
+    my $query              = "";
+
+    $query_count_total_mgi_phenotypes = "SELECT COUNT(*) as c,phenotype_name 
+                                         FROM mgi_phenotypes 
+                                         GROUP BY phenotype_name 
+                                         ORDER BY c desc;"
+
+    my @phenotypes = ("");
+    my @phenotypes_count = ("");
+
+    MODULES::Database:connectToDB;
+    MODULES::Database:
+        
 =co
     my $tableDatasetA = 'loctree';
     my $tableDatasetB = "";
