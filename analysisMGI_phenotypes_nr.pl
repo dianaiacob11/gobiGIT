@@ -32,21 +32,10 @@ sub usage{
 }
 
 #extract plot data
-my ($phenotypes, $count, $total_phenotypes) = MODULES::PlotsExtract::get_analysisMGI_phenotypes_nr();
-
-#transform plot data
-my $x_axis                  = $phenotypes;
-my $y_axis                  = $count;
-my $xlab                    = "Phenotypes";
-my $ylab                    = "Phenotype frequency for nuclear receptors";
-my $legend_count_phenotypes = "MGI Phenotypes: ".$total_phenotypes;
-my $legend_count_nr         = "Nuclear receptors: 49";
-my $label                   = $count;
-
-print $x_axis."\n".$y_axis."\n".$xlab."\n".$ylab."\n".$legend_count_phenotypes."\n".$legend_count_nr."\n".$label."\n";
+my $csv = MODULES::PlotsExtract::get_analysisMGI_phenotypes_nr();
 
 #generate plots
-MODULES::PlotsGenerate::plotMPI_phenotypes_nr($x_axis, $y_axis, $outputFile, $xlab, $ylab, $legend_count_phenotypes, $legend_count_nr, $label);
+MODULES::PlotsGenerate::plotMPI_phenotypes_nr($csv, $outputFile);
 
 
 __END__
