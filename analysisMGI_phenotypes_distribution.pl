@@ -32,11 +32,11 @@ sub usage{
 }
 
 #extract plot data
-my ($phenotypes, $count, $total_phenotypes) = MODULES::PlotsExtract::get_analysisMGI_phenotypes_distribution();
+my ($phenotypes, $percentage, $count, $total_phenotypes) = MODULES::PlotsExtract::get_analysisMGI_phenotypes_distribution();
 
 #transform plot data
 my $x_axis                  = $phenotypes;
-my $y_axis                  = $count;
+my $y_axis                  = $percentage;
 my $xlab                    = "Phenotypes";
 my $ylab                    = "Phenotype frequency for nuclear receptors";
 my $legend_count_phenotypes = "MGI Phenotypes: ".$total_phenotypes;
