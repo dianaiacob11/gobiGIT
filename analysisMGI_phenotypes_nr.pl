@@ -40,7 +40,7 @@ my $csv = "./datei.csv";
 MODULES::Functions::toMatrix($phenotypes, $nr, $count, $csv);
 
 #generate plots
-MODULES::PlotsGenerate::plotMPI_phenotypes_nr($csv, $outputFile);
+MODULES::PlotsGenerate::plotHeatmap($csv, $outputFile);
 
 
 __END__
