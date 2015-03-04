@@ -8,6 +8,7 @@ use Pod::Usage;
 
 require MODULES::PlotsExtract;
 require MODULES::PlotsGenerate;
+require MODULES::Functions;
 
 my ($outputFile, $debug, $help, $man);
 
@@ -32,7 +33,11 @@ sub usage{
 }
 
 #extract plot data
-my $csv = MODULES::PlotsExtract::get_analysisMGI_phenotypes_nr();
+my ($phenotypes, $nr, $count) = MODULES::PlotsExtract::get_analysisMGI_phenotypes_nr();
+
+#transform
+my $csv = "./datei.csv";
+MODULES::Functions::toMatrix($phenotypes, $nr, $count, $csv);
 
 #generate plots
 MODULES::PlotsGenerate::plotMPI_phenotypes_nr($csv, $outputFile);
