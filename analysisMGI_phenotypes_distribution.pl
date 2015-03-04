@@ -25,14 +25,14 @@ usage() unless defined $outputFile;
 
 sub usage{
     print "Incorrect parameters! \n";
-    print "Usage: perl analysisMGI_phenotype_nr.pl --outputFile <path_to_plot_file> [--d|debug]\n";
+    print "Usage: perl analysisMGI_phenotype_distribution.pl --outputFile <path_to_plot_file> [--d|debug]\n";
     print "       $0 --help \n";
     print "       $0 --man \n";
     exit;
 }
 
 #extract plot data
-my ($phenotypes, $count, $total_phenotypes) = MODULES::PlotsExtract::get_analysisMGI_phenotypes_nr();
+my ($phenotypes, $count, $total_phenotypes) = MODULES::PlotsExtract::get_analysisMGI_phenotypes_distribution();
 
 #transform plot data
 my $x_axis                  = $phenotypes;
@@ -46,19 +46,19 @@ my $label                   = $count;
 print $x_axis."\n".$y_axis."\n".$xlab."\n".$ylab."\n".$legend_count_phenotypes."\n".$legend_count_nr."\n".$label."\n";
 
 #generate plots
-MODULES::PlotsGenerate::plotMPI_phenotypes_nr($x_axis, $y_axis, $outputFile, $xlab, $ylab, $legend_count_phenotypes, $legend_count_nr, $label);
+MODULES::PlotsGenerate::plotMPI_phenotypes_distribution($x_axis, $y_axis, $outputFile, $xlab, $ylab, $legend_count_phenotypes, $legend_count_nr, $label);
 
 
 __END__
 
 =head1 NAME
 
- analysisMGI_phenotypes_nr.pl - creates MGI-NR-Phenotypes distribution plot over 49 nuclear receptors, for the phenotypes found in the MGI database.
+ analysisMGI_phenotypes_distribution.pl - creates MGI-Phenotypes distribution plot for the phenotypes found in the MGI database.
  Please include absolute path in the arguements.
  
  =head1 SYNOPSYS
  
- analysisMGI_phenotypes_nr.pl [OPTIONS]
+ analysisMGI_phenotypes_distribution.pl [OPTIONS]
  Options:
  -debug debug message
  -help brief help message
@@ -88,10 +88,10 @@ __END__
  
  =head1 DESCRIPTION
  
- B<analysisMGI_phenotypes_nr.pl> generates MGI-NR-Phenotypes distribution plot.
+ B<analysisMGI_phenotypes_distribution.pl> generates MGI-Phenotypes distribution plot.
  
  =head1 EXAMPLE
  
- Usage: perl analysisMGI_phenotypes_nr.pl --outputFile <path_to_plot_file>
+ Usage: perl analysisMGI_phenotypes_distribution.pl --outputFile <path_to_plot_file>
 
 =cut

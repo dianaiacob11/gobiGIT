@@ -9,7 +9,7 @@ use Statistics::R;
 
 my $R = Statistics::R->new();
 
-sub                 plotMPI_phenotypes_nr{
+sub                 plotMPI_phenotypes_distribution{
     my $phenotypes              = $_[0];
     my $count                   = $_[1];
     my $filename                = $_[2];
@@ -31,7 +31,7 @@ sub                 plotMPI_phenotypes_nr{
     print "Plot done: ".$filename."!\n";
 }
 
-sub                 plotHeatmap{
+sub                 plotMPI_phenotypes_nr{
     my $phenotypes              = $_[0];
     my $count                   = $_[1];
     my $filename                = $_[2];

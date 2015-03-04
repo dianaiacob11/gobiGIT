@@ -13,6 +13,7 @@ require MODULES::Database;
 my $db = MODULES::Database::connectToDB("gobi");
 
 
+<<<<<<< Updated upstream
 sub                 get_analysisMGI_phenotypes_nr{
 
     my $tableMGIphenotypes = 'mgi_phenotypes'
@@ -29,6 +30,10 @@ sub                 get_analysisMGI_phenotypes_nr{
     MODULES::Database:connectToDB;
     MODULES::Database:
         
+=======
+sub                 get_analysisMGI_phenotypes_distribution{
+    
+>>>>>>> Stashed changes
 =co
     my $tableDatasetA = 'loctree';
     my $tableDatasetB = "";
@@ -162,19 +167,31 @@ sub                 get_analysisMGI_phenotypes_nr{
     return ($localization, $percentage_dataset, $percentage_ref, $total_datasetA, $total_datasetB, $percentage_total);
 =cut
     my $phenotypes = '';
-    my $phenotypes_per_nr = '';
-    my $plotlabel = '';
+    my $count = '';
     my $total_phenotypes = '';
     
     #extract from db ...
     
     $phenotypes = "'pheno1','pheno2','pheno3'";
-    $phenotypes_per_nr = "1,2,3";
-    $plotlabel = "'nr1','nr2','nr3'";
+    $count = "1,2,3";
     $total_phenotypes = "50";
     
-    return ($phenotypes, $phenotypes_per_nr, $plotlabel, $total_phenotypes);
+    return ($phenotypes, $count, $total_phenotypes);
 }
 
+sub                 get_analysisMGI_phenotypes_distribution{
+    my $phenotypes = '';
+    my $count = '';
+    my $total_phenotypes = '';
+    
+    #extract from db ...
+    
+    $phenotypes = "'pheno1','pheno2','pheno3'";
+    $count = "1,2,3";
+    $total_phenotypes = "50";
+    
+    return ($phenotypes, $count, $total_phenotypes);
+
+}
 
 1;
