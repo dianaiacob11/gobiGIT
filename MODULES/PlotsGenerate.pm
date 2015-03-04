@@ -32,14 +32,8 @@ sub                 plotMPI_phenotypes_distribution{
 }
 
 sub                 plotMPI_phenotypes_nr{
-    my $phenotypes              = $_[0];
-    my $count                   = $_[1];
-    my $filename                = $_[2];
-    my $xlab                    = $_[3];
-    my $ylab                    = $_[4];
-    my $legend_phenotypes       = $_[5];
-    my $legend_nr               = $_[6];
-    my $label                   = $_[7];
+    my $csv      = $_[0];
+    my $filename = $_[1];
     
     $R->send(qq (library(gplots)));
     $R->send(qq (source("http://bioconductor.org/biocLite.R")));
@@ -48,11 +42,18 @@ sub                 plotMPI_phenotypes_nr{
     $R->send(qq (library(vegan)));
     $R->send(qq (library(RColorBrewer)));
     
-    $R->send(qq (mydata <- data.frame(row.names = c($phenotypes), NR = c($label), Count = c($count))));
+    $R->send(qq (data <- read.csv("$csv", comment.char="#")));
+    $R->send(qq (rnames <- data[,1]));
+    $R->send(qq (mat_data <- data.matrix(data[,2:ncol(data)])));
+    $R->send(qq (rownames(mat_data) <- rnames));
+ 
+    $R->send(qq (c(pdf("$filename"))));
     $R->send(qq (scaleyellowred <- colorRampPalette(c("lightyellow", "red"), space = "rgb")(100)));
-    $R->send(qq (heatmap(as.matrix(mydata), Rowv = NA, Colv = NA, col = scaleyellowred)));
+    $R->send(qq (heatmap.2(mat_data, cellnote = mat_data, margins =c(12,9), scale="none", key=T, keysize=1.5,
+    density.info="none", trace="none", Rowv = NA, Colv = NA, lhei = c(2, 8), col = scaleyellowred)));
+    $R->send(qq (dev.off()));
 
-    
+    print "Plot done: ".$filename."!\n";
 }
 =co
 

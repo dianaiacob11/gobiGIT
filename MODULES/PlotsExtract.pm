@@ -4,13 +4,22 @@ use strict;
 use warnings;
 use diagnostics;
 
-use DBI;
-use DBD::mysql;
+#use DBI;
+#use DBD::mysql;
 
 use lib '.';
 require MODULES::Database;
 
-my $db = MODULES::Database::connectToDB("gobi");
+#my $db = MODULES::Database::connectToDB("gobi");
+
+sub                 get_analysisMGI_phenotypes_nr{
+    my $csv = "/Users/DianaIacob/Desktop/test.csv";
+    
+    return $csv;
+    
+}
+
+=co
 
 sub                 get_analysisMGI_phenotypes_distribution{
 
@@ -56,20 +65,8 @@ sub                 get_analysisMGI_phenotypes_distribution{
 
     return ($phenotypes, $percentage, $count, $total_phenotypes);
 }
+ =cut
 
-sub                 get_analysisMGI_phenotypes_nr{
-    my $phenotypes = '';
-    my $count = '';
-    my $total_phenotypes = '';
-    
-    #extract from db ...
-    
-    $phenotypes = "'pheno1','pheno2','pheno3'";
-    $count = "1,2,3";
-    $total_phenotypes = "50";
-    
-    return ($phenotypes, $count, $total_phenotypes);
 
-}
 
 1;
