@@ -4,18 +4,50 @@ use strict;
 use warnings;
 use diagnostics;
 
-#use DBI;
-#use DBD::mysql;
+use DBI;
+use DBD::mysql;
 
 use lib '.';
 require MODULES::Database;
 
-#my $db = MODULES::Database::connectToDB("gobi");
+my $db = MODULES::Database::connectToDB("gobi");
 
 sub                 get_analysisMGI_phenotypes_nr{
-    my $csv = "/Users/DianaIacob/Desktop/test.csv";
+   
+    my $dbTable1            = 'mgi_phenotypes';
+    my $dbTable2            = 'mgi';
+    my $query              = "";
+
+    $query   = " SELECT p.phenotype_name,m.allele_name,COUNT(*) AS count "
+             . " FROM ".$dbTable1." p "
+             . " JOIN ".$dbTable2." m "
+             . " ON p.mgi_allele_id = m.allele_id"
+             . " GROUP BY p.phenotype_name ORDER BY count DESC";
+
+    my $sth       = $db->prepare($query);
+
+    $sth->execute() or die $DBI::errstr;
+
+    my @row;
+    my $phenotypes = '';
+    my $nr = '';
+    my $count      = '';
+    while(@row = $sth->fetchrow_array){
+        $phenotypes  = join(',', $phenotypes, $row[0]);
+        chomp($phenotypes);
+        
+        $nr = join(',', $nr, $row[1]);
+        chomp($nr);
+        
+        $count  = join(',', $count, $row[2]);
+        chomp($count);
+    }
     
-    return $csv;
+    $phenotypes =~ s/.//;
+    $nr         =~ s/.//;
+    $count      =~ s/.//;
+
+    return ($phenotypes, $nr, $count);
     
 }
 
