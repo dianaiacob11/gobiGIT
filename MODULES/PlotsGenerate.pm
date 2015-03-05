@@ -49,7 +49,7 @@ sub                 plotHeatmap{
     $R->send(qq (c(pdf("$filename", width=20, height=20))));
     $R->send(qq (scaleyellowred <- colorRampPalette(c("lightyellow", "red"), space = "rgb")));
     $R->send(qq (heatmap.2(mat_data, margins =c(20,20), scale="none", key=T, keysize=0.5,
-    density.info="none", trace="none", Rowv = NA, Colv = NA, lhei = c(2, 8), symm=F ,symkey=T, col = scaleyellowred)));
+    density.info="none", trace="none", Rowv = NA, Colv = NA, symm=F ,symkey=T, col = scaleyellowred)));
     $R->send(qq (dev.off()));
 
     print "Plot done: ".$filename."!\n";
