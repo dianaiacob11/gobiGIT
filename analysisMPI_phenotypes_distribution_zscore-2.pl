@@ -25,25 +25,23 @@ usage() unless defined $outputFile;
 
 sub usage{
     print "Incorrect parameters! \n";
-    print "Usage: perl analysisMGI_type_distribution.pl --outputFile <path_to_plot_file> [--d|debug]\n";
+    print "Usage: perl analysisMGI_phenotype_distribution_zscore-2.pl --outputFile <path_to_plot_file> [--d|debug]\n";
     print "       $0 --help \n";
     print "       $0 --man \n";
     exit;
 }
 
 #extract plot data
-my ($types, $percentage, $count, $total_types) = MODULES::PlotsExtract::get_analysisMGI_type_distribution();
+my ($phenotypes, $percentage, $count, $total_phenotypes) = MODULES::PlotsExtract::get_analysisMPI_phenotypes_distribution_zscore2_neg();
 
 #transform plot data
-my $x_axis                  = $types;
+my $x_axis                  = $phenotypes;
 my $y_axis                  = $percentage;
-my $xlab                    = "Allele types";
-my $ylab                    = "Allele type frequency for nuclear receptors";
-my $legend_count_types      = "Allele_types: ".$total_types;
+my $xlab                    = "Phenotypes";
+my $ylab                    = "Phenotype frequency for nuclear receptors, having Z-score < -2";
+my $legend_count_phenotypes = "MPI Phenotypes: ".$total_phenotypes;
 my $legend_count_nr         = "Nuclear receptors: 49";
 my $label                   = $count;
-
-print $x_axis."\n".$y_axis."\n".$xlab."\n".$ylab."\n".$legend_count_types."\n".$legend_count_nr."\n".$label."\n";
 
 #generate plots
 MODULES::PlotsGenerate::plotVerticalString($x_axis, $y_axis, $outputFile, $xlab, $ylab, $legend_count_phenotypes, $legend_count_nr, $label);
@@ -53,12 +51,12 @@ __END__
 
 =head1 NAME
 
- analysisMGI_type_distribution.pl - creates MGI-Allele Type distribution plot for the allele types found in the MGI database.
+ analysisMGI_phenotypes_distribution_zscore-2.pl - creates MGI-Phenotypes distribution plot for the phenotypes found in the MGI database.
  Please include absolute path in the arguements.
  
  =head1 SYNOPSYS
  
- analysisMGI_type_distribution.pl [OPTIONS]
+ analysisMGI_phenotypes_distribution_zscore-2.pl [OPTIONS]
  Options:
  -debug debug message
  -help brief help message
@@ -88,10 +86,10 @@ __END__
  
  =head1 DESCRIPTION
  
- B<analysisMGI_type_distribution.pl> generates MGI-Allele Type distribution plot.
+ B<analysisMGI_phenotypes_distribution_zscore-2.pl> generates MGI-Phenotypes distribution plot.
  
  =head1 EXAMPLE
  
- Usage: perl analysisMGI_type_distribution.pl --outputFile <path_to_plot_file>
+ Usage: perl analysisMGI_phenotypes_distribution_zscore-2.pl --outputFile <path_to_plot_file>
 
 =cut

@@ -21,9 +21,9 @@ sub                 plotVerticalString{
 
     $R->send(qq (x_labels <- c($x_axis)));
     $R->send(qq (mydata <- data.frame(row.names = c($x_axis), Count = c($y_axis))));
-    $R->send(qq (c(pdf("$filename", width=25, height=12),mp <- par(mar=c(13,7,4,2)))));
+    $R->send(qq (c(pdf("$filename", width=25, height=12),mp <- par(mar=c(20,7,4,2)))));
     $R->send(qq (mp <- barplot(t(as.matrix(mydata)), col="lightblue", border=NA, axes = FALSE, axisnames = FALSE, ylab="$ylab")));
-    $R->send(qq (text(mp, par('usr')[3], labels = x_labels, srt = 45, adj = 1, xpd = TRUE, cex=.6)));
+    $R->send(qq (text(mp, par('usr')[3], labels = x_labels, srt = 45, adj = 1, xpd = TRUE, cex=1)));
     $R->send(qq (axis(2)));
     $R->send(qq (text(mp, 0, labels = c($label), cex = 0.8, pos=3, offset=3)));
     $R->send(qq (dev.off()));
@@ -46,10 +46,10 @@ sub                 plotHeatmap{
     $R->send(qq (mat_data <- data.matrix(data[,2:ncol(data)])));
     $R->send(qq (rownames(mat_data) <- rnames));
  
-    $R->send(qq (c(pdf("$filename"))));
-    $R->send(qq (scaleyellowred <- colorRampPalette(c("lightyellow", "red"), space = "rgb")(100)));
-    $R->send(qq (heatmap.2(mat_data, cellnote = mat_data, margins =c(12,9), scale="none", key=T, keysize=1.5,
-    density.info="none", trace="none", Rowv = NA, Colv = NA, lhei = c(2, 8), col = scaleyellowred)));
+    $R->send(qq (c(pdf("$filename", width=20, height=20))));
+    $R->send(qq (scaleyellowred <- colorRampPalette(c("lightyellow", "red"), space = "rgb")));
+    $R->send(qq (heatmap.2(mat_data, margins =c(20,20), scale="none", key=T, keysize=0.5,
+    density.info="none", trace="none", Rowv = NA, Colv = NA, lhei = c(2, 8), symm=F ,symkey=T, col = scaleyellowred)));
     $R->send(qq (dev.off()));
 
     print "Plot done: ".$filename."!\n";

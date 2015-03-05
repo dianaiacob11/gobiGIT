@@ -47,7 +47,8 @@ sub                 toMatrix {
     my $nr         = $_[1];
     my $count      = $_[2];
     my $csvFile    = $_[3];
-    
+   
+    open(my $fh, '>', $csvFile) or die "Cannot open $csvFile!";
 
     my @phenotypes_array = "";
     my @nr_array = "";
@@ -90,19 +91,14 @@ sub                 toMatrix {
 
     }
 
-    open(my $fh, '>>', $csvFile) or die "Cannot open $csvFile!";
+    open($fh, '>>', $csvFile) or die "Cannot open $csvFile!";
     for (my $q=0; $q < $len_row; $q++){
             my $line = '';
             for (my $p = 0; $p < $len_col; $p++){
                 if(!defined $matrix[$q][$p]){
                     $matrix[$q][$p] = 0;
                 }
-                if ($q == 0 && $p == 0){
-                    $line .= $matrix[$q][$p];
-                }
-                else{
-                    $line .= ','.$matrix[$q][$p];
-                }
+                $line .= ','.$matrix[$q][$p];
             }
             $line =~ s/.//;
             print $fh $line."\n";

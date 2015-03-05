@@ -4,8 +4,8 @@ use strict;
 use warnings;
 use diagnostics;
 
-#use DBI;
-#use DBD::mysql;
+use DBI;
+use DBD::mysql;
 
 sub                 connectToDB{
     my $database    = $_[0];

@@ -32,14 +32,14 @@ sub usage{
 }
 
 #extract plot data
-my ($phenotypes, $percentage, $count, $total_phenotypes) = MODULES::PlotsExtract::get_analysisMGI_phenotypes_distribution();
+my ($phenotypes, $percentage, $count, $total_phenotypes) = MODULES::PlotsExtract::get_analysisMPI_phenotypes_distribution_zscore2();
 
 #transform plot data
 my $x_axis                  = $phenotypes;
 my $y_axis                  = $percentage;
 my $xlab                    = "Phenotypes";
-my $ylab                    = "Phenotype frequency for nuclear receptors";
-my $legend_count_phenotypes = "MGI Phenotypes: ".$total_phenotypes;
+my $ylab                    = "Phenotype frequency for nuclear receptors, having Z-score > 2";
+my $legend_count_phenotypes = "MPI Phenotypes: ".$total_phenotypes;
 my $legend_count_nr         = "Nuclear receptors: 49";
 my $label                   = $count;
 
