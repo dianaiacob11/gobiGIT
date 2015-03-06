@@ -52,6 +52,9 @@ system (" perl ./analysisMPI_phenotypes_strain_zscore-2.pl --outputFile $mpi_phe
 my $mpi_snp_distribution_file = $outputDir."/mpi_snp_distribution.pdf";
 system (" perl ./analysisMPI_snp_distribution.pl --outputFile $mpi_snp_distribution_file");
 
+my $mpi_snp_function_distribution_file = $outputDir."/mpi_snp_function_distribution.pdf";
+system (" perl ./analysisMPI_snp_function_distribution.pl --outputFile $mpi_snp_function_distribution_file");
+
 
 sub usage{
     print "Incorrect command line parameters! \n";
