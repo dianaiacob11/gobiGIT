@@ -389,5 +389,50 @@ sub                 get_analysisMPI_phenotypes_distribution_zscore2_neg{
     return ($phenotypes, $percentage, $count, $total_phenotypes);
 }
 
+sub                 get_analysisMPI_snp_distribution{
+
+    my $dbTable            = 'mpi_rs';
+    my $query              = "";
+    my $query_total        = "";
+
+    $query   = " SELECT strain_name, COUNT(strain_name) AS count "
+             . " FROM ".$dbTable
+             . " GROUP BY strain_name "
+             . " ORDER BY count DESC";
+    $query_total = " SELECT COUNT(*) FROM ".$dbTable;
+    
+    my $sth       = $db->prepare($query);
+    my $sth_total = $db->prepare($query_total);
+    
+    $sth->execute() or die $DBI::errstr;
+    $sth_total->execute() or die $DBI::errstr;
+    
+    my $total_snp = $sth_total->fetchrow_array;
+
+    my @row;
+    my $strains = '';
+    my $percentage = '';
+    my $count      = '';
+    while(@row = $sth->fetchrow_array){
+        my $strain_norm = "'". $row[0] ."'"; # !! otherwise R won't work for string array
+        $strains  = join(',', $strains, $strain_norm);
+        chomp($strains);
+        
+        my $percent = sprintf("%.2f",100 * $row[1]/$total_snp);
+        $percentage = join(',', $percentage, $percent);
+        chomp($percentage);
+        
+        my $cnt =  "'".$row[1]."\n(". $percent ."%)'";
+        $count  = join(',', $count, $cnt);
+        chomp($count);
+    }
+    
+    $strains =~ s/.//;
+    $percentage =~ s/.//;
+    $count      =~ s/.//;
+
+    return ($strains, $percentage, $count, $total_snp);
+}
+
 
 1;
