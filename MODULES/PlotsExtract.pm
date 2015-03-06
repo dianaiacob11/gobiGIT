@@ -434,5 +434,50 @@ sub                 get_analysisMPI_snp_distribution{
     return ($strains, $percentage, $count, $total_snp);
 }
 
+sub                 get_analysisMPI_snp_function_distribution{
+
+    my $dbTable            = 'ucsc_variants';
+    my $query              = "";
+    my $query_total        = "";
+
+    $query   = " SELECT function, COUNT(function) AS count "
+             . " FROM ".$dbTable
+             . " GROUP BY function "
+             . " ORDER BY count DESC";
+    $query_total = " SELECT COUNT(*) FROM ".$dbTable;
+    
+    my $sth       = $db->prepare($query);
+    my $sth_total = $db->prepare($query_total);
+    
+    $sth->execute() or die $DBI::errstr;
+    $sth_total->execute() or die $DBI::errstr;
+    
+    my $total_function = $sth_total->fetchrow_array;
+
+    my @row;
+    my $function = '';
+    my $percentage = '';
+    my $count      = '';
+    while(@row = $sth->fetchrow_array){
+        my $function_norm = "'". $row[0] ."'"; # !! otherwise R won't work for string array
+        $function  = join(',', $function, $function_norm);
+        chomp($function);
+        
+        my $percent = sprintf("%.2f",100 * $row[1]/$total_function);
+        $percentage = join(',', $percentage, $percent);
+        chomp($percentage);
+        
+        my $cnt =  "'".$row[1]."\n(". $percent ."%)'";
+        $count  = join(',', $count, $cnt);
+        chomp($count);
+    }
+    
+    $function =~ s/.//;
+    $percentage =~ s/.//;
+    $count      =~ s/.//;
+
+    return ($function, $percentage, $count, $total_function);
+}
+
 
 1;
