@@ -138,6 +138,53 @@ sub                 get_analysisMPI_phenotypes_strain_zscore2{
     
 }
 
+sub                 get_analysisMPI_phenotypes_nr_zscore2{
+    
+    my $dbTable1           = 'mpi_measnum';
+    my $dbTable2           = 'mpi_strainmeans';
+    my $dbTable3           = 'mpi_rs';
+    my $query              = "";
+    
+    $query   = " SELECT m.phenotype, p.gene_name, COUNT(*) AS count "
+    . " FROM ".$dbTable1." m "
+    . " JOIN ".$dbTable2." s "
+    . " ON m.measnum = s.measnum "
+    . " JOIN ".$dbTable3." p "
+    . " ON p.strain_name =  s.strain"
+    . " WHERE score > 2 "
+    #. " AND s.strain IN (SELECT strain_name FROM ".$dbTable3.")"
+    . " GROUP BY m.phenotype, p.gene_name "
+    . " ORDER BY count DESC";
+    
+    my $sth       = $db->prepare($query);
+    
+    $sth->execute() or die $DBI::errstr;
+    
+    my @row;
+    my $phenotypes = '';
+    my $nr = '';
+    my $count      = '';
+    while(@row = $sth->fetchrow_array){
+        if($row[2] > 2){
+            $phenotypes  = join(',', $phenotypes, $row[0]);
+            chomp($phenotypes);
+            
+            $nr = join(',', $nr, $row[1]);
+            chomp($nr);
+            
+            $count  = join(',', $count, $row[2]);
+            chomp($count);
+        }
+    }
+    
+    $phenotypes =~ s/.//;
+    $nr         =~ s/.//;
+    $count      =~ s/.//;
+    
+    return ($phenotypes, $nr, $count);
+    
+}
+
 sub                 get_analysisMPI_phenotypes_strain_zscore2_neg{
     
     my $dbTable1           = 'mpi_measnum';
