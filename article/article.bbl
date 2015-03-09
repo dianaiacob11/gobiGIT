@@ -1,11 +1,18 @@
 \begin{thebibliography}{1}
 
+<<<<<<< HEAD
 \bibitem{proteomic}
 Qiongming Liu, Chen Ding, Wanlin Liu, Lei Song, Mingwei Liu, Liang Qi, Tianyi
   Fu, Anna Malovannaya, Yi~Wang, Jun Qin, and Bei Zhen.
 \newblock In-depth proteomic characterization of endogenous nuclear receptors
   in mouse liver.
 \newblock 2013.
+=======
+\bibitem{intro1}
+Ali~J. Marian.
+\newblock Modeling human disease phenotype in model organisms.
+\newblock 2011.
+>>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
 
 \bibitem{mpd}
 Terry~P. Maddatu, Stephen~C. Grubb, Carol~J. Bult, and Molly~A. Bogue.

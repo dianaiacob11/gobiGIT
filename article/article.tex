@@ -21,7 +21,7 @@
 %----------------------------------------------------------------------------------------
 
 \Abstract{\textit{
-Nuclear receptors (NRs) are a large family of ligand-activated transcription factors, that bind directly to DNA to regulate the expression of target genes. They regulate critical functions in cell control, inflammation, fibrosis and tumor formation and are involved in metabolism, development and reproduction. Nuclear receptors act on the metabolism and signalling of cells by changing the expression of target genes. Thus, they are associated with numerous pathologies such as cancer, cardiovascular disease, inflammation, and reproductive abnormalities. This paper will investigate the knockout phenotypes and genetic variation of mouse NRs. We will first create an assembly of all known mouse SNPs in the vicinity of mouse NR genes (+-1Mbp up-or downstream). In a second step, phenotype information for genetic knockouts and genetic variation data will be included. Knockout phenotypes are available from the MGI database, while the Mouse Phenome Database provides SNPs from various mouse strains, which can be correlated to extreme phenotypes, measured in these mouse strains. The goal of this analysis is to find NR SNPs in mice that influence changes in biological parameters such as body weight, body fat and other phenotypic traits. Furthermore, we will couple these findings to phenotypes observed in mice with a targeted or spontaneous mutation of the nuclear receptor and thus provide additional indication for a putative functionality of the investigated SNPs.}}
+Nuclear receptors (NRs) are a large family of ligand-activated transcription factors, that bind directly to DNA to regulate the expression of target genes. They regulate critical functions in cell control, inflammation, fibrosis and tumor formation and are involved in metabolism, development and reproduction. Nuclear receptors influence the metabolism and signalling processes in the cells by changing the expression of target genes and are associated with numerous pathologies such as cancer, cardiovascular disease, and reproductive abnormalities. This paper presents the investigative results of knockout phenotypes and genetic variation for mouse NRs. Based on an assembly of all known mouse SNPs in the vicinity of mouse NR genes, the phenotype information for genetic knockouts and genetic variation data was compiled from public databases. Knockout phenotypes were extracted from the Mouse Genome Informatics (MGI) database, while the Mouse Phenome Database (MPD) provides SNPs from various mouse strains, which can be correlated with extreme phenotypes measured in these mouse strains. The goal of this analysis is to find NR-associated SNPs in mice that influence changes in biological parameters such as body weight, body fat and other phenotypic traits. Furthermore, these findings will be coupled to phenotypes observed in mice with a targeted or spontaneous mutation of the nuclear receptor and thus provide additional indication for a putative functionality of the investigated SNPs.}}
 
 %----------------------------------------------------------------------------------------
 
@@ -37,14 +37,22 @@ Nuclear receptors (NRs) are a large family of ligand-activated transcription fac
 
 \section*{Introduction} % The \section*{} command stops section numbering
 
-IntroIntroIntro
+Looking across the evolutionary patterns between mouse and human, numerous research experiments and gene regulation studies have shown striking similarities regarding certain processes and systems in the two organisms. The mouse presents up to 95\% genome similarity to humans and is thus often being used as a model organism when investigating anatomical, physiological or genetical markers in humans. Practically, mice are small, have an accelerated life cycle and represent a cost-effective alternative to genetic research and drug development for human diseases. Also, the majority of the genes responsible for complex diseases are shared between mice and humans, enhancing the chances of successfully identifying patterns in mice which would reveal human disease phenotypes~\cite{intro1}.
+~~~~~~~\\
+~~~~~~~\\  
+This paper makes use of the publicly available data in the Mouse Genome Informatics database and Mouse Phenome Database, respectively, in order to highlight changes in various biological parameters in mice under the influence of the NR-associated SNPs. Furthermore, these findings can be mapped to genotype - phenotype associations in humans, for studying the human biology and disease.
 
 %------------------------------------------------
 
 \section{Methods}
 
+<<<<<<< HEAD
 \subsection{Nuclear receptors}
 The dataset on which this examination was based upon contains 49 nuclear receptors of mouse~\cite{proteomic} as well as additional information regarding these receptors. To achieve the goal of associating the receptors with extreme phenotypes, the dataset was analyzed and two mouse databases were brought in.
+=======
+\subsection{Mouse nuclear receptors}
+49 nuclear receptors
+>>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
 \subsection{human genome}
 tbd
 
@@ -64,15 +72,19 @@ The drawback of the MPI database is that every sort of data is always reffered o
 %------------------------------------------------
 
 \section{Database}
-The goal of the database was to create several tables which could be mapped with the reference table of the 49 nuclear receptors, to create statistics about the relationship between the nuclear receptors and the phenotypes and SNPs associated with them. As mentioned above, the main problem was the connection between the MGI and the MPI tables, which was gone around	by using an extra table which contained only the strains of MGI which are the same as the ones of the MPI table. As additional information regarding the SNPs another database was consulted, the UCSC database. This table contains every SNP of the MPI table, but with infromation about the reference genome and the locations of the SNPs. Having that information, it is possible to create statistics regarding the substitutions of the nucleotides, locations and the phenotypic results arising from those SNPs. 
+The goal of the database was to create several tables which could be mapped with the reference table of the 49 nuclear receptors, to create statistics about the relationship between the nuclear receptors and the phenotypes and SNPs associated with them. As mentioned above, the main problem was the connection between the MGI and the MPI tables, which was gone around by using an extra table which contained only the strains of MGI which are the same as the ones of the MPI table. As additional information regarding the SNPs another database was consulted, the UCSC database. This table contains every SNP of the MPI table, but with infromation about the reference genome and the locations of the SNPs. Having that information, it is possible to create statistics regarding the substitutions of the nucleotides, locations and the phenotypic results arising from those SNPs. 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{pics/db.png}
 	\captionsetup{margin=12pt,format=plain,font=footnotesize,labelfont=bf}
  	\caption{\footnotesize{\textbf{Database}. 
 	~~~~~~~\\
+<<<<<<< HEAD
 	Database scheme for the 49 nuclear receptors with information about MGI, MPI and UCSC.}}
 	\label{fig:mgi_pheotypes_distribution}
 \end{figure}
@@ -81,6 +93,12 @@ All databases were build upon the \textit{nr\_mapping} table, which contains the
 
 
 
+=======
+	The database created with information of MGI, MPI and UCSC.}}
+	\label{fig:database}
+\end{figure}
+
+>>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
 %------------------------------------------------
 
 \section{Results}

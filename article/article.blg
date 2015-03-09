@@ -3,6 +3,7 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: article.aux
 The style file: unsrt.bst
 Database file #1: sample.bib
+<<<<<<< HEAD
 Warning--empty journal in proteomic
 Warning--empty journal in mpd
 You've used 2 entries,
@@ -16,6 +17,21 @@ and the built_in function-call counts, 455 in all, are:
 - -- 15
 * -- 36
 := -- 94
+=======
+Warning--empty journal in intro1
+Warning--empty journal in mpd
+You've used 2 entries,
+            1791 wiz_defined-function locations,
+            451 strings with 3690 characters,
+and the built_in function-call counts, 320 in all, are:
+= -- 21
+> -- 18
+< -- 0
++ -- 7
+- -- 5
+* -- 15
+:= -- 64
+>>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
 add.period$ -- 6
 call.type$ -- 2
 change.case$ -- 2
@@ -23,8 +39,13 @@ chr.to.int$ -- 0
 cite$ -- 4
 duplicate$ -- 16
 empty$ -- 29
+<<<<<<< HEAD
 format.name$ -- 15
 if$ -- 85
+=======
+format.name$ -- 5
+if$ -- 63
+>>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
 int.to.chr$ -- 0
 int.to.str$ -- 2
 missing$ -- 2
