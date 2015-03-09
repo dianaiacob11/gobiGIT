@@ -210,7 +210,7 @@ sub                 get_analysisMPI_phenotypes_nr_zscore2_neg{
     my $count      = '';
     
     while(@row = $sth->fetchrow_array){
-        if($row[2] > 2){
+        if($row[2] > 45000){
             $phenotypes  = join(',', $phenotypes, $row[0]);
             chomp($phenotypes);
             
@@ -570,6 +570,54 @@ sub                 get_analysisMPI_snp_function_distribution{
     $count      =~ s/.//;
 
     return ($function, $percentage, $count, $total_function);
+}
+
+sub                 get_analysisMPI_top10_strains_distribution{
+    
+    my $dbTable1           = 'mpi_strainmeans';
+    my $dbTable2           = 'mpi_rs_strains';
+    my $query              = "";
+    my $query_total        = "";
+    
+    $query   = " SELECT DISTINCT strain as current_strain, (SELECT count(*) FROM ".$dbTable1." WHERE strain = current_strain) as count_strain, score "
+             . " FROM mpi_strainmeans "
+             . " WHERE strain IN (SELECT DISTINCT strain_name FROM ".$dbTable2." ) "
+             . " ORDER BY score DESC "
+             . " LIMIT 10 ";
+    $query_total = " SELECT COUNT(*) FROM ".$dbTable1
+                 . " WHERE strain IN (SELECT DISTINCT strain_name FROM ".$dbTable2." )";
+    
+    my $sth       = $db->prepare($query);
+    my $sth_total = $db->prepare($query_total);
+    
+    $sth->execute() or die $DBI::errstr;
+    $sth_total->execute() or die $DBI::errstr;
+    
+    my $total_strains = $sth_total->fetchrow_array;
+    
+    my @row;
+    my $strains = '';
+    my $percentage = '';
+    my $count      = '';
+    while(@row = $sth->fetchrow_array){
+        my $strain_norm = "'". $row[0] ."'"; # !! otherwise R won't work for string array
+        $strains  = join(',', $strains, $strain_norm);
+        chomp($strains);
+        
+        my $percent = sprintf("%.2f",100 * $row[1]/$total_strains);
+        $percentage = join(',', $percentage, $percent);
+        chomp($percentage);
+        
+        my $cnt =  "'".$row[1]."\n(". $percent ."%)\n".$row[2]."'";
+        $count  = join(',', $count, $cnt);
+        chomp($count);
+    }
+    
+    $strains =~ s/.//;
+    $percentage =~ s/.//;
+    $count      =~ s/.//;
+    
+    return ($strains, $percentage, $count, $total_strains);
 }
 
 
