@@ -21,8 +21,8 @@ sub                 plotVerticalString{
 
     $R->send(qq (x_labels <- c($x_axis)));
     $R->send(qq (mydata <- data.frame(row.names = c($x_axis), Count = c($y_axis))));
-    $R->send(qq (c(pdf("$filename", width=25, height=12),mp <- par(mar=c(20,7,4,2)))));
-    $R->send(qq (mp <- barplot(t(as.matrix(mydata)), col="lightblue", border=NA, axes = FALSE, axisnames = FALSE, ylab="$ylab", cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)));
+    $R->send(qq (c(pdf("$filename", width=25, height=12),mp <- par(mar=c(25,7,4,2)))));
+    $R->send(qq (mp <- barplot(t(as.matrix(mydata)), col="lightblue", border=NA, axes = FALSE, axisnames = FALSE, ylab="$ylab", cex.lab=1.5, cex.axis=3)));
     $R->send(qq (text(mp, par('usr')[3], labels = x_labels, srt = 45, adj = 1, xpd = TRUE, cex=1.5)));
     $R->send(qq (axis(2)));
     $R->send(qq (text(mp, 0, labels = c($label), cex = 0.8, pos=3, offset=3)));
@@ -48,7 +48,7 @@ sub                 plotHeatmap{
  
     $R->send(qq (c(pdf("$filename", width=20, height=20))));
     $R->send(qq (scaleyellowred <- colorRampPalette(c("lightyellow", "red"), space = "rgb")));
-    $R->send(qq (heatmap.2(mat_data, margins =c(20,20), scale="none", key=T, keysize=0.5,
+    $R->send(qq (heatmap.2(mat_data, margins =c(20,20), cexRow=2, cexCol=2, scale="none", key=T, keysize=0.5,
     density.info="none", trace="none", Rowv = NA, Colv = NA, symm=F ,symkey=T, col = scaleyellowred)));
     $R->send(qq (dev.off()));
 

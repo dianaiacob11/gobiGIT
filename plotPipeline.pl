@@ -24,7 +24,7 @@ pod2usage( -verbose => 2 ) if $man;
 usage() unless defined $outputDir;
 
 make_path ($outputDir);
-
+=co
 my $mgi_phenotypes_distribution_file = $outputDir."/mgi_phenotypes_distribution.pdf";
 system (" perl ./analysisMGI_phenotypes_distribution.pl --outputFile $mgi_phenotypes_distribution_file");
 
@@ -37,13 +37,12 @@ system (" perl ./analysisMPI_phenotypes_distribution_zscore2.pl --outputFile $mp
 my $mpi_phenotypes_distribution_zscore2_neg_file = $outputDir."/mpi_phenotypes_distribution_zscore2_neg.pdf";
  system (" perl ./analysisMPI_phenotypes_distribution_zscore-2.pl --outputFile $mpi_phenotypes_distribution_zscore2_neg_file");
 
-my $mpi_snp_distribution_file = $outputDir."/mpi_snp_distribution.pdf";
-system (" perl ./analysisMPI_snp_distribution.pl --outputFile $mpi_snp_distribution_file");
+#my $mpi_snp_distribution_file = $outputDir."/mpi_snp_distribution.pdf";
+#system (" perl ./analysisMPI_snp_distribution.pl --outputFile $mpi_snp_distribution_file");
 
 my $mpi_snp_function_distribution_file = $outputDir."/mpi_snp_function_distribution.pdf";
 system (" perl ./analysisMPI_snp_function_distribution.pl --outputFile $mpi_snp_function_distribution_file");
-
-=co
+=cut
 my $mgi_phenotypes_nr_file = $outputDir."/mgi_phenotypes_nr.pdf";
 system (" perl ./analysisMGI_phenotypes_nr.pl --outputFile $mgi_phenotypes_nr_file");
 
@@ -56,6 +55,7 @@ system (" perl ./analysisMPI_phenotypes_strain_zscore2.pl --outputFile $mpi_phen
 my $mpi_phenotypes_strain_zscore2_neg_file = $outputDir."/mpi_phenotypes_strain_zscore2_neg.pdf";
 system (" perl ./analysisMPI_phenotypes_strain_zscore-2.pl --outputFile $mpi_phenotypes_strain_zscore2_neg_file");
 
+=co
 my $mpi_phenotypes_nr_zscore2_file = $outputDir."/mpi_phenotypes_nr_zscore2.pdf";
 system (" perl ./analysisMPI_phenotypes_nr_zscore2.pl --outputFile $mpi_phenotypes_nr_zscore2_file");
 
