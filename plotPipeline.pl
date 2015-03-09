@@ -37,6 +37,13 @@ system (" perl ./analysisMPI_phenotypes_distribution_zscore2.pl --outputFile $mp
 my $mpi_phenotypes_distribution_zscore2_neg_file = $outputDir."/mpi_phenotypes_distribution_zscore2_neg.pdf";
  system (" perl ./analysisMPI_phenotypes_distribution_zscore-2.pl --outputFile $mpi_phenotypes_distribution_zscore2_neg_file");
 
+my $mpi_snp_distribution_file = $outputDir."/mpi_snp_distribution.pdf";
+system (" perl ./analysisMPI_snp_distribution.pl --outputFile $mpi_snp_distribution_file");
+
+my $mpi_snp_function_distribution_file = $outputDir."/mpi_snp_function_distribution.pdf";
+system (" perl ./analysisMPI_snp_function_distribution.pl --outputFile $mpi_snp_function_distribution_file");
+
+=co
 my $mgi_phenotypes_nr_file = $outputDir."/mgi_phenotypes_nr.pdf";
 system (" perl ./analysisMGI_phenotypes_nr.pl --outputFile $mgi_phenotypes_nr_file");
 
@@ -54,13 +61,7 @@ system (" perl ./analysisMPI_phenotypes_nr_zscore2.pl --outputFile $mpi_phenotyp
 
 my $mpi_phenotypes_nr_zscore2_neg_file = $outputDir."/mpi_phenotypes_nr_zscore2_neg.pdf";
 system (" perl ./analysisMPI_phenotypes_nr_zscore-2.pl --outputFile $mpi_phenotypes_nr_zscore2_neg_file");
-
-my $mpi_snp_distribution_file = $outputDir."/mpi_snp_distribution.pdf";
-system (" perl ./analysisMPI_snp_distribution.pl --outputFile $mpi_snp_distribution_file");
-
-my $mpi_snp_function_distribution_file = $outputDir."/mpi_snp_function_distribution.pdf";
-system (" perl ./analysisMPI_snp_function_distribution.pl --outputFile $mpi_snp_function_distribution_file");
-
+=cut
 
 sub usage{
     print "Incorrect command line parameters! \n";

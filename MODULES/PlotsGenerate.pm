@@ -22,8 +22,8 @@ sub                 plotVerticalString{
     $R->send(qq (x_labels <- c($x_axis)));
     $R->send(qq (mydata <- data.frame(row.names = c($x_axis), Count = c($y_axis))));
     $R->send(qq (c(pdf("$filename", width=25, height=12),mp <- par(mar=c(20,7,4,2)))));
-    $R->send(qq (mp <- barplot(t(as.matrix(mydata)), col="lightblue", border=NA, axes = FALSE, axisnames = FALSE, ylab="$ylab")));
-    $R->send(qq (text(mp, par('usr')[3], labels = x_labels, srt = 45, adj = 1, xpd = TRUE, cex=1)));
+    $R->send(qq (mp <- barplot(t(as.matrix(mydata)), col="lightblue", border=NA, axes = FALSE, axisnames = FALSE, ylab="$ylab", cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)));
+    $R->send(qq (text(mp, par('usr')[3], labels = x_labels, srt = 45, adj = 1, xpd = TRUE, cex=1.5)));
     $R->send(qq (axis(2)));
     $R->send(qq (text(mp, 0, labels = c($label), cex = 0.8, pos=3, offset=3)));
     $R->send(qq (dev.off()));
