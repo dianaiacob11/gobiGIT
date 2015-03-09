@@ -44,7 +44,7 @@ IntroIntroIntro
 \section{Methods}
 
 \subsection{Nuclear receptors}
-49 nuclear receptors
+The dataset on which this examination was based upon contains 49 nuclear receptors of mouse~\cite{proteomic} as well as additional information regarding these receptors. To achieve the goal of associating the receptors with extreme phenotypes, the dataset was analyzed and two mouse databases were brought in.
 \subsection{human genome}
 tbd
 
@@ -53,9 +53,11 @@ tbd
 \section{Tools}
 \subsection{MGI}
 Mouse Genome Informatics\footnote{\url{http://www.informatics.jax.org/}, \today} is a database for the laboratory mouse, which makes information about integrated genetics and associated phenotypes with their alleles available.
+
 For this report the MGI database was solely used for building a connection between the nuclear receptor genes and the associated phenotypes always dependent on miscellaneous strains. Information about SNPs and variation of the nuclear receptors were not taken from MGI, because the annotation regarding this matter was far better in the MPI and UCSC database.
 \subsection{MPD}
-Mouse Phenome Database\footnote{\url{http://phenome.jax.org/}, \today}~\cite{mpd} includes information about measured data on laboratoy mouse strains and populations as well as SNPs and phenotypes of the examined strains. The information about the SNPs and the variations were the motifs to also take a look at this database, wit
+Mouse Phenome Database\footnote{\url{http://phenome.jax.org/}, \today}~\cite{mpd} includes information about measured data on laboratoy mouse strains and populations as well as SNPs and phenotypes of the examined strains. 
+More than 1330 were examined in several ways, over 3500 phenotype and 1.8 billion genotype annotations were made ~\cite{mpd}.
 Given that the MGI phenotypes can be compared to the ones found in MPI which are by far more detailed.
 The drawback of the MPI database is that every sort of data is always reffered on the regarding strain, making the mapping between the nuclear receptors and the MGI data more difficult. 
 
@@ -64,30 +66,20 @@ The drawback of the MPI database is that every sort of data is always reffered o
 \section{Database}
 The goal of the database was to create several tables which could be mapped with the reference table of the 49 nuclear receptors, to create statistics about the relationship between the nuclear receptors and the phenotypes and SNPs associated with them. As mentioned above, the main problem was the connection between the MGI and the MPI tables, which was gone around	by using an extra table which contained only the strains of MGI which are the same as the ones of the MPI table. As additional information regarding the SNPs another database was consulted, the UCSC database. This table contains every SNP of the MPI table, but with infromation about the reference genome and the locations of the SNPs. Having that information, it is possible to create statistics regarding the substitutions of the nucleotides, locations and the phenotypic results arising from those SNPs. 
 
-<<<<<<< HEAD
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{pics/db.png}
 	\captionsetup{margin=12pt,format=plain,font=footnotesize,labelfont=bf}
- 	\caption{\footnotesize{\textbf{MGI phenotypes}. 
+ 	\caption{\footnotesize{\textbf{Database}. 
 	~~~~~~~\\
-	Mouse Genome Informatics phenotype distribution over the nuclear receptors.}}
+	Database scheme for the 49 nuclear receptors with information about MGI, MPI and UCSC.}}
 	\label{fig:mgi_pheotypes_distribution}
 \end{figure}
 ~~~~~~~\\
-=======
+All databases were build upon the \textit{nr\_mapping} table, which contains the important association between the nuclear receptors and the gene names. Given that the table for MGI was created by searching the gene names in the database and extracting all necessary information, analogous for the MPI database.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{pics/database.png}
-	\captionsetup{margin=12pt,format=plain,font=footnotesize,labelfont=bf}
- 	\caption{\footnotesize{\textbf{Database}. 
-	~~~~~~~\\
-	The database created with information of MGI, MPI and UCSC.}}
-	\label{fig:database}
-\end{figure}
 
->>>>>>> origin/master
 
 %------------------------------------------------
 
