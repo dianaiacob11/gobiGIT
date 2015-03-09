@@ -25,7 +25,7 @@ usage() unless defined $outputFile;
 
 sub usage{
     print "Incorrect parameters! \n";
-    print "Usage: perl analysisMGI_phenotype_distribution.pl --outputFile <path_to_plot_file> [--d|debug]\n";
+    print "Usage: perl analysisMPI_phenotype_distribution_zscore2.pl --outputFile <path_to_plot_file> [--d|debug]\n";
     print "       $0 --help \n";
     print "       $0 --man \n";
     exit;
@@ -51,12 +51,12 @@ __END__
 
 =head1 NAME
 
- analysisMGI_phenotypes_distribution.pl - creates MGI-Phenotypes distribution plot for the phenotypes found in the MGI database.
+ analysisMPI_phenotypes_distribution_zscore2.pl - creates MPI-Phenotypes distribution plot for the phenotypes found in the MPI database, associated with z-scores > 2.
  Please include absolute path in the arguements.
  
  =head1 SYNOPSYS
  
- analysisMGI_phenotypes_distribution.pl [OPTIONS]
+ analysisMPI_phenotypes_distribution_zscore2.pl [OPTIONS]
  Options:
  -debug debug message
  -help brief help message
@@ -86,10 +86,10 @@ __END__
  
  =head1 DESCRIPTION
  
- B<analysisMGI_phenotypes_distribution.pl> generates MGI-Phenotypes distribution plot.
+ B<analysisMPI_phenotypes_distribution_zscore2.pl> generates MPI-Phenotypes distribution plot, having Z-score > 2.
  
  =head1 EXAMPLE
  
- Usage: perl analysisMGI_phenotypes_distribution.pl --outputFile <path_to_plot_file>
+ Usage: perl analysisMPI_phenotypes_distribution_zscore2.pl --outputFile <path_to_plot_file>
 
 =cut
