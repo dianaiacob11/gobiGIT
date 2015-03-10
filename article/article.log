@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.3.6)  9 MAR 2015 15:19
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.1.4)  9 MAR 2015 15:24
->>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.3.6)  10 MAR 2015 09:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -883,44 +879,25 @@ Overfull \hbox (17.0pt too wide) in paragraph at lines 32--32
 
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 38.
-<<<<<<< HEAD
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 55.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-=======
 
 Underfull \hbox (badness 10000) in paragraph at lines 40--44
 
  []
 
+[1
 
-Underfull \vbox (badness 1448) has occurred while \output is active []
-
- [1
-
-
-{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 58.
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1pcr.fd
->>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [1
-
-<<<<<<< HEAD
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<pics/db.png, id=67, 1064.97874pt x 543.02875pt>
-=======
-<pics/db.png, id=64, 1064.97874pt x 543.02875pt>
->>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 60.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+<pics/db.png, id=72, 1064.97874pt x 543.02875pt>
 File: pics/db.png Graphic file (type png)
  <use pics/db.png>
-Package pdftex.def Info: pics/db.png used on input line 72.
+Package pdftex.def Info: pics/db.png used on input line 76.
 (pdftex.def)             Requested size: 500.484pt x 255.1904pt.
-<<<<<<< HEAD
-
-<pics/mgi_phenotypes_distribution.pdf, id=69, 1806.75pt x 867.24pt>
-=======
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -931,15 +908,16 @@ Package Fancyhdr Warning: \headheight is too small (11.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2] <pics/mgi_phenotypes_distribution.pdf, id=76, 1806.75pt x 867.24pt>
->>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
+[2] <pics/mgi_phenotypes_distribution.pdf, id=85, 1806.75pt x 867.24pt>
 File: pics/mgi_phenotypes_distribution.pdf Graphic file (type pdf)
 
 <use pics/mgi_phenotypes_distribution.pdf>
 Package pdftex.def Info: pics/mgi_phenotypes_distribution.pdf used on input lin
-<<<<<<< HEAD
-e 90.
+e 92.
 (pdftex.def)             Requested size: 500.484pt x 240.23187pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 
 Package Fancyhdr Warning: \headheight is too small (11.0pt): 
@@ -947,59 +925,29 @@ Package Fancyhdr Warning: \headheight is too small (11.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2 <./pics/db.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 97--98
+[3 <./pics/db.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
 
  []
 
-<pics/mgi_types_distribution.pdf, id=82, 1806.75pt x 867.24pt>
+<pics/mgi_types_distribution.pdf, id=95, 1806.75pt x 867.24pt>
 File: pics/mgi_types_distribution.pdf Graphic file (type pdf)
 
 <use pics/mgi_types_distribution.pdf>
-Package pdftex.def Info: pics/mgi_types_distribution.pdf used on input line 102
+Package pdftex.def Info: pics/mgi_types_distribution.pdf used on input line 104
 .
 (pdftex.def)             Requested size: 500.484pt x 240.23187pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 109--110
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
  []
 
-<pics/mpi_phenotypes_distribution_zscore2.pdf, id=83, 1806.75pt x 867.24pt>
-=======
-e 88.
-(pdftex.def)             Requested size: 500.484pt x 240.23187pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 95--96
-
- []
-
-<pics/mgi_types_distribution.pdf, id=77, 1806.75pt x 867.24pt>
-File: pics/mgi_types_distribution.pdf Graphic file (type pdf)
-
-<use pics/mgi_types_distribution.pdf>
-Package pdftex.def Info: pics/mgi_types_distribution.pdf used on input line 100
-.
-(pdftex.def)             Requested size: 500.484pt x 240.23187pt.
-
-
-Package Fancyhdr Warning: \headheight is too small (11.0pt): 
- Make it at least 12.0pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[3 <./pics/db.png> <./pics/mgi_phenotypes_distribution.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
-
- []
-
-<pics/mpi_phenotypes_distribution_zscore2.pdf, id=92, 1806.75pt x 867.24pt>
->>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
+<pics/mpi_phenotypes_distribution_zscore2.pdf, id=96, 1806.75pt x 867.24pt>
 File: pics/mpi_phenotypes_distribution_zscore2.pdf Graphic file (type pdf)
 
 <use pics/mpi_phenotypes_distribution_zscore2.pdf>
 Package pdftex.def Info: pics/mpi_phenotypes_distribution_zscore2.pdf used on i
-<<<<<<< HEAD
-nput line 113.
+nput line 115.
 (pdftex.def)             Requested size: 500.484pt x 240.23187pt.
 
 
@@ -1008,66 +956,30 @@ Package Fancyhdr Warning: \headheight is too small (11.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[3 <./pics/mgi_phenotypes_distribution.pdf> <./pics/mgi_types_distribution.pdf>
+[4 <./pics/mgi_phenotypes_distribution.pdf> <./pics/mgi_types_distribution.pdf>
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
-=======
-nput line 111.
-(pdftex.def)             Requested size: 500.484pt x 240.23187pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
->>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
  []
 
 
-<<<<<<< HEAD
-<pics/mpi_phenotypes_distribution_zscore2_neg.pdf, id=101, 1806.75pt x 867.24pt
+<pics/mpi_phenotypes_distribution_zscore2_neg.pdf, id=114, 1806.75pt x 867.24pt
 >
-=======
-<pics/mpi_phenotypes_distribution_zscore2_neg.pdf, id=93, 1806.75pt x 867.24pt>
->>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
 File: pics/mpi_phenotypes_distribution_zscore2_neg.pdf Graphic file (type pdf)
  <use pics/mpi_phenotypes_distribution_zscore2_neg.pdf>
 Package pdftex.def Info: pics/mpi_phenotypes_distribution_zscore2_neg.pdf used 
-<<<<<<< HEAD
-on input line 124.
+on input line 126.
 (pdftex.def)             Requested size: 500.484pt x 240.23187pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--132
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
 
  []
 
-<pics/mgi_phenotypes_nr.pdf, id=102, 1445.4pt x 1445.4pt>
+<pics/mgi_phenotypes_nr.pdf, id=115, 1445.4pt x 1445.4pt>
 File: pics/mgi_phenotypes_nr.pdf Graphic file (type pdf)
 
 <use pics/mgi_phenotypes_nr.pdf>
-Package pdftex.def Info: pics/mgi_phenotypes_nr.pdf used on input line 135.
-=======
-on input line 122.
-(pdftex.def)             Requested size: 500.484pt x 240.23187pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-Package Fancyhdr Warning: \headheight is too small (11.0pt): 
- Make it at least 12.0pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[4 <./pics/mgi_types_distribution.pdf> <./pics/mpi_phenotypes_distribution_zsco
-re2.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 129--130
-
- []
-
-<pics/mgi_phenotypes_nr.pdf, id=112, 1445.4pt x 1445.4pt>
-File: pics/mgi_phenotypes_nr.pdf Graphic file (type pdf)
-
-<use pics/mgi_phenotypes_nr.pdf>
-Package pdftex.def Info: pics/mgi_phenotypes_nr.pdf used on input line 133.
->>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
+Package pdftex.def Info: pics/mgi_phenotypes_nr.pdf used on input line 137.
 (pdftex.def)             Requested size: 500.484pt x 500.47206pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1079,30 +991,17 @@ Package Fancyhdr Warning: \headheight is too small (11.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-<<<<<<< HEAD
-[4 <./pics/mpi_phenotypes_distribution_zscore2.pdf> <./pics/mpi_phenotypes_dist
+[5 <./pics/mpi_phenotypes_distribution_zscore2.pdf> <./pics/mpi_phenotypes_dist
 ribution_zscore2_neg.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 142--143
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
 
  []
 
-<pics/mgi_types_nr.pdf, id=121, 1445.4pt x 1445.4pt>
+<pics/mgi_types_nr.pdf, id=134, 1445.4pt x 1445.4pt>
 File: pics/mgi_types_nr.pdf Graphic file (type pdf)
 
 <use pics/mgi_types_nr.pdf>
-Package pdftex.def Info: pics/mgi_types_nr.pdf used on input line 146.
-=======
-[5 <./pics/mpi_phenotypes_distribution_zscore2_neg.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 140--141
-
- []
-
-<pics/mgi_types_nr.pdf, id=124, 1445.4pt x 1445.4pt>
-File: pics/mgi_types_nr.pdf Graphic file (type pdf)
-
-<use pics/mgi_types_nr.pdf>
-Package pdftex.def Info: pics/mgi_types_nr.pdf used on input line 144.
->>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
+Package pdftex.def Info: pics/mgi_types_nr.pdf used on input line 148.
 (pdftex.def)             Requested size: 500.484pt x 500.47206pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1114,30 +1013,17 @@ Package Fancyhdr Warning: \headheight is too small (11.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-<<<<<<< HEAD
-[5 <./pics/mgi_phenotypes_nr.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
-
- []
-
-<pics/mpi_phenotypes_strain_zscore2.pdf, id=134, 1445.4pt x 1445.4pt>
-=======
 [6 <./pics/mgi_phenotypes_nr.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 151--152
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
 
  []
 
-<pics/mpi_phenotypes_strain_zscore2.pdf, id=137, 1445.4pt x 1445.4pt>
->>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
+<pics/mpi_phenotypes_strain_zscore2.pdf, id=147, 1445.4pt x 1445.4pt>
 File: pics/mpi_phenotypes_strain_zscore2.pdf Graphic file (type pdf)
 
 <use pics/mpi_phenotypes_strain_zscore2.pdf>
 Package pdftex.def Info: pics/mpi_phenotypes_strain_zscore2.pdf used on input l
-<<<<<<< HEAD
-ine 157.
-=======
-ine 155.
->>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
+ine 159.
 (pdftex.def)             Requested size: 500.484pt x 500.47206pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1149,24 +1035,15 @@ Package Fancyhdr Warning: \headheight is too small (11.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-<<<<<<< HEAD
-[6 <./pics/mgi_types_nr.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 164--165
-=======
 [7 <./pics/mgi_types_nr.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 162--163
->>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
 
  []
 
 File: pics/mpi_phenotypes_strain_zscore2.pdf Graphic file (type pdf)
 <use pics/mpi_phenotypes_strain_zscore2.pdf>
 Package pdftex.def Info: pics/mpi_phenotypes_strain_zscore2.pdf used on input l
-<<<<<<< HEAD
-ine 168.
-=======
-ine 166.
->>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
+ine 170.
 (pdftex.def)             Requested size: 500.484pt x 500.47206pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1193,29 +1070,28 @@ Package Fancyhdr Warning: \headheight is too small (11.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-<<<<<<< HEAD
-[9]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 194.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 194.
+[10]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
  (./article.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 194.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 194.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 196.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
 Package rerunfilecheck Info: File `article.out' has not changed.
-(rerunfilecheck)             Checksum: A3DCC9E0725850D0742C61A7E8472B1A;554.
+(rerunfilecheck)             Checksum: 508E402E53CE7803C8DF48568D0E1E7D;627.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 194.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
  ) 
 Here is how much of TeX's memory you used:
- 11001 strings out of 495059
- 163433 string characters out of 3182031
- 290925 words of memory out of 3000000
- 13794 multiletter control sequences out of 15000+200000
- 63525 words of font info for 199 fonts, out of 3000000 for 9000
+ 11022 strings out of 495059
+ 163651 string characters out of 3182031
+ 293008 words of memory out of 3000000
+ 13797 multiletter control sequences out of 15000+200000
+ 64287 words of font info for 209 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 43i,12n,45p,1489b,483s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,12n,45p,1515b,481s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/
@@ -1224,44 +1100,10 @@ lvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro
 8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on article.pdf (9 pages, 207794 bytes).
+Output written on article.pdf (10 pages, 214057 bytes).
 PDF statistics:
- 208 PDF objects out of 1000 (max. 8388607)
- 171 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
-=======
-[10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 192.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 192.
- (./article.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 192.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 192.
-Package rerunfilecheck Info: File `article.out' has not changed.
-(rerunfilecheck)             Checksum: 573CE63828637D9FB13B38999AAE18B5;560.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 192.
- ) 
-Here is how much of TeX's memory you used:
- 11309 strings out of 493117
- 169618 string characters out of 6135434
- 307122 words of memory out of 5000000
- 14381 multiletter control sequences out of 15000+600000
- 63092 words of font info for 194 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 43i,12n,45p,1515b,485s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
-xlive/2014/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/20
-14/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2014/texm
-f-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2014/texmf-dist/
-fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/
-type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/
-times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr
-i8a.pfb>
-Output written on article.pdf (10 pages, 208060 bytes).
-PDF statistics:
- 212 PDF objects out of 1000 (max. 8388607)
- 174 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
->>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
- 57985 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 224 PDF objects out of 1000 (max. 8388607)
+ 186 compressed objects within 2 object streams
+ 38 named destinations out of 1000 (max. 500000)
+ 57993 words of extra memory for PDF output out of 61914 (max. 10000000)
 

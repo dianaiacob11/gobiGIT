@@ -3,59 +3,40 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: article.aux
 The style file: unsrt.bst
 Database file #1: sample.bib
-<<<<<<< HEAD
-Warning--empty journal in proteomic
-Warning--empty journal in mpd
-You've used 2 entries,
-            1791 wiz_defined-function locations,
-            452 strings with 3871 characters,
-and the built_in function-call counts, 455 in all, are:
-= -- 22
-> -- 49
-< -- 0
-+ -- 17
-- -- 15
-* -- 36
-:= -- 94
-=======
 Warning--empty journal in intro1
+Warning--empty journal in proteomic
+Warning--empty journal in mgd
 Warning--empty journal in mpd
-You've used 2 entries,
+You've used 4 entries,
             1791 wiz_defined-function locations,
-            451 strings with 3690 characters,
-and the built_in function-call counts, 320 in all, are:
-= -- 21
-> -- 18
+            458 strings with 4131 characters,
+and the built_in function-call counts, 768 in all, are:
+= -- 43
+> -- 70
 < -- 0
-+ -- 7
-- -- 5
-* -- 15
-:= -- 64
->>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
-add.period$ -- 6
-call.type$ -- 2
-change.case$ -- 2
++ -- 25
+- -- 21
+* -- 51
+:= -- 152
+add.period$ -- 12
+call.type$ -- 4
+change.case$ -- 4
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 16
-empty$ -- 29
-<<<<<<< HEAD
-format.name$ -- 15
-if$ -- 85
-=======
-format.name$ -- 5
-if$ -- 63
->>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
+cite$ -- 8
+duplicate$ -- 32
+empty$ -- 57
+format.name$ -- 21
+if$ -- 149
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 2
-newline$ -- 13
-num.names$ -- 2
-pop$ -- 10
+int.to.str$ -- 4
+missing$ -- 4
+newline$ -- 23
+num.names$ -- 4
+pop$ -- 20
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 6
+skip$ -- 12
 stack$ -- 0
 substring$ -- 0
 swap$ -- 0
@@ -63,8 +44,8 @@ text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 2
-while$ -- 2
-width$ -- 3
-write$ -- 20
-(There were 2 warnings)
+warning$ -- 4
+while$ -- 4
+width$ -- 5
+write$ -- 38
+(There were 4 warnings)

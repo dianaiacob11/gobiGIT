@@ -46,13 +46,10 @@ This paper makes use of the publicly available data in the Mouse Genome Informat
 
 \section{Methods}
 
-<<<<<<< HEAD
 \subsection{Nuclear receptors}
 The dataset on which this examination was based upon contains 49 nuclear receptors of mouse~\cite{proteomic} as well as additional information regarding these receptors. To achieve the goal of associating the receptors with extreme phenotypes, the dataset was analyzed and two mouse databases were brought in.
-=======
 \subsection{Mouse nuclear receptors}
 49 nuclear receptors
->>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
 \subsection{human genome}
 tbd
 
@@ -61,44 +58,31 @@ tbd
 \section{Tools}
 \subsection{MGI}
 Mouse Genome Informatics\footnote{\url{http://www.informatics.jax.org/}, \today} is a database for the laboratory mouse, which makes information about integrated genetics and associated phenotypes with their alleles available.
-
-For this report the MGI database was solely used for building a connection between the nuclear receptor genes and the associated phenotypes always dependent on miscellaneous strains. Information about SNPs and variation of the nuclear receptors were not taken from MGI, because the annotation regarding this matter was far better in the MPI and UCSC database.
+The Mouse Genome Database contains over 24000 genes with protein sequences and approximately 48000 genotypes with phenotype annotation ~\cite{mgd}.
+For this paper the MGD was solely used for building a connection between the nuclear receptor genes and the associated phenotypes always dependent on miscellaneous strains. Information about SNPs and variation of the nuclear receptors were not taken from MGD, because the annotation regarding this matter was far better in the MPI and UCSC database.
 \subsection{MPD}
 Mouse Phenome Database\footnote{\url{http://phenome.jax.org/}, \today}~\cite{mpd} includes information about measured data on laboratoy mouse strains and populations as well as SNPs and phenotypes of the examined strains. 
-More than 1330 were examined in several ways, over 3500 phenotype and 1.8 billion genotype annotations were made ~\cite{mpd}.
+More than 1330 strains were examined in several ways, over 3500 phenotype and 1.8 billion genotype annotations were made~\cite{mpd}.
 Given that the MGI phenotypes can be compared to the ones found in MPI which are by far more detailed.
 The drawback of the MPI database is that every sort of data is always reffered on the regarding strain, making the mapping between the nuclear receptors and the MGI data more difficult. 
 
 %------------------------------------------------
 
 \section{Database}
-The goal of the database was to create several tables which could be mapped with the reference table of the 49 nuclear receptors, to create statistics about the relationship between the nuclear receptors and the phenotypes and SNPs associated with them. As mentioned above, the main problem was the connection between the MGI and the MPI tables, which was gone around by using an extra table which contained only the strains of MGI which are the same as the ones of the MPI table. As additional information regarding the SNPs another database was consulted, the UCSC database. This table contains every SNP of the MPI table, but with infromation about the reference genome and the locations of the SNPs. Having that information, it is possible to create statistics regarding the substitutions of the nucleotides, locations and the phenotypic results arising from those SNPs. 
+The goal of the database was to create several tables which could be mapped with the reference table of the 49 nuclear receptors, to create statistics about the relationship between the nuclear receptors and the phenotypes and SNPs associated with them. As mentioned above, the main problem was the connection between the MGD and the MPD tables, which was gone around by using an extra table which contained only the strains of MGI which are the same as the ones of the MPD table. As additional information regarding the SNPs another database was consulted, the UCSC database. This table contains every SNP of the MPD table, but with infromation about the reference genome and the locations of the SNPs. Having that information, it is possible to create statistics regarding the substitutions of the nucleotides, locations and the phenotypic results arising from those SNPs. 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{pics/db.png}
 	\captionsetup{margin=12pt,format=plain,font=footnotesize,labelfont=bf}
  	\caption{\footnotesize{\textbf{Database}. 
 	~~~~~~~\\
-<<<<<<< HEAD
 	Database scheme for the 49 nuclear receptors with information about MGI, MPI and UCSC.}}
 	\label{fig:mgi_pheotypes_distribution}
 \end{figure}
 ~~~~~~~\\
-All databases were build upon the \textit{nr\_mapping} table, which contains the important association between the nuclear receptors and the gene names. Given that the table for MGI was created by searching the gene names in the database and extracting all necessary information, analogous for the MPI database.
-
-
-
-=======
-	The database created with information of MGI, MPI and UCSC.}}
-	\label{fig:database}
-\end{figure}
-
->>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
+All databases were build upon the \textit{nr\_mapping} table, which contains the important association between the nuclear receptors and the gene names. The \textit{mgi} table with the information regarding the genes itself like allele attributes and types was connected with the \textit{mgi\_phenotypes} table which stored the phenotypic information in association with the internal MGD ID. To map the nuclear receptors and the data of MGD on MPD we used the \textit{mgi\_strains} table which contained every available strain in mgi and built with that and the gene names of \textit{mgi} the \textit{mpi\_strainmeans} table. This table stores information about experimental results from strains like means, maximum values, minimum value and the zscore which will be an important indicator in the results chapter. Further the table includes an \textit{measurementsnumber} which was the key identifier for an element in the \textit{mpi\_strainmeans} and the \textit{mpi\_measnum} table which stores information about phenotypes associated with the regarded genes. To get a more view on the genotypic aspect besides the phenotypic, the \textit{mpi\_rs} and the \textit{ucsc\_variants} tables were built. They store the information about SNPs in the genes which are affected by the nuclear receptors. 
+Given that the table for MGD was created by searching the gene names in the database and extracting all necessary information, analogous for the MPD database.
 %------------------------------------------------
 
 \section{Results}
