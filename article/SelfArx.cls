@@ -30,6 +30,11 @@
 \RequirePackage{graphicx,xcolor}
 \RequirePackage[english]{babel}
 \RequirePackage{booktabs}
+\usepackage{longtable}
+\usepackage{microtype}
+\usepackage{tabularx}
+\usepackage{tabulary}
+\usepackage{ltxtable}
 
 %----------------------------------------------------------------------
 %	MARGINS	
