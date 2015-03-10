@@ -46,59 +46,43 @@ This paper makes use of the publicly available data in the Mouse Genome Informat
 
 \section{Methods}
 
-<<<<<<< HEAD
-\subsection{Nuclear receptors}
-The dataset on which this examination was based upon contains 49 nuclear receptors of mouse~\cite{proteomic} as well as additional information regarding these receptors. To achieve the goal of associating the receptors with extreme phenotypes, the dataset was analyzed and two mouse databases were brought in.
-=======
-\subsection{Mouse nuclear receptors}
-49 nuclear receptors
->>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
-\subsection{human genome}
-tbd
+Both the process of consolidating a genotype - phenotype map, as well as the subsequent analysis of extreme phenotypes observed in mice rely on four biological elements: mouse strains, gene names / symbols, nuclear receptors, SNPs. The correlation between the position of a nuclear receptor and various SNPs on a gene can result in a specific phenotype. Due to increased specificity rate of the phenotype associated with a particular nuclear receptor, different NR and SNPs associations will result in different phenotypes for the same gene. Similarly, diverging mouse strains present non-identical phenotypes for the genetic parameters.  
+~~~~~~~\\
+~~~~~~~\\
+The analysis presented in this paper was based upon a dataset consisting of the 49 nuclear receptors of mouse~\cite{proteomic} and their associated genes (for a full list of gene names, please see Annex~\ref{an:annex1}). 
 
 %------------------------------------------------
 
 \section{Tools}
-\subsection{MGI}
-Mouse Genome Informatics\footnote{\url{http://www.informatics.jax.org/}, \today} is a database for the laboratory mouse, which makes information about integrated genetics and associated phenotypes with their alleles available.
 
+\subsection{MGI}
+
+Mouse Genome Informatics\footnote{\url{http://www.informatics.jax.org/}, \today} is a database for the laboratory mouse, which makes information about integrated genetics and associated phenotypes with their alleles available.
+~~~~~~~\\
+~~~~~~~\\
 For this report the MGI database was solely used for building a connection between the nuclear receptor genes and the associated phenotypes always dependent on miscellaneous strains. Information about SNPs and variation of the nuclear receptors were not taken from MGI, because the annotation regarding this matter was far better in the MPI and UCSC database.
+
 \subsection{MPD}
-Mouse Phenome Database\footnote{\url{http://phenome.jax.org/}, \today}~\cite{mpd} includes information about measured data on laboratoy mouse strains and populations as well as SNPs and phenotypes of the examined strains. 
-More than 1330 were examined in several ways, over 3500 phenotype and 1.8 billion genotype annotations were made ~\cite{mpd}.
-Given that the MGI phenotypes can be compared to the ones found in MPI which are by far more detailed.
-The drawback of the MPI database is that every sort of data is always reffered on the regarding strain, making the mapping between the nuclear receptors and the MGI data more difficult. 
+
+Mouse Phenome Database\footnote{\url{http://phenome.jax.org/}, \today}~\cite{mpd} includes information about measured data on laboratoy mouse strains and populations as well as SNPs and phenotypes of the examined strains. More than 1330 were examined in several ways, over 3500 phenotype and 1.8 billion genotype annotations were made ~\cite{mpd}. Given that the MGI phenotypes can be compared to the ones found in MPI which are by far more detailed. The drawback of the MPI database is that every sort of data is always reffered on the regarding strain, making the mapping between the nuclear receptors and the MGI data more difficult. 
 
 %------------------------------------------------
 
 \section{Database}
+
 The goal of the database was to create several tables which could be mapped with the reference table of the 49 nuclear receptors, to create statistics about the relationship between the nuclear receptors and the phenotypes and SNPs associated with them. As mentioned above, the main problem was the connection between the MGI and the MPI tables, which was gone around by using an extra table which contained only the strains of MGI which are the same as the ones of the MPI table. As additional information regarding the SNPs another database was consulted, the UCSC database. This table contains every SNP of the MPI table, but with infromation about the reference genome and the locations of the SNPs. Having that information, it is possible to create statistics regarding the substitutions of the nucleotides, locations and the phenotypic results arising from those SNPs. 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{pics/db.png}
 	\captionsetup{margin=12pt,format=plain,font=footnotesize,labelfont=bf}
  	\caption{\footnotesize{\textbf{Database}. 
 	~~~~~~~\\
-<<<<<<< HEAD
 	Database scheme for the 49 nuclear receptors with information about MGI, MPI and UCSC.}}
 	\label{fig:mgi_pheotypes_distribution}
 \end{figure}
 ~~~~~~~\\
 All databases were build upon the \textit{nr\_mapping} table, which contains the important association between the nuclear receptors and the gene names. Given that the table for MGI was created by searching the gene names in the database and extracting all necessary information, analogous for the MPI database.
-
-
-
-=======
-	The database created with information of MGI, MPI and UCSC.}}
-	\label{fig:database}
-\end{figure}
-
->>>>>>> 34db39059d4a9dbed1c4dafa34a6c1e688b70527
 %------------------------------------------------
 
 \section{Results}
@@ -200,6 +184,16 @@ Blabla
 \section{Acknowledgments} % The \section*{} command stops section numbering
 
 Our gratitude to Prof. Dr. H. W. Mewes for offering us the topic and the opportunity to work with the Helmholz Zentrum research centre in Munich. Many thanks to our supervisor, Dr. Desislava Boyanova for all the input and ideas, discussions, advices and foremost her useful and critical suggestions which motivated us a lot. Last but not least, we would like to thank our fellow colleagues for their support, as well as the entire \emph{Helmholz Zentrum} group. 
+%----------------------------------------------------------------------------------------
+% Appendix
+%----------------------------------------------------------------------------------------
+\section{Annex1}
+\label{an:annex1}
+List of gene names associated with the 49 mouse nuclear receptors:
+~~~~~~~\\
+~~~~~~~\\
+\textit{Esrrg, Rorc, Nr1i2, Hnf4g, Nr0b1, Nr3c1, Hnf4a, Rxrg, Esrra, Thrb, Nr5a1, Pparg, Nr4a1, Nr5a2, Nr1h3, Nr4a3, Nr1i3, Nr2f2, Nr4a2, Nr2f6, Esrrb, Ppard, Nr2e1, Vdr, Nr6a1, Nr1h5, Rarb, Nr1h2, Esr1, Rora, Rarg, Nr1h4, Rara, Nr3c2, Pgr, Ar, Rxrb, Thra, Esr2, Rorb, Ppara, Nr1d1, Nr0b2, Nr2e3, Nr2f1, Nr1d2, Nr2c1, Rxra, Nr2c2}.
+
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
 %----------------------------------------------------------------------------------------
