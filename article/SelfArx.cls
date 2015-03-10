@@ -35,6 +35,8 @@
 \usepackage{tabularx}
 \usepackage{tabulary}
 \usepackage{ltxtable}
+\usepackage{itemize}
+\usepackage{enumerate}
 
 %----------------------------------------------------------------------
 %	MARGINS	

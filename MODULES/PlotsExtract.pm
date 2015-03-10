@@ -256,7 +256,7 @@ sub                 get_analysisMPI_phenotypes_strain_zscore2_neg{
     my $nr = '';
     my $count      = '';
     while(@row = $sth->fetchrow_array){
-        if($row[2] > 1){
+        if($row[2] > 150000){
             $phenotypes  = join(',', $phenotypes, $row[0]);
             chomp($phenotypes);
             

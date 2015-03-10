@@ -49,34 +49,36 @@ This paper makes use of the publicly available data in the Mouse Genome Informat
 Both the process of consolidating a genotype - phenotype map, as well as the subsequent analysis of extreme phenotypes observed in mice rely on four biological elements: mouse strains, gene names / symbols, nuclear receptors, SNPs. The correlation between the position of a nuclear receptor and various SNPs on a gene can result in a specific phenotype. Due to increased specificity rate of the phenotype associated with a particular nuclear receptor, different NR and SNPs associations will result in different phenotypes for the same gene. Similarly, diverging mouse strains present non-identical phenotypes for the genetic parameters.  
 
 \subsection{Mouse nuclear receptors}
-The analysis presented in this paper was based upon a dataset consisting of the 49 nuclear receptors of mouse~\cite{proteomic} and their associated genes (for a full list of gene names, please see Appendix~\ref{an:appendix}). The gene names were further on used to compile additional information regarding the position, associated SNPs and phenotypes for the nuclear receptors in mice.
+
+The analysis presented in this paper was based upon a dataset consisting of the 49 nuclear receptors of mouse~\cite{proteomic} and their associated genes (242 unique gene Ids, 49 gene names / symbols); for a full list of gene names, see Appendix~\ref{an:appendix}). The gene names were further on used to compile additional information regarding the position, associated SNPs and phenotypes for the nuclear receptors in mice.
 
 \subsection{MGI - Mouse Genome Informatics}
 
-Mouse Genome Informatics\footnote{\url{http://www.informatics.jax.org/}, \today}~\cite{mgi} is free, online database for the laboratory mouse, which provides access to information about integrated genetics and associations between specific phenotypes and their corresponding alleles.
-~~~~~~~\\
-~~~~~~~\\
-For this research, the MGI database was solely used for building a connection between the nuclear receptor genes in the mouse and the associated phenotypes dependent on miscellaneous strains. Information about the SNPs and the variation of the nuclear receptors were not taken from MGI, because the annotation regarding this matter was far better in the MPI and UCSC database.
+Mouse Genome Informatics\footnote{\url{http://www.informatics.jax.org/}, \today}~\cite{mgi} is a free, online database for the laboratory mouse and provides access to information about integrated genetics and associations between specific phenotypes and their corresponding alleles. It contains over 24000 genes and their protein sequences and approximately 48000 genotypes and phenotype annotations. For this research, the MGI database was solely used for building a connection between the nuclear receptor genes in the mouse and the associated phenotypes dependent on miscellaneous strains. 
 
 \subsection{MPD - Mouse Phenome Database}
 
-Mouse Phenome Database\footnote{\url{http://phenome.jax.org/}, \today}~\cite{mpd} includes information about measured data on laboratoy mouse strains and populations as well as SNPs and phenotypes of the examined strains. More than 1330 were examined in several ways, over 3500 phenotype and 1.8 billion genotype annotations were made ~\cite{mpd}. Given that the MGI phenotypes can be compared to the ones found in MPI which are by far more detailed. The drawback of the MPI database is that every sort of data is always reffered on the regarding strain, making the mapping between the nuclear receptors and the MGI data more difficult. 
-Mouse Genome Informatics\footnote{\url{http://www.informatics.jax.org/}, \today} is a database for the laboratory mouse, which makes information about integrated genetics and associated phenotypes with their alleles available.
-The Mouse Genome Database contains over 24000 genes with protein sequences and approximately 48000 genotypes with phenotype annotation ~\cite{mgd}.
-For this paper the MGD was solely used for building a connection between the nuclear receptor genes and the associated phenotypes always dependent on miscellaneous strains. Information about SNPs and variation of the nuclear receptors were not taken from MGD, because the annotation regarding this matter was far better in the MPI and UCSC database.
-\subsection{MPD}
-Mouse Phenome Database\footnote{\url{http://phenome.jax.org/}, \today}~\cite{mpd} includes information about measured data on laboratoy mouse strains and populations as well as SNPs and phenotypes of the examined strains. 
-More than 1330 strains were examined in several ways, over 3500 phenotype and 1.8 billion genotype annotations were made~\cite{mpd}.
-Given that the MGI phenotypes can be compared to the ones found in MPI which are by far more detailed.
-The drawback of the MPI database is that every sort of data is always reffered on the regarding strain, making the mapping between the nuclear receptors and the MGI data more difficult. 
+Mouse Phenome Database\footnote{\url{http://phenome.jax.org/}, \today}~\cite{mpd} includes annotations of measured data on the laboratory mouse strains and populations, as well as SNPs and phenotypes of the examined strains. More than 1330 strains were examined, providing annotations for over 3500 phenotype and 1.8 billion genotypes. 
+~~~~~~~\\
+~~~~~~~\\  
+The MPD database is more detailed and comprehensive than the MGI, so that the phenotypes found in MGI can be traced back to MPD. However, the MPD strictly associates individual phenotypes to their corresponding strain, posing difficulties in the mapping process between the mouse nuclear receptors and the MGI data. 
 
 %------------------------------------------------
 
 \section{Database}
 
-The goal of the database was to create several tables which could be mapped with the reference table of the 49 nuclear receptors, to create statistics about the relationship between the nuclear receptors and the phenotypes and SNPs associated with them. As mentioned above, the main problem was the connection between the MGI and the MPI tables, which was gone around by using an extra table which contained only the strains of MGI which are the same as the ones of the MPI table. As additional information regarding the SNPs another database was consulted, the UCSC database. This table contains every SNP of the MPI table, but with infromation about the reference genome and the locations of the SNPs. Having that information, it is possible to create statistics regarding the substitutions of the nucleotides, locations and the phenotypic results arising from those SNPs. 
-The goal of the database was to create several tables which could be mapped with the reference table of the 49 nuclear receptors, to create statistics about the relationship between the nuclear receptors and the phenotypes and SNPs associated with them. As mentioned above, the main problem was the connection between the MGD and the MPD tables, which was gone around by using an extra table which contained only the strains of MGI which are the same as the ones of the MPD table. As additional information regarding the SNPs another database was consulted, the UCSC database. This table contains every SNP of the MPD table, but with infromation about the reference genome and the locations of the SNPs. Having that information, it is possible to create statistics regarding the substitutions of the nucleotides, locations and the phenotypic results arising from those SNPs. 
-
+Since annotation from multiple public databases and internal data were used, there was a need to design and implement a database supporting the research. The database structure thereby presents 7 tables and aims to facilitate the processes of gathering, parsing and statistical analysis of the nuclear receptors data, as well as to allow for a clear mapping between the nuclear receptor genes and the phenotypes and SNPs associated with them. 
+The main challenge was to establish a connection between the MGI, MPD and UCSC tables. Therefore, there are 2 tables containing information from the MGI, 3 tables for MPD, 1 USCS table and the core table:
+\begin{itemize}
+\item \textbf{nr\_mapping} - core table, which contains the associations between the 49 nuclear receptors in the mouse and their corresponding gene names. 
+\item \textbf{mgi} - contains the MGI gene annotations (MGI gene id, type, attributes, transmission etc.). 
+\item \textbf{mgi\_phenotypes} - stores phenotypic information in association with MGI genes; more than one phenotype can be associated with a specific gene.
+\item \textbf{mpd\_snp} - contains the MPD SNP-annotations in correlation with the nuclear receptor genes. 
+\item \textbf{ucsc} - contains a more detailed overview on the MPD mutations from \textit{mpd\_snp} 
+\item \textbf{mpd\_strains} - contains the MPD strain annotations (MPD strain id, sex, number of mice, Z-score etc.)
+\item \textbf{mpd\_phenotypes} - stores phenotypic information in association with MPD strains; more than one phenotype can be associated with a specific strain.
+\end{itemize} 
+~~~~~~~\\  
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{pics/db.png}
@@ -86,13 +88,12 @@ The goal of the database was to create several tables which could be mapped with
 	Database scheme for the 49 nuclear receptors with information about MGI, MPI and UCSC.}}
 	\label{fig:mgi_pheotypes_distribution}
 \end{figure}
-~~~~~~~\\
-All databases were build upon the \textit{nr\_mapping} table, which contains the important association between the nuclear receptors and the gene names. Given that the table for MGI was created by searching the gene names in the database and extracting all necessary information, analogous for the MPI database.
-All databases were build upon the \textit{nr\_mapping} table, which contains the important association between the nuclear receptors and the gene names. The \textit{mgi} table with the information regarding the genes itself like allele attributes and types was connected with the \textit{mgi\_phenotypes} table which stored the phenotypic information in association with the internal MGD ID. To map the nuclear receptors and the data of MGD on MPD we used the \textit{mgi\_strains} table which contained every available strain in mgi and built with that and the gene names of \textit{mgi} the \textit{mpi\_strainmeans} table. This table stores information about experimental results from strains like means, maximum values, minimum value and the zscore which will be an important indicator in the results chapter. Further the table includes an \textit{measurementsnumber} which was the key identifier for an element in the \textit{mpi\_strainmeans} and the \textit{mpi\_measnum} table which stores information about phenotypes associated with the regarded genes. To get a more view on the genotypic aspect besides the phenotypic, the \textit{mpi\_rs} and the \textit{ucsc\_variants} tables were built. They store the information about SNPs in the genes which are affected by the nuclear receptors. 
-Given that the table for MGD was created by searching the gene names in the database and extracting all necessary information, analogous for the MPD database.
 %------------------------------------------------
 
 \section{Results}
+The goal hereby was to visualise the most important phenotypes associated with the 49 nuclear receptors in the mouse. In this regard, the phenotypic and genomic data from the MGI and MPD was compared and analysed. All graphics were generated using the R package\footnote{\url{www.r-project.org/}, \today}.
+
+\subsection{MGI Statistics}
 
 \begin{figure}[H]
 	\centering
@@ -100,30 +101,31 @@ Given that the table for MGD was created by searching the gene names in the data
 	\captionsetup{margin=12pt,format=plain,font=footnotesize,labelfont=bf}
  	\caption{\footnotesize{\textbf{MGI phenotypes}. 
 	~~~~~~~\\
-	Mouse Genome Informatics phenotype distribution over the nuclear receptors.}}
+	Mouse Genome Informatics phenotype distribution over the genes associated with the 49 nuclear receptors in the mouse.}}
 	\label{fig:mgi_pheotypes_distribution}
 \end{figure}
 ~~~~~~~\\
+The MGI database consists of generalised definitions of the phenotypes associated with the nuclear receptors found in the mouse. Figure~\ref{fig:mgi_pheotypes_distribution} illustrates the most significant phenotypes and their occurrence frequency across the 242 genes corresponding to the nuclear receptors in the mouse. With a count of 196 matches across the dataset, the most prominent phenotype correlates with the homeostatic metabolic processes, such as temperature regulation and pH-balance. Moreover, Figure~\ref{fig:mgi_pheotypes_nr} provides an insight into the exact association of each phenotype with the corresponding nuclear receptor genes, such that homeostatis, for instance, is prominently found in the following genes: \textit{Esr1}, \textit{Pparg}, \textit{Thrb}, \textit{Thra}, \textit{Vdr} etc. Other phenotypes describe body size and growth features and are representative for the \textit{Pparg} genes.
 
-%Figure~\ref{fig:mgi_pheotypes_distribution} bla bla 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{pics/mgi_types_distribution.pdf}
+	\includegraphics[width=\linewidth, height=0.99\linewidth]{pics/mgi_phenotypes_nr.pdf}
 	\captionsetup{margin=12pt,format=plain,font=footnotesize,labelfont=bf}
- 	\caption{\footnotesize{\textbf{MGI allele types}. 
+ 	\caption{\footnotesize{\textbf{MGI phenotype - nuclear receptor gene associations}. 
 	~~~~~~~\\
-	Mouse Genome Informatics allele type distribution over the nuclear receptors.}}
-	\label{fig:mgi_types_distribution}
+	Mouse Genome Informatics phenotype occurrence frequency among the nuclear receptor genes.}}
+	\label{fig:mgi_pheotypes_nr}
 \end{figure}
 ~~~~~~~\\
 
+\subsection{MPD Statistics}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{pics/mpi_phenotypes_distribution_zscore2.pdf}
 	\captionsetup{margin=12pt,format=plain,font=footnotesize,labelfont=bf}
  	\caption{\footnotesize{\textbf{MPD phenotypes, having Z-score $>$ 2}. 
 	~~~~~~~\\
-	Mouse Phenotype Database phenotype distribution over the nuclear receptors, having Z-score $>$ 2}}
+	Mouse Phenotype Database extreme phenotype distribution over the genes associated with the 49 nuclear receptors in the mouse, having Z-score $>$ 2}}
 	\label{fig:mpi_pheotypes_distribution_zscore2}
 \end{figure}
 ~~~~~~~\\
@@ -134,33 +136,15 @@ Given that the table for MGD was created by searching the gene names in the data
 	\captionsetup{margin=12pt,format=plain,font=footnotesize,labelfont=bf}
  	\caption{\footnotesize{\textbf{MPD phenotypes, having Z-score $<$ -2}. 
 	~~~~~~~\\
-	Mouse Phenotype Database phenotype distribution over the nuclear receptors, having Z-score $<$ -2}}
+	Mouse Phenotype Database extreme phenotype distribution over the genes associated with the 49 nuclear receptors in the mouse, having Z-score $<$ -2}}
 	\label{fig:mpi_pheotypes_distribution_zscore2_neg}
 \end{figure}
 ~~~~~~~\\
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{pics/mgi_phenotypes_nr.pdf}
-	\captionsetup{margin=12pt,format=plain,font=footnotesize,labelfont=bf}
- 	\caption{\footnotesize{\textbf{MGI phenotype - nuclear receptor associations}. 
-	~~~~~~~\\
-	Mouse Genome Informatics phenotype occurrence frequency among the nuclear receptors.}}
-	\label{fig:mgi_pheotypes_nr}
-\end{figure}
 ~~~~~~~\\
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{pics/mgi_types_nr.pdf}
-	\captionsetup{margin=12pt,format=plain,font=footnotesize,labelfont=bf}
- 	\caption{\footnotesize{\textbf{MGI allele type - nuclear receptor associations}. 
-	~~~~~~~\\
-	Mouse Genome Informatics allele type occurrence frequency among the nuclear receptors.}}
-	\label{fig:mgi_types_nr}
-\end{figure}
+The MPDatabase contains annotations for extreme phenotypes associated with different mouse strains. An extreme phenotype is described by a Z-score above 2 (very high) or below -2 (very low), relative to other measurement means. Based on these specifications, Figure~\ref{fig:mpi_pheotypes_distribution_zscore2} illustrates the most significant phenotypes and their occurrence frequency across the 242 genes corresponding to the nuclear receptors in the mouse, with a Z-score $>$ 2 (extreme high phenotypes). Here, the most significant phenotypes include \textit{body weight}, \textit{kidney weight} and \textit{cholesterol}. Similarly, Figure~\ref{fig:mpi_pheotypes_distribution_zscore2_neg} presents the most significant phenotypes and their occurrence frequency across the 242 genes corresponding to the nuclear receptors in the mouse, having a Z-score $<$ -2 (extreme low phenotypes). In this case, the most significant phenotypes include \textit{body weight} as well, but the focus lies on several blood phenotypes (e.g. lymphocyte differential, red blood cell count, hemoglobin). 
 ~~~~~~~\\
-
+~~~~~~~\\
+Table~\ref{tab:top10pheno} shows the strains and gene names associated with the most significant MPD phenotypes. 
 \begin{table}[H]
 \centering
 \begin{tabulary}{\linewidth}{ LLLLLL }
@@ -170,13 +154,13 @@ Given that the table for MGD was created by searching the gene names in the data
 	CAST/EiJ  & Rora (RAR-related orphan receptor alpha) & protein coding gene & trigonelline relative abundance &  8.870 & 2440\\ 
 	C58/J  & Rorc (RAR-related orphan receptor gamma) & protein coding gene & N-acetylglutamate relative abundance & 8.450 & 1398\\ 
 	BUB/BnJ &  & 3-dehydrocarnitine  relative abundance &  8.420 & 1716\\ 
-	NOD/ShiLtJ   &  & glucose &  7.840 & 2599\\ 
-	NZW/LacJ   &  & glycerate  relative abundance &  7.410 & 2230\\ 
-	FVB/NJ  &  & succinylcarnitine  relative abundance  &  6.450 & 3335\\ 
-	NZB/BlNJ  &  & cornea-lens synechia  &  6.250 & 1342\\ 
-	SEA/GnJ  &  & optic cup changes &  6.170 & 912\\ 
-	NZO/HlLtJ &  &  body weight &  6.130 & 1007\\ 
-	129S1/SvImJ  &  & latency to reach periphery 10 min test  &  6.080 & 3360\\ 
+	NOD/ShiLtJ   &  & & glucose &  7.840 & 2599\\ 
+	NZW/LacJ   &  & & glycerate relative abundance &  7.410 & 2230\\ 
+	FVB/NJ  &  & & succinylcarnitine relative abundance  &  6.450 & 3335\\ 
+	NZB/BlNJ  &  & & cornea-lens synechia  &  6.250 & 1342\\ 
+	SEA/GnJ  &  & & optic cup changes &  6.170 & 912\\ 
+	NZO/HlLtJ & & & body weight &  6.130 & 1007\\ 
+	129S1/SvImJ  & & & latency to reach periphery 10 min test  &  6.080 & 3360\\ 
 	\hline
 \end{tabulary}
 \caption{\footnotesize{\textbf{Top 10 extreme phenotypes.} 
@@ -185,28 +169,28 @@ Mouse strains associated with extreme phenotypes, based on their Z-score.}}
 \label{tab:top10pheno}
 \end{table}
 ~~~~~~~\\
-
-
+Moreover, Figures~\ref{fig:mpi_pheotypes_strain_zscore2} and~\ref{fig:mpi_pheotypes_strain_zscore2_neg} provide an insight into the exact association of each phenotype with the corresponding nuclear receptor genes. Therefore, there are ... genes associated with the extreme high phenotypes and 5 genes associated with the extreme low phenotypes, respectively, as following: \textit{Rora}, \textit{Esr1}, \textit{Esrrg}, \textit{Thrb} and \textit{Nr3c2}. 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{pics/mpi_phenotypes_strain_zscore2.pdf}
+	\includegraphics[width=\linewidth]{pics/mpi_phenotypes_nr_zscore2.pdf}
 	\captionsetup{margin=12pt,format=plain,font=footnotesize,labelfont=bf}
- 	\caption{\footnotesize{\textbf{MPD phenotype - strain associations, having Z-score $>$ 2}. 
+ 	\caption{\footnotesize{\textbf{MPD extreme phenotypes, having Z-score $>$ 2}. 
 	~~~~~~~\\
-	Mouse Phenome Database phenotype occurrence frequency among the strains associated with the nuclear receptors, having Z-score $>$ 2}}
+	Mouse Phenome Database extreme phenotype occurrence frequency among the 49 nuclear receptors in the mouse, having Z-score $>$ 2}}
 	\label{fig:mpi_pheotypes_strain_zscore2}
 \end{figure}
 ~~~~~~~\\
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{pics/mpi_phenotypes_strain_zscore2.pdf}
+	\includegraphics[width=\linewidth]{pics/mpi_phenotypes_nr_zscore2_neg.pdf}
 	\captionsetup{margin=12pt,format=plain,font=footnotesize,labelfont=bf}
- 	\caption{\footnotesize{\textbf{MPD phenotype - strain associations, having Z-score $<$ -2}. 
+ 	\caption{\footnotesize{\textbf{MPD extreme phenotypes, having Z-score $<$ -2}. 
 	~~~~~~~\\
-	Mouse Phenome Database phenotype occurrence frequency among the strains associated with the nuclear receptors, having Z-score $<$ -2}}
+	Mouse Phenome Database extreme phenotype occurrence frequency among the 49 nuclear receptors in the mouse, having Z-score $<$ -2}}
 	\label{fig:mpi_pheotypes_strain_zscore2_neg}
 \end{figure}
+~~~~~~~\\
 
 %------------------------------------------------
 \section{Discussion and Outlook}
