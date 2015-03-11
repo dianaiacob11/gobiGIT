@@ -164,7 +164,7 @@ sub                 get_analysisMPI_phenotypes_nr_zscore2{
     my $count      = '';
 
     while(@row = $sth->fetchrow_array){
-        if($row[2] > 25000){
+        if($row[2] > 150000){
             $phenotypes  = join(',', $phenotypes, $row[0]);
             chomp($phenotypes);
             
