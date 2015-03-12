@@ -123,9 +123,9 @@ The MGI database consists of generalised definitions of the phenotypes associate
 	\centering
 	\includegraphics[width=\linewidth]{pics/mpi_phenotypes_distribution_zscore2.pdf}
 	\captionsetup{margin=12pt,format=plain,font=footnotesize,labelfont=bf}
- 	\caption{\footnotesize{\textbf{MPD phenotypes, having Z-score $>$ 2}. 
+ 	\caption{\footnotesize{\textbf{MPD extreme high phenotypes, having Z-score $>$ 2}. 
 	~~~~~~~\\
-	Mouse Phenotype Database extreme phenotype distribution over the genes associated with the 49 nuclear receptors in the mouse, having Z-score $>$ 2}}
+	Mouse Phenotype Database extreme high phenotype distribution over the genes associated with the 49 nuclear receptors in the mouse, having Z-score $>$ 2}}
 	\label{fig:mpi_pheotypes_distribution_zscore2}
 \end{figure}
 ~~~~~~~\\
@@ -136,7 +136,7 @@ The MGI database consists of generalised definitions of the phenotypes associate
 	\captionsetup{margin=12pt,format=plain,font=footnotesize,labelfont=bf}
  	\caption{\footnotesize{\textbf{MPD phenotypes, having Z-score $<$ -2}. 
 	~~~~~~~\\
-	Mouse Phenotype Database extreme phenotype distribution over the genes associated with the 49 nuclear receptors in the mouse, having Z-score $<$ -2}}
+	Mouse Phenotype Database extreme low phenotype distribution over the genes associated with the 49 nuclear receptors in the mouse, having Z-score $<$ -2}}
 	\label{fig:mpi_pheotypes_distribution_zscore2_neg}
 \end{figure}
 ~~~~~~~\\
@@ -144,7 +144,7 @@ The MGI database consists of generalised definitions of the phenotypes associate
 The MPDatabase contains annotations for extreme phenotypes associated with different mouse strains. An extreme phenotype is described by a Z-score above 2 (very high) or below -2 (very low), relative to other measurement means. Based on these specifications, Figure~\ref{fig:mpi_pheotypes_distribution_zscore2} illustrates the most significant phenotypes and their occurrence frequency across the 242 genes corresponding to the nuclear receptors in the mouse, with a Z-score $>$ 2 (extreme high phenotypes). Here, the most significant phenotypes include \textit{body weight}, \textit{kidney weight} and \textit{cholesterol}. Similarly, Figure~\ref{fig:mpi_pheotypes_distribution_zscore2_neg} presents the most significant phenotypes and their occurrence frequency across the 242 genes corresponding to the nuclear receptors in the mouse, having a Z-score $<$ -2 (extreme low phenotypes). In this case, the most significant phenotypes include \textit{body weight} as well, but the focus lies on several blood phenotypes (e.g. lymphocyte differential, red blood cell count, hemoglobin). 
 ~~~~~~~\\
 ~~~~~~~\\
-Table~\ref{tab:top10pheno} shows the strains and gene names associated with the highest ranking \textit{MPD} phenotypes relative to their Z-scores. As seen in the table the phenotypes are not directly associated with expressed proteins rather than observed abnormal condition of mouse strains. Furthermore the denoted phenotypes in the table of \textit{MPD} show nevertheless a more detailed description than \textit{MGI}.
+Table~\ref{tab:top10pheno} shows the strains and gene names associated with the highest ranking \textit{MPD} phenotypes relative to their Z-scores. As seen in the table, the phenotypes are not directly associated with the expressed proteins, but rather with the observed abnormal condition in the mouse strains. %Furthermore the denoted phenotypes in the table of \textit{MPD} show nevertheless a more detailed description than \textit{MGI}.
 \begin{table}[H]
 \centering
 \begin{tabulary}{\linewidth}{ LLLL }
@@ -169,7 +169,7 @@ Table~\ref{tab:top10pheno} shows the strains and gene names associated with the 
 \end{tabulary}
 \caption{\footnotesize{\textbf{Top 10 extreme phenotypes.} 
 ~~~~~~~\\
-Mouse strains associated with extreme phenotypes, based on their Z-score.}} 
+Mouse strains associated with MPD extreme phenotypes, based on their Z-score.}} 
 \label{tab:top10pheno}
 \end{table}
 ~~~~~~~\\
@@ -196,34 +196,54 @@ Moreover, Figures~\ref{fig:mpi_pheotypes_strain_zscore2} and~\ref{fig:mpi_pheoty
 \end{figure}
 
 %------------------------------------------------
-\section{Nuclear receptors in the human genome}
-
-In contrast to the nuclear receptors in mouse, there have been two studies about nuclear receptors in human, called \textit{kora} and \textit{twinsuk}. With the results of these studies the database used in this paper was expanded beyond one species with the goal to find similarities between the nuclear receptors in human and mouse. Because of the lack of researched nuclear receptors in mouse there can be only made comparisons regarding the phenotype with the tables \textit{mgi\_phenotypes} \ref{fig:database} and \textit{mpg\_phenotypes} \ref{fig:database}. Table \ref{tab:compHuMo} shows a list with nuclear receptors which are found in mouse and human and have a similar phenotype or a similar biological function.
+\subsection{Nuclear receptors in the human genome}
+The nuclear receptor variation has been widely studied not only in the mouse, but also in the human genome. The research hereby refers to two published genome-wide association studies in this field of interest, namely \textit{Kora}\footnote{\url{http://epi.helmholtz-muenchen.de/kora-gen}, \today}  - a GWAS study initiated at the Helmholtz Zentrum in Munich involving approximately 18,000 adults from Southern Germany - and \textit{TwinsUK}\footnote{\url{http://www.twinsuk.ac.uk/}, \today}, being the biggest adult twin genetic registry in the UK.  
+~~~~~~~\\
+~~~~~~~\\
+Using the information provided by these studies regarding the correlations between different SNPs and metabolites to metabolic pathways, this research aimed to identify the similarities between the nuclear receptors and their associated phenotypes in human and in the mouse, respectively. Due to missing or incomplete annotations for the nuclear receptors in the mouse, comparisons could only be made between the phenotypes extracted from the MGI and MPD databases (see tables \textit{mgi\_phenotypes} and \textit{mpg\_phenotypes} from the internal database~\ref{fig:database}). Table \ref{tab:compHuMo} shows a list of nuclear receptors found in both the mouse and human and which present a similar phenotype or share the same biological function.
+~~~~~~~\\
+~~~~~~~\\
+%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%
+%which are the joined phenotypes, what's the consequence? e.g. what does it mean that mouse + human share steroid hormone? 
+%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%
 ~~~~~~~\\
 \begin{table}[H]
-\begin{tabulary}{\linewidth}{ LLLLL }
+\begin{tabulary}{\linewidth}{ LLL }
 \hline
-	\textbf{Gene} & \textbf{Mouse phenotype}  & \textbf{Human phenotype}
+	\textbf{Nuclear Receptor Gene} & \textbf{Mouse phenotype}  & \textbf{Human phenotype}
 	\\  
 	\hline \hline 
 	Nr2e1  & corticosterone, \textit{steroid hormone} & lathosterol, \textit{steroid hormone}\\
 	Essrg  & carnitine, \textit{lysine metabolism} & glutaroyl carnitine, \textit{lysine metabolism}\\
 	Thrb  & \textit{thyroid hormone resistance} & \textit{thyroid hormone resistance}\\
 	Nr0b1 & \textit{adrenal hypoplasia} & \textit{adrenal hypoplasia}\\
-	Vdr & \textit{Osteoporosis} & \textit{Osteoporosis}\\
-	Ar & \textit{Spinal and bulbar muscular atrophy} & \textit{Spinal and bulbar muscular atrophy}\\
+	Vdr & \textit{osteoporosis} & \textit{osteoporosis}\\
+	Ar & \textit{spinal and bulbar muscular atrophy} & \textit{spinal and bulbar muscular atrophy}\\
 	\hline
 \end{tabulary}
 \caption{\footnotesize{\textbf{Nuclear receptors with their coding protein or phenotype} 
 ~~~~~~~\\
-Nuclear receptors in human and mouse which share a similar protein or a similar biological function.}} 
+Nuclear receptors in human and in the mouse which share a similar phenotype or biological function.}} 
 \label{tab:compHuMo}
 \end{table}
 
 %------------------------------------------------
 \section{Discussion and Outlook}
 
-The statistics about extreme phenotypes which manifest if a variation in a nuclear receptor in mice occurs, show clearly that very important fields are affected which leads to the conclusion that nuclear receptors have a big influence on the development of the mouse. The data of \textit{MGI} and \textit{MPD} on nuclear receptors is limited, the phenotypes annotated in \textit{MGI} decribe more the biological systems in which the phenotypes occur rather than the description of differences to a non variant like in \textit{MPD}. Nevertheless, in contrast to the human genome where there are less annotations than in the mouse databases, the conclusion on the comparison between the two species shows a shallow match regarding the phenotypic expression in case of a variation in one of the same nuclear receptors.
+Over the last year, the number of studies and publications involving the nuclear receptor variation has increased and scientist have been focusing on exploring the effects of nuclear receptors in different organisms, on various levels: in the cells, tissues, and even full-body impact. The goal hereby is to link their metabolic activity to possible human diseases and facilitate the drug development processes. In this regard, extensive experiments and studies have been performed on humans, as well as on laboratory mice, which are known to present a striking genomic resemblance to humans (up to 95\%) and and time and money-wise more advantageous.   As a result, it has been proved that nuclear receptors have a great influence over the extreme phenotypes showcased in the mouse, as well as in human. 
+~~~~~~~\\
+~~~~~~~\\
+In spite of the ascending progress in this field of research, there annotation data provided in the mouse public databases - \textit{Mouse Genome Informatics} and \textit{Mouse Phenome Database} on nuclear receptors is still rather limited. However, the two databases provide complementary information: the phenotypes annotated in \textit{MGI} describe roughly the biological systems in which they occur rather than the description of differences between non-variants, as of \textit{MPD}. On the other hand, the UCSC database for the human genome is far more detailed, comprising also information regarding the metabolic pathways associated with various phenotypes. 
+~~~~~~~\\
+~~~~~~~\\
+This research presents the most significant phenotypes found in the mouse, based on the 49 nuclear receptor variation, as well as a mapping of these phenotypes on the human phenotypic expression, providing insight into possible human disease conditions. Nevertheless, the mouse public databases are far less comprehensive than the UCSC, for instance, allowing for only a generalised comparison between the two species, relative to the phenotypic expression in case of a variation in one of the same nuclear receptors.
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%what are the similarites, differences? How does the mouse study involve human phenotypes?
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %------------------------------------------------
 \section{Acknowledgments} % The \section*{} command stops section numbering
