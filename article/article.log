@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.3.6)  11 MAR 2015 11:54
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.3.6)  12 MAR 2015 11:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -736,11 +736,7 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 6.
 Package hyperref Info: Option `breaklinks' set `true' on input line 6.
 Package hyperref Info: Option `bookmarksopen' set `false' on input line 6.
 
-(./article.aux
-
-LaTeX Warning: Label `fig:mgi_pheotypes_distribution' multiply defined.
-
-)
+(./article.aux)
 \openout1 = `article.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
@@ -967,7 +963,7 @@ File: omsptm.fd
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 73.
 
-<pics/db.png, id=71, 951.555pt x 484.81125pt>
+<pics/db.png, id=75, 951.555pt x 484.81125pt>
 File: pics/db.png Graphic file (type png)
  <use pics/db.png>
 Package pdftex.def Info: pics/db.png used on input line 84.
@@ -983,7 +979,7 @@ Package Fancyhdr Warning: \headheight is too small (11.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2] <pics/mgi_phenotypes_distribution.pdf, id=90, 1704.94534pt x 612.50761pt>
+[2] <pics/mgi_phenotypes_distribution.pdf, id=94, 1704.94534pt x 612.50761pt>
 File: pics/mgi_phenotypes_distribution.pdf Graphic file (type pdf)
 
 <use pics/mgi_phenotypes_distribution.pdf>
@@ -998,7 +994,7 @@ Package Fancyhdr Warning: \headheight is too small (11.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [3 <./pics/db.png> <./pics/mgi_phenotypes_distribution.pdf>]
-<pics/mgi_phenotypes_nr.pdf, id=112, 1445.4pt x 1445.4pt>
+<pics/mgi_phenotypes_nr.pdf, id=116, 1445.4pt x 1445.4pt>
 File: pics/mgi_phenotypes_nr.pdf Graphic file (type pdf)
 
 <use pics/mgi_phenotypes_nr.pdf>
@@ -1020,7 +1016,7 @@ Package Fancyhdr Warning: \headheight is too small (11.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [4 <./pics/mgi_phenotypes_nr.pdf>]
-<pics/mpi_phenotypes_distribution_zscore2.pdf, id=125, 1806.75pt x 867.24pt>
+<pics/mpi_phenotypes_distribution_zscore2.pdf, id=129, 1806.75pt x 867.24pt>
 File: pics/mpi_phenotypes_distribution_zscore2.pdf Graphic file (type pdf)
 
 <use pics/mpi_phenotypes_distribution_zscore2.pdf>
@@ -1033,7 +1029,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 131--132
  []
 
 
-<pics/mpi_phenotypes_distribution_zscore2_neg.pdf, id=126, 1717.42886pt x 683.9
+<pics/mpi_phenotypes_distribution_zscore2_neg.pdf, id=130, 1717.42886pt x 683.9
 2862pt>
 File: pics/mpi_phenotypes_distribution_zscore2_neg.pdf Graphic file (type pdf)
  <use pics/mpi_phenotypes_distribution_zscore2_neg.pdf>
@@ -1085,7 +1081,7 @@ Package Fancyhdr Warning: \headheight is too small (11.0pt):
 
 [5 <./pics/mpi_phenotypes_distribution_zscore2.pdf> <./pics/mpi_phenotypes_dist
 ribution_zscore2_neg.pdf>]
-<pics/mpi_phenotypes_nr_zscore2.pdf, id=162, 1445.4pt x 1445.4pt>
+<pics/mpi_phenotypes_nr_zscore2.pdf, id=166, 1445.4pt x 1445.4pt>
 File: pics/mpi_phenotypes_nr_zscore2.pdf Graphic file (type pdf)
 
 <use pics/mpi_phenotypes_nr_zscore2.pdf>
@@ -1107,7 +1103,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 184--185
 
  []
 
-<pics/mpi_phenotypes_nr_zscore2_neg.pdf, id=171, 1445.4pt x 1445.4pt>
+<pics/mpi_phenotypes_nr_zscore2_neg.pdf, id=175, 1445.4pt x 1445.4pt>
 File: pics/mpi_phenotypes_nr_zscore2_neg.pdf Graphic file (type pdf)
 
 <use pics/mpi_phenotypes_nr_zscore2_neg.pdf>
@@ -1130,13 +1126,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 195--196
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 200--221
+
+ []
+
+
 Package Fancyhdr Warning: \headheight is too small (11.0pt): 
  Make it at least 12.0pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
 [8 <./pics/mpi_phenotypes_nr_zscore2_neg.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 211--215
+Underfull \hbox (badness 10000) in paragraph at lines 237--241
 
  []
 
@@ -1149,25 +1150,21 @@ Package Fancyhdr Warning: \headheight is too small (11.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [9]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 225.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 225.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 251.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 251.
  (./article.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 225.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 225.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 251.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 251.
 Package rerunfilecheck Info: File `article.out' has not changed.
-(rerunfilecheck)             Checksum: CBC529FD096BCBE41DE290BCE9112024;680.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 225.
+(rerunfilecheck)             Checksum: 65013AF60B0DABB1C9C8303EAE4E1B83;761.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 251.
  ) 
 Here is how much of TeX's memory you used:
- 11359 strings out of 495059
- 167980 string characters out of 3182031
- 305371 words of memory out of 3000000
- 14081 multiletter control sequences out of 15000+200000
- 69519 words of font info for 233 fonts, out of 3000000 for 9000
+ 11379 strings out of 495059
+ 168139 string characters out of 3182031
+ 305678 words of memory out of 3000000
+ 14095 multiletter control sequences out of 15000+200000
+ 69754 words of font info for 236 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  43i,12n,45p,1503b,424s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -1179,10 +1176,10 @@ urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on article.pdf (9 pages, 250677 bytes).
+Output written on article.pdf (9 pages, 253066 bytes).
 PDF statistics:
- 243 PDF objects out of 1000 (max. 8388607)
- 202 compressed objects within 3 object streams
- 37 named destinations out of 1000 (max. 500000)
- 58500 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 251 PDF objects out of 1000 (max. 8388607)
+ 210 compressed objects within 3 object streams
+ 39 named destinations out of 1000 (max. 500000)
+ 58508 words of extra memory for PDF output out of 61914 (max. 10000000)
 
