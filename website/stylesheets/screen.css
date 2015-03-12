@@ -1,0 +1,100 @@
+html, body, div, span, h1, p, footer, header, section{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+html {
+  line-height: 1; }
+
+
+footer, header, section{
+  display: block; }
+
+body {
+  background: white;
+  color: #39313c;
+  font-family: "Ovo", serif;
+  font-size: 1.125em;
+  line-height: 1.875em; }
+
+.link {
+  font-size: 1.2em;
+}
+
+a {
+  color: #8b78b9;
+  text-decoration: none; }
+
+a:hover {
+  color: #7460a4; }
+
+
+h1 {
+  font-size: 3.75em;
+  margin-bottom: 1em;
+  line-height: 1; }
+
+p span {
+  font-size: 1.875em;  }
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+ -webkit-box-sizing:border-box;
+ -moz-box-sizing:border-box;
+ box-sizing:border-box;
+ }
+
+header .wrapper {
+  background: url(../images/lavender1.jpg) left center no-repeat;
+  padding: 8.33333% 4.16667% 8.33333% 6.66667%;
+  background-size: 33.91667% auto; }
+
+#allgemeines .wrapper {
+  background:  url(../images/lavender2.jpg) left center no-repeat;
+  padding: 5% 1.16667% 5% 20%;
+  background-size: 27.5% auto;
+ }
+
+#align .wrapper {
+  background:  url(../images/lavender3.jpg) left center no-repeat;
+  padding: 5% 1.16667% 5% 20%;
+  background-size: 27.5% auto;
+}
+
+#pred .wrapper {
+  background:  url(../images/lavender4.jpg) left center no-repeat;
+  padding: 5% 1.16667% 5% 20%;
+  background-size: 27.5% auto;
+ }
+
+section:after, header:after {
+  content: "";
+  display: block;
+  height: 400px;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6); 
+ 
+}
+
+header:after, #allgemeines:after, #align:after, #pred:after {
+  background-image: url(../images/lavenderbg.jpg); }
+
+footer {
+  background: white;
+  padding: 8.33333% 3.33333%;
+  text-align: center; }
+
+@media only screen and (min-width: 1200px) {
+.wrapper {
+    width:1200px; }
+	header .wrapper {
+	  padding: 100px 50px 100px 440px; }
+}

@@ -1,0 +1,96 @@
+html, body, div, span, h1,a,table,tr, th, td, footer, header {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+html {
+  line-height: 1; }
+
+footer, header {
+  display: block; }
+
+body {
+  background: white;
+  color: #39313c;
+  font-family: "Ovo", serif;
+  font-size: 1.125em;
+  line-height: 1.875em; }
+
+a {
+  color: #8b78b9;
+  text-decoration: none; }
+
+a:hover {
+  color: #7460a4; }
+
+
+h1 {
+  font-size: 3.75em;
+  margin-bottom: 1em;
+  line-height: 1; }
+
+p span {
+  font-size: 1.875em;  }
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+ -webkit-box-sizing:border-box;
+ -moz-box-sizing:border-box;
+  box-sizing:border-box;
+ }
+
+header .wrapper {
+  background: url(../images/lavender3.jpg) left no-repeat;
+  padding: 8% 7% 8% 20%;
+  background-size: 15%;
+  display: block;
+  height: 100px;
+  width: 100%;
+  box-shadow: inset 0 0 10px rgba(0, 0.2, 0, 0.6);  
+}
+table{
+  width:100%;
+  padding: 0;
+  border: none;
+  border-collapse: collapse;
+  height: 400px;
+}
+
+th, td {
+  padding: 0;
+}
+
+td{
+  padding-left: 25px;
+  text-align:top;
+  padding-top: 3%;
+  box-shadow: inset 0 0 2px rgba(0, 0.0, 0, 0.6);  
+}
+#left{
+  width:18%;
+  background-color:#A9E2F3;  
+}
+#right{
+  width:82%;
+  background-color:#CEECF5;
+}
+
+p padd{
+  padding-left:3%;
+}
+
+p.p_header{
+  font-weight:bold;
+}
+
+p.p_content{
+  font-family:Courier New, Courier, monospace; 
+  width: 1200px; 
+  word-wrap:break-word;
+  word-break:break-all;
+  line-height: 0.5em;
+}

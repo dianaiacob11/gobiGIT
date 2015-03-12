@@ -144,10 +144,10 @@ The MGI database consists of generalised definitions of the phenotypes associate
 The MPDatabase contains annotations for extreme phenotypes associated with different mouse strains. An extreme phenotype is described by a Z-score above 2 (very high) or below -2 (very low), relative to other measurement means. Based on these specifications, Figure~\ref{fig:mpi_pheotypes_distribution_zscore2} illustrates the most significant phenotypes and their occurrence frequency across the 242 genes corresponding to the nuclear receptors in the mouse, with a Z-score $>$ 2 (extreme high phenotypes). Here, the most significant phenotypes include \textit{body weight}, \textit{kidney weight} and \textit{cholesterol}. Similarly, Figure~\ref{fig:mpi_pheotypes_distribution_zscore2_neg} presents the most significant phenotypes and their occurrence frequency across the 242 genes corresponding to the nuclear receptors in the mouse, having a Z-score $<$ -2 (extreme low phenotypes). In this case, the most significant phenotypes include \textit{body weight} as well, but the focus lies on several blood phenotypes (e.g. lymphocyte differential, red blood cell count, hemoglobin). 
 ~~~~~~~\\
 ~~~~~~~\\
-Table~\ref{tab:top10pheno} shows the strains and gene names associated with the most significant MPD phenotypes. 
+Table~\ref{tab:top10pheno} shows the strains and gene names associated with the highest ranking \textit{MPD} phenotypes relative to their Z-scores. As seen in the table the phenotypes are not directly associated with expressed proteins rather than observed abnormal condition of mouse strains. Furthermore the denoted phenotypes in the table of \textit{MPD} show nevertheless a more detailed description than \textit{MGI}.
 \begin{table}[H]
 \centering
-\begin{tabulary}{\linewidth}{ LLLLL }
+\begin{tabulary}{\linewidth}{ LLLL }
 \hline
 	\textbf{Strain} & \textbf{Gene}  & \textbf{Phenotype} & \textbf{Z-score}
 	\\  
@@ -160,9 +160,11 @@ Table~\ref{tab:top10pheno} shows the strains and gene names associated with the 
 	NZB/BlNJ  & Nr5a1 (nuclear receptor subfamily 5, group A, member 1) & succinylcarnitine relative abundance  &  3.8\\
 	C57L/J & Esr2 (estrogen receptor 2 beta) & 
 	relative size of perivascular immune cell clusters &  3.5\\
+	CE/J & Rorb (RAR-related orphan receptor beta) & 
+	tigloylglycine (16h fast), relative abundance&  3.3\\
 	NOD/\\ShiLtJ & Ppard (peroxisome proliferator activator receptor delta) & 
 	percentage of parasites in brain relative to all organs tested &  3.1\\ 
-	BUB/BnJ & Esr1 (estrogen receptor 1 alpha) & 3-dehydrocarnitine  relative abundance &  2.7\\  
+	BUB/BnJ & Esr1 (estrogen receptor 1 alpha) & 3-dehydrocarnitine  relative abundance &  2.7\\   
 	\hline
 \end{tabulary}
 \caption{\footnotesize{\textbf{Top 10 extreme phenotypes.} 
@@ -192,15 +194,13 @@ Moreover, Figures~\ref{fig:mpi_pheotypes_strain_zscore2} and~\ref{fig:mpi_pheoty
 	Mouse Phenome Database extreme phenotype occurrence frequency among the 49 nuclear receptors in the mouse, having Z-score $<$ -2}}
 	\label{fig:mpi_pheotypes_strain_zscore2_neg}
 \end{figure}
-~~~~~~~\\
 
 %------------------------------------------------
-\section{The 49 nuclear receptors in the human genome}
+\section{Nuclear receptors in the human genome}
 
 In contrast to the nuclear receptors in mouse, there have been two studies about nuclear receptors in human, called \textit{kora} and \textit{twinsuk}. With the results of these studies the database used in this paper was expanded beyond one species with the goal to find similarities between the nuclear receptors in human and mouse. Because of the lack of researched nuclear receptors in mouse there can be only made comparisons regarding the phenotype with the tables \textit{mgi\_phenotypes} \ref{fig:database} and \textit{mpg\_phenotypes} \ref{fig:database}. Table \ref{tab:compHuMo} shows a list with nuclear receptors which are found in mouse and human and have a similar phenotype or a similar biological function.
 ~~~~~~~\\
 \begin{table}[H]
-\centering
 \begin{tabulary}{\linewidth}{ LLLLL }
 \hline
 	\textbf{Gene} & \textbf{Mouse phenotype}  & \textbf{Human phenotype}
@@ -208,10 +208,10 @@ In contrast to the nuclear receptors in mouse, there have been two studies about
 	\hline \hline 
 	Nr2e1  & corticosterone, \textit{steroid hormone} & lathosterol, \textit{steroid hormone}\\
 	Essrg  & carnitine, \textit{lysine metabolism} & glutaroyl carnitine, \textit{lysine metabolism}\\
-	Thrb  & ,\textit{thyroid hormone resistance} & \textit{thyroid hormone resistance}\\
+	Thrb  & \textit{thyroid hormone resistance} & \textit{thyroid hormone resistance}\\
 	Nr0b1 & \textit{adrenal hypoplasia} & \textit{adrenal hypoplasia}\\
 	Vdr & \textit{Osteoporosis} & \textit{Osteoporosis}\\
-	Ar & Spinal and bulbar muscular atrophy & Spinal and bulbar muscular atrophy\\
+	Ar & \textit{Spinal and bulbar muscular atrophy} & \textit{Spinal and bulbar muscular atrophy}\\
 	\hline
 \end{tabulary}
 \caption{\footnotesize{\textbf{Nuclear receptors with their coding protein or phenotype} 
@@ -223,7 +223,7 @@ Nuclear receptors in human and mouse which share a similar protein or a similar 
 %------------------------------------------------
 \section{Discussion and Outlook}
 
-Blabla 
+The statistics about extreme phenotypes which manifest if a variation in a nuclear receptor in mice occurs, show clearly that very important fields are affected which leads to the conclusion that nuclear receptors have a big influence on the development of the mouse. The data of \textit{MGI} and \textit{MPD} on nuclear receptors is limited, the phenotypes annotated in \textit{MGI} decribe more the biological systems in which the phenotypes occur rather than the description of differences to a non variant like in \textit{MPD}. Nevertheless, in contrast to the human genome where there are less annotations than in the mouse databases, the conclusion on the comparison between the two species shows a shallow match regarding the phenotypic expression in case of a variation in one of the same nuclear receptors.
 
 %------------------------------------------------
 \section{Acknowledgments} % The \section*{} command stops section numbering

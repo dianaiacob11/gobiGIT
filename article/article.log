@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.3.6)  12 MAR 2015 11:19
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2015.3.6)  12 MAR 2015 14:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1037,39 +1037,39 @@ Package pdftex.def Info: pics/mpi_phenotypes_distribution_zscore2_neg.pdf used
 on input line 135.
 (pdftex.def)             Requested size: 500.484pt x 199.30475pt.
 
-Overfull \hbox (9.8109pt too wide) in paragraph at lines 167--167
+Overfull \hbox (9.8109pt too wide) in paragraph at lines 169--169
 []\OT1/ptm/m/n/10.95 (-20) CAST/EiJ|  
  []
 
 
-Overfull \hbox (9.8109pt too wide) in paragraph at lines 167--167
+Overfull \hbox (9.8109pt too wide) in paragraph at lines 169--169
 []\OT1/ptm/m/n/10.95 (-20) CAST/EiJ|  
  []
 
 
-Overfull \hbox (12.19315pt too wide) in paragraph at lines 167--167
+Overfull \hbox (12.19315pt too wide) in paragraph at lines 169--169
 []\OT1/ptm/m/n/10.95 (-20) NZB/BlNJ|  
  []
 
 
-Overfull \hbox (12.19315pt too wide) in paragraph at lines 167--167
+Overfull \hbox (12.19315pt too wide) in paragraph at lines 169--169
 []\OT1/ptm/m/n/10.95 (-20) NZB/BlNJ|  
  []
 
 
-Overfull \hbox (7.31917pt too wide) in paragraph at lines 167--167
+Overfull \hbox (7.31917pt too wide) in paragraph at lines 169--169
 []\OT1/ptm/m/n/10.95 (-20) BUB/BnJ|  
  []
 
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 170.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 172.
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--172
+Underfull \hbox (badness 10000) in paragraph at lines 142--174
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--172
+Underfull \hbox (badness 10000) in paragraph at lines 142--174
 
  []
 
@@ -1086,7 +1086,7 @@ File: pics/mpi_phenotypes_nr_zscore2.pdf Graphic file (type pdf)
 
 <use pics/mpi_phenotypes_nr_zscore2.pdf>
 Package pdftex.def Info: pics/mpi_phenotypes_nr_zscore2.pdf used on input line 
-177.
+179.
 (pdftex.def)             Requested size: 500.484pt x 500.47206pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1099,7 +1099,7 @@ Package Fancyhdr Warning: \headheight is too small (11.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 184--185
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
 
  []
 
@@ -1108,7 +1108,7 @@ File: pics/mpi_phenotypes_nr_zscore2_neg.pdf Graphic file (type pdf)
 
 <use pics/mpi_phenotypes_nr_zscore2_neg.pdf>
 Package pdftex.def Info: pics/mpi_phenotypes_nr_zscore2_neg.pdf used on input l
-ine 188.
+ine 190.
 (pdftex.def)             Requested size: 500.484pt x 500.47206pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1121,14 +1121,13 @@ Package Fancyhdr Warning: \headheight is too small (11.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [7 <./pics/mpi_phenotypes_nr_zscore2.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
+Underfull \hbox (badness 10000) in paragraph at lines 201--221
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--221
+Underfull \vbox (badness 1715) has occurred while \output is active []
 
- []
 
 
 Package Fancyhdr Warning: \headheight is too small (11.0pt): 
@@ -1156,15 +1155,15 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 251.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 251.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 251.
 Package rerunfilecheck Info: File `article.out' has not changed.
-(rerunfilecheck)             Checksum: 65013AF60B0DABB1C9C8303EAE4E1B83;761.
+(rerunfilecheck)             Checksum: 31B13DF2E9B9D1A221C7EDC401FB2D05;754.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 251.
  ) 
 Here is how much of TeX's memory you used:
- 11379 strings out of 495059
- 168139 string characters out of 3182031
- 305678 words of memory out of 3000000
- 14095 multiletter control sequences out of 15000+200000
- 69754 words of font info for 236 fonts, out of 3000000 for 9000
+ 11382 strings out of 495059
+ 168180 string characters out of 3182031
+ 307678 words of memory out of 3000000
+ 14092 multiletter control sequences out of 15000+200000
+ 70074 words of font info for 240 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  43i,12n,45p,1503b,424s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -1176,7 +1175,7 @@ urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on article.pdf (9 pages, 253066 bytes).
+Output written on article.pdf (9 pages, 244009 bytes).
 PDF statistics:
  251 PDF objects out of 1000 (max. 8388607)
  210 compressed objects within 3 object streams
