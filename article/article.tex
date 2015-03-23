@@ -11,7 +11,7 @@
 \PaperTitle{Nuclear receptor variation in mice} % Article title
 
 \Authors{Beratis, Alexander, Iacob, Diana, Boyanova, Dr. Desislava\textsuperscript{1}, Mewes, Prof. Dr. Hans-Werner\textsuperscript{1}} % Authors
-\affiliation{\textsuperscript{1}\textit{Institute of Bioinformatics and Systems Biology, Helmholtz Zentrum MŸnchen, German Research Center for Environmental Health,}} % Author affiliation
+\affiliation{\textsuperscript{1}\textit{Institute of Bioinformatics and Systems Biology, Helmholtz Zentrum MÅ¸nchen, German Research Center for Environmental Health,}} % Author affiliation
 
 \Keywords{Nuclear receptors --- SNPs --- Gene variation} % Keywords
 \newcommand{\keywordname}{Keywords} % Defines the keywords heading name
@@ -21,7 +21,7 @@
 %----------------------------------------------------------------------------------------
 
 \Abstract{\textit{
-Nuclear receptors (NRs) are a large family of ligand-activated transcription factors, that bind directly to DNA to regulate the expression of target genes. They regulate critical functions in cell control, inflammation, fibrosis and tumor formation and are involved in metabolism, development and reproduction. Nuclear receptors influence the metabolism and signalling processes in the cells by changing the expression of target genes and are associated with numerous pathologies such as cancer, cardiovascular disease, and reproductive abnormalities. This paper presents the investigative results of knockout phenotypes and genetic variation for mouse NRs. Based on an assembly of all known mouse SNPs in the mouse NR genes, the phenotype information for genetic knockouts and genetic variation data was compiled from public databases. Knockout phenotypes were extracted from the Mouse Genome Informatics (MGI) database, while the Mouse Phenome Database (MPD) provides SNPs from various mouse strains, which can be correlated with extreme phenotypes measured in these mouse strains. The goal of this analysis is to find NR-associated SNPs in mice that influence changes in biological parameters such as body weight, body fat and other phenotypic traits. Furthermore, these findings will be coupled to phenotypes observed in mice with a targeted or spontaneous mutation of the nuclear receptor and thus provide additional indication for a putative functionality of the investigated SNPs.}}
+Nuclear receptors (NRs) are a large family of ligand-activated transcription factors, that bind directly to DNA to regulate the expression of target genes. They regulate critical functions in cell control, inflammation, fibrosis and tumor formation and are involved in metabolism, development and reproduction. Nuclear receptors influence the metabolism and signalling processes in the cells by changing the expression of target genes and are associated with numerous pathologies such as cancer, cardiovascular disease, and reproductive abnormalities. This paper presents the investigative results of knockout phenotypes and genetic variation for mouse NRs. Based on an assembly of all known mouse SNPs in the mouse NR genes, the phenotype information for genetic knockouts and genetic variation data was compiled from public databases. Knockout phenotypes were extracted from the Mouse Genome Informatics (MGI) database, while the Mouse Phenome Database (MPD) provides SNPs from various mouse strains, which can be correlated with extreme phenotypes measured in these mouse strains. The goal of this analysis is to find NR-associated SNPs in mice that influence changes in biological parameters such as body weight, body fat and other phenotypic traits. Furthermore, these findings will be coupled to phenotypes observed in human metabolic pathways and thus provide an insight into the implications of the investigated SNPs in human disease and drug development processes.}}
 
 %----------------------------------------------------------------------------------------
 
@@ -40,16 +40,15 @@ Nuclear receptors (NRs) are a large family of ligand-activated transcription fac
 Looking across the evolutionary patterns between mouse and human, numerous research experiments and gene regulation studies have shown striking similarities regarding certain processes and systems in the two organisms. The mouse presents up to 95\% genome similarity to humans and is thus often being used as a model organism when investigating anatomical, physiological or genetical markers in humans. Practically, mice are small, have an accelerated life cycle and represent a cost-effective alternative to genetic research and drug development for human diseases. Also, the majority of the genes responsible for complex diseases are shared between mice and humans, enhancing the chances of successfully identifying patterns in mice which would reveal human disease phenotypes~\cite{intro1}.
 ~~~~~~~\\
 ~~~~~~~\\  
-This paper makes use of the publicly available data in the Mouse Genome Informatics database and Mouse Phenome Database, respectively, in order to highlight changes in various biological parameters in mice under the influence of the NR-associated SNPs. Furthermore, these findings can be mapped to genotype - phenotype associations in humans, for studying the human biology and disease.
+This paper makes use of the publicly available data in the Mouse Genome Informatics database~\cite{mgi} and Mouse Phenome Database~\cite{mpd}, respectively, in order to highlight changes in various biological parameters in mice under the influence of the NR-associated SNPs. Furthermore this enables the study of the human biology and disease, by mapping these findings to genotype - phenotype associations in humans found in the HMDB (Human Metabolome Database)~\cite{hm1},~\cite{hm2}, EHMN (Edinburgh Human Metabolic Network)~\cite{hm3}, Recon X (Reconstruction of Human Metabolism)~\cite{hm4} and KEGG (Kyoto Encyclopedia of Genes and Genomes)~\cite{hm5},~\cite{hm6}.
 
 %------------------------------------------------
 
 \section{Methods}
 
 Both the process of consolidating a genotype - phenotype map, as well as the subsequent analysis of extreme phenotypes observed in mice rely on four biological elements: mouse strains, gene names / symbols, nuclear receptors, SNPs. The correlation between the position of a nuclear receptor and various SNPs on a gene can result in a specific phenotype. Due to increased specificity rate of the phenotype associated with a particular nuclear receptor, different NR and SNPs associations will result in different phenotypes for the same gene. Similarly, diverging mouse strains present non-identical phenotypes for the genetic parameters.  
-
-\subsection{Mouse nuclear receptors}
-
+~~~~~~~\\
+~~~~~~~\\  
 The analysis presented in this paper was based upon a dataset consisting of the 49 nuclear receptors of mouse~\cite{proteomic} and their associated genes (242 unique gene Ids, 49 gene names / symbols); for a full list of gene names, see Appendix~\ref{an:appendix}). The gene names were further on used to compile additional information regarding the position, associated SNPs and phenotypes for the nuclear receptors in mice.
 
 \subsection{MGI - Mouse Genome Informatics}
@@ -58,17 +57,19 @@ Mouse Genome Informatics\footnote{\url{http://www.informatics.jax.org/}, \today}
 
 \subsection{MPD - Mouse Phenome Database}
 
-Mouse Phenome Database\footnote{\url{http://phenome.jax.org/}, \today}~\cite{mpd} includes annotations of measured data on the laboratory mouse strains and populations, as well as SNPs and phenotypes of the examined strains. More than 1330 strains were examined, providing annotations for over 3500 phenotype and 1.8 billion genotypes. 
+Mouse Phenome Database\footnote{\url{http://phenome.jax.org/}, \today}~\cite{mpd} includes annotations of measured data on the laboratory mouse strains and populations, as well as SNPs and phenotypes of the examined strains. More than 1330 strains were examined, providing annotations for over 3500 phenotype and 1.8 billion genotypes. The MPD database is more detailed and comprehensive than the MGI, so that the phenotypes found in MGI can be traced back to MPD. However, the MPD strictly associates individual phenotypes to their corresponding strain, posing difficulties in the mapping process between the mouse nuclear receptors and the MGI data. 
+
+\subsection{Outcast: HMDB, EHMN, Recon X, KEGG}
+The nuclear receptor variation has been widely studied not only in the mouse, but also in the human genome. The research hereby refers to two published genome-wide association studies in this field of interest, namely \textit{Kora}\footnote{\url{http://epi.helmholtz-muenchen.de/kora-gen}, \today}  - a GWAS study initiated at the Helmholtz Zentrum in Munich involving approximately 18,000 adults from Southern Germany - and \textit{TwinsUK}\footnote{\url{http://www.twinsuk.ac.uk/}, \today}, being the biggest adult twin genetic registry in the UK.  
 ~~~~~~~\\
-~~~~~~~\\  
-The MPD database is more detailed and comprehensive than the MGI, so that the phenotypes found in MGI can be traced back to MPD. However, the MPD strictly associates individual phenotypes to their corresponding strain, posing difficulties in the mapping process between the mouse nuclear receptors and the MGI data. 
+~~~~~~~\\
+Using the information provided by these studies regarding the correlations between different SNPs and metabolites to metabolic pathways, this research aimed to identify the similarities between the nuclear receptors and their associated phenotypes in human and in the mouse, respectively.  Therefore, it makes use of the information about metabolite names, classes and associated diseases, pathways and tissues for metabolites found in the HMDB (Human Metabolome Database)~\cite{hm1},~\cite{hm2}, EHMN (Edinburgh Human Metabolic Network)~\cite{hm3}, Recon X (Reconstruction of Human Metabolism)~\cite{hm4} and KEGG (Kyoto Encyclopedia of Genes and Genomes)~\cite{hm5},~\cite{hm6}. 
 
 %------------------------------------------------
 
 \section{Database}
 
-Since annotation from multiple public databases and internal data were used, there was a need to design and implement a database supporting the research. The database structure thereby presents 7 tables and aims to facilitate the processes of gathering, parsing and statistical analysis of the nuclear receptors data, as well as to allow for a clear mapping between the nuclear receptor genes and the phenotypes and SNPs associated with them. 
-The main challenge was to establish a connection between the MGI, MPD and UCSC tables. Therefore, there are 2 tables containing information from the MGI, 3 tables for MPD, 1 USCS table and the core table:
+Since annotation from multiple public databases and internal data were used, there was a need to design and implement a database supporting the research. The database structure thereby presents 10 tables and aims to facilitate the processes of gathering, parsing and statistical analysis of the nuclear receptors data, as well as to allow for a clear mapping between the nuclear receptor genes and the phenotypes and SNPs associated with them. The main challenge was to establish a connection between the MGI, MPD and HMDB tables. Therefore, there are 2 tables containing information from the MGI, 4 tables for MPD, 3 HMDB tables and the core table:
 \begin{itemize}
 \item \textbf{nr\_mapping} - core table, which contains the associations between the 49 nuclear receptors in the mouse and their corresponding gene names. 
 \item \textbf{mgi} - contains the MGI gene annotations (MGI gene id, type, attributes, transmission etc.). 
@@ -77,6 +78,9 @@ The main challenge was to establish a connection between the MGI, MPD and UCSC t
 \item \textbf{ucsc} - contains a more detailed overview on the MPD mutations from \textit{mpd\_snp} 
 \item \textbf{mpd\_strains} - contains the MPD strain annotations (MPD strain id, sex, number of mice, Z-score etc.)
 \item \textbf{mpd\_phenotypes} - stores phenotypic information in association with MPD strains; more than one phenotype can be associated with a specific strain.
+\item \textbf{kora} - stores metabolic information from the Kora study.
+\item \textbf{twins} - stores metabolic information from the Twins study in the UK.
+\item \textbf{human\_metabolites} - stores metabolic information from the HMDB, EHMN, Recon X and KEGG.  
 \end{itemize} 
 ~~~~~~~\\  
 \begin{figure}[H]
@@ -85,16 +89,16 @@ The main challenge was to establish a connection between the MGI, MPD and UCSC t
 	\captionsetup{margin=12pt,format=plain,font=footnotesize,labelfont=bf}
  	\caption{\footnotesize{\textbf{Database}. 
 	~~~~~~~\\
-	Database scheme for the 49 nuclear receptors with information about MGI, MPI and UCSC.}}
+	Database scheme for the 49 nuclear receptors with information about MGI, MPI and HMDB.}}
 	\label{fig:database}
 \end{figure}
+
 %------------------------------------------------
 
 \section{Results}
 The goal hereby was to visualise the most important phenotypes associated with the 49 nuclear receptors in the mouse. In this regard, the phenotypic and genomic data from the MGI and MPD was compared and analysed. All graphics were generated using the R package\footnote{\url{www.r-project.org/}, \today}.
 
 \subsection{MGI Statistics}
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{pics/mgi_phenotypes_distribution.pdf}
@@ -105,8 +109,7 @@ The goal hereby was to visualise the most important phenotypes associated with t
 	\label{fig:mgi_pheotypes_distribution}
 \end{figure}
 ~~~~~~~\\
-The MGI database consists of generalised definitions of the phenotypes associated with the nuclear receptors found in the mouse. Figure~\ref{fig:mgi_pheotypes_distribution} illustrates the most significant phenotypes and their occurrence frequency across the 242 genes corresponding to the nuclear receptors in the mouse. With a count of 196 matches across the dataset, the most prominent phenotype correlates with the homeostatic metabolic processes, such as temperature regulation and pH-balance. Moreover, Figure~\ref{fig:mgi_pheotypes_nr} provides an insight into the exact association of each phenotype with the corresponding nuclear receptor genes, such that homeostatis, for instance, is prominently found in the following genes: \textit{Esr1}, \textit{Pparg}, \textit{Thrb}, \textit{Thra}, \textit{Vdr} etc. Other phenotypes describe body size and growth features and are representative for the \textit{Pparg} genes.
-
+The MGI database consists of generalised definitions of the phenotypes associated with the nuclear receptors found in the mouse. Figure~\ref{fig:mgi_pheotypes_distribution} illustrates the most significant phenotypes and their occurrence frequency across the 242 genes corresponding to the nuclear receptors in the mouse. With a count of 196 matches across the dataset, the most prominent phenotype correlates with the homeostatic metabolic processes. Moreover, Figure~\ref{fig:mgi_pheotypes_nr} provides an insight into the exact association of each phenotype with the corresponding nuclear receptor genes, such that homeostatis, for instance, is prominently associated with mutations in the following genes: \textit{Esr1 - estrogen receptor 1 alpha}, \textit{Pparg - peroxisome proliferator-activated receptor gamma}, \textit{Thrb - thyroid hormone receptor, beta}, \textit{Thra - thyroid hormone receptor, alpha}, \textit{Vdr - vitamin D receptor gene} etc. Other phenotypes describe body size and growth features and are representative for the \textit{Pparg} genes.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth, height=0.99\linewidth]{pics/mgi_phenotypes_nr.pdf}
@@ -116,9 +119,10 @@ The MGI database consists of generalised definitions of the phenotypes associate
 	Mouse Genome Informatics phenotype occurrence frequency among the nuclear receptor genes.}}
 	\label{fig:mgi_pheotypes_nr}
 \end{figure}
-~~~~~~~\\
 
 \subsection{MPD Statistics}
+The MPDatabase contains annotations for extreme phenotypes associated with different mouse strains. The determining factor in \textit{MPD} for associating a variation with a phenotypes is the Z-score, which describes the standard deviation of the standard distribution function. The range of the Z-score which indicates a significant deviation is below -2 (extremely low) and above 2 (extremely high). Between the range of -2 and 2, the Z-score does not deviate significantly enough from the mean to indicate any major changes and is therefore not relevant for this association.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{pics/mpi_phenotypes_distribution_zscore2.pdf}
@@ -129,7 +133,6 @@ The MGI database consists of generalised definitions of the phenotypes associate
 	\label{fig:mpi_pheotypes_distribution_zscore2}
 \end{figure}
 ~~~~~~~\\
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{pics/mpi_phenotypes_distribution_zscore2_neg.pdf}
@@ -140,11 +143,29 @@ The MGI database consists of generalised definitions of the phenotypes associate
 	\label{fig:mpi_pheotypes_distribution_zscore2_neg}
 \end{figure}
 ~~~~~~~\\
+Based on these specifications, Figure~\ref{fig:mpi_pheotypes_distribution_zscore2} illustrates the most significant phenotypes and their occurrence frequency across the 242 genes corresponding to the nuclear receptors in the mouse, with a Z-score $>$ 2 (extreme high phenotypes). Here, the most significant phenotypes include \textit{body weight}, \textit{kidney weight} and \textit{cholesterol}. Similarly, Figure~\ref{fig:mpi_pheotypes_distribution_zscore2_neg} presents the most significant phenotypes and their occurrence frequency across the 242 genes corresponding to the nuclear receptors in the mouse, having a Z-score $<$ -2 (extreme low phenotypes). In this case, the most significant phenotypes include \textit{body weight} as well, but the focus lies on several blood phenotypes (e.g. lymphocyte differential, red blood cell count, haemoglobin). 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{pics/mpi_phenotypes_nr_zscore2.pdf}
+	\captionsetup{margin=12pt,format=plain,font=footnotesize,labelfont=bf}
+ 	\caption{\footnotesize{\textbf{MPD extreme phenotypes, having Z-score $>$ 2}. 
+	~~~~~~~\\
+	Mouse Phenome Database extreme phenotype occurrence frequency among the 49 nuclear receptors in the mouse, having Z-score $>$ 2}}
+	\label{fig:mpi_pheotypes_strain_zscore2}
+\end{figure}
 ~~~~~~~\\
-The MPDatabase contains annotations for extreme phenotypes associated with different mouse strains. An extreme phenotype is described by a Z-score above 2 (very high) or below -2 (very low), relative to other measurement means. Based on these specifications, Figure~\ref{fig:mpi_pheotypes_distribution_zscore2} illustrates the most significant phenotypes and their occurrence frequency across the 242 genes corresponding to the nuclear receptors in the mouse, with a Z-score $>$ 2 (extreme high phenotypes). Here, the most significant phenotypes include \textit{body weight}, \textit{kidney weight} and \textit{cholesterol}. Similarly, Figure~\ref{fig:mpi_pheotypes_distribution_zscore2_neg} presents the most significant phenotypes and their occurrence frequency across the 242 genes corresponding to the nuclear receptors in the mouse, having a Z-score $<$ -2 (extreme low phenotypes). In this case, the most significant phenotypes include \textit{body weight} as well, but the focus lies on several blood phenotypes (e.g. lymphocyte differential, red blood cell count, hemoglobin). 
+Moreover, Figures~\ref{fig:mpi_pheotypes_strain_zscore2} and~\ref{fig:mpi_pheotypes_strain_zscore2_neg} provide an insight into the exact association of each phenotype with mutation in the corresponding nuclear receptor genes. Therefore, there are 4 genes associated with the extreme high and low phenotypes respectively, as following: \textit{Rora - RAR-related orphan receptor alpha}, \textit{Esr1 - estrogen receptor 1 alpha}, \textit{Esrrg - estrogen-related receptor gamma}, \textit{Thrb - thyroid hormone receptor, beta} and a fifth gene associated only with extreme low phenotypes - \textit{Nr3c2}. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{pics/mpi_phenotypes_nr_zscore2_neg.pdf}
+	\captionsetup{margin=12pt,format=plain,font=footnotesize,labelfont=bf}
+ 	\caption{\footnotesize{\textbf{MPD extreme phenotypes, having Z-score $<$ -2}. 
+	~~~~~~~\\
+	Mouse Phenome Database extreme phenotype occurrence frequency among the 49 nuclear receptors in the mouse, having Z-score $<$ -2}}
+	\label{fig:mpi_pheotypes_strain_zscore2_neg}
+\end{figure}
 ~~~~~~~\\
-~~~~~~~\\
-Table~\ref{tab:top10pheno} shows the strains and gene names associated with the highest ranking \textit{MPD} phenotypes relative to their Z-scores. As seen in the table, the phenotypes are not directly associated with the expressed proteins, but rather with the observed abnormal condition in the mouse strains. %Furthermore the denoted phenotypes in the table of \textit{MPD} show nevertheless a more detailed description than \textit{MGI}.
+The Z-score in \textit{MPD} derives from measurements of metabolites or observations in specific mouse strains. In this regard, Table~\ref{tab:top10pheno} shows a snippet of strains and their gene names associated based on their Z-score. This shows that the phenotypes are not directly associated with the expressed proteins, but rather with the observed abnormal condition in the mouse strains. 
 \begin{table}[H]
 \centering
 \begin{tabulary}{\linewidth}{ LLLL }
@@ -161,48 +182,23 @@ Table~\ref{tab:top10pheno} shows the strains and gene names associated with the 
 	C57L/J & Esr2 (estrogen receptor 2 beta) & relative size of perivascular immune cell clusters &  3.5\\
 	CE/J & Rorb (RAR-related orphan receptor beta) & tigloylglycine (16h fast), relative abundance&  3.3\\
 	NOD/\\ShiLtJ & Ppard (peroxisome proliferator activator receptor delta) & percentage of parasites in brain relative to all organs tested &  3.1\\ 
-	BUB/BnJ & Esr1 (estrogen receptor 1 alpha) & 3-dehydrocarnitine  relative abundance &  2.7\\   
-	tdb & Esrrg ( ... ) & tbd &  tbd\\ 
+	AKR/J & Esrrg (estrogen-related receptor gamma) & allantoin (16h fast), relative abundance &  2.8\\
+	BUB/BnJ & Esr1 (estrogen receptor 1 alpha) & 3-dehydrocarnitine  relative abundance &  2.7\\    
 	\hline
 \end{tabulary}
-\caption{\footnotesize{\textbf{Top 10 extreme phenotypes.} 
+\caption{\footnotesize{\textbf{A snippet of extreme phenotypes.} 
 ~~~~~~~\\
 Mouse strains associated with MPD extreme phenotypes, based on their Z-score.}} 
 \label{tab:top10pheno}
 \end{table}
-~~~~~~~\\
-Moreover, Figures~\ref{fig:mpi_pheotypes_strain_zscore2} and~\ref{fig:mpi_pheotypes_strain_zscore2_neg} provide an insight into the exact association of each phenotype with the corresponding nuclear receptor genes. Therefore, there are 4 genes associated with the extreme high and low phenotypes respectively, as following: \textit{Rora - RAR-related orphan receptor alpha}, \textit{Esr1 - estrogen receptor 1 alpha}, \textit{Esrrg - estrogen-related receptor gamma}, \textit{Thrb - thyroid hormone receptor, beta} and a fifth gene associated only with extreme low phenotypes - \textit{Nr3c2}. 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{pics/mpi_phenotypes_nr_zscore2.pdf}
-	\captionsetup{margin=12pt,format=plain,font=footnotesize,labelfont=bf}
- 	\caption{\footnotesize{\textbf{MPD extreme phenotypes, having Z-score $>$ 2}. 
-	~~~~~~~\\
-	Mouse Phenome Database extreme phenotype occurrence frequency among the 49 nuclear receptors in the mouse, having Z-score $>$ 2}}
-	\label{fig:mpi_pheotypes_strain_zscore2}
-\end{figure}
-~~~~~~~\\
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{pics/mpi_phenotypes_nr_zscore2_neg.pdf}
-	\captionsetup{margin=12pt,format=plain,font=footnotesize,labelfont=bf}
- 	\caption{\footnotesize{\textbf{MPD extreme phenotypes, having Z-score $<$ -2}. 
-	~~~~~~~\\
-	Mouse Phenome Database extreme phenotype occurrence frequency among the 49 nuclear receptors in the mouse, having Z-score $<$ -2}}
-	\label{fig:mpi_pheotypes_strain_zscore2_neg}
-\end{figure}
 
 %------------------------------------------------
+
 \subsection{Nuclear receptors in the human genome}
-The nuclear receptor variation has been widely studied not only in the mouse, but also in the human genome. The research hereby refers to two published genome-wide association studies in this field of interest, namely \textit{Kora}\footnote{\url{http://epi.helmholtz-muenchen.de/kora-gen}, \today}  - a GWAS study initiated at the Helmholtz Zentrum in Munich involving approximately 18,000 adults from Southern Germany - and \textit{TwinsUK}\footnote{\url{http://www.twinsuk.ac.uk/}, \today}, being the biggest adult twin genetic registry in the UK.  
+This research shows that there are only a few phenotypes shared between the mouse and human. The reason therefore is that the phenotypes for the nuclear receptors in both human and mouse are involved in more than one metabolic pathway. For each nuclear receptor there were roughly 8 to 10 phenotypic annotations available, but only the ones which share the same function were mentioned in Tables~\ref{tab:compHuMoMe} and~\ref{tab:compHuMo}.
 ~~~~~~~\\
 ~~~~~~~\\
-Using the information provided by these studies regarding the correlations between different SNPs and metabolites to metabolic pathways, this research aimed to identify the similarities between the nuclear receptors and their associated phenotypes in human and in the mouse, respectively. Due to missing or incomplete annotations for the nuclear receptors in the mouse, comparisons could only be made between the phenotypes extracted from the MGI and MPD databases (see tables \textit{mgi\_phenotypes} and \textit{mpg\_phenotypes} from the internal database~\ref{fig:database}). Table \ref{tab:compHuMo} shows a list of nuclear receptors found in both the mouse and human and which present a similar phenotype or share the same biological function.
-As seen there are only a few phenotypes shared between these two species. The reason therefore is that the phenotypes for the nuclear receptors in both, human and mouse do not only have influence on one metabolic pathway. For each nuclear receptor there were roughly about 8 to 10 phenotype annotations available, but only the ones which share the same function were written into the table. Nevertheless as an example the gene \textit{Nr2e1} without limitation regulates the expression for the same kind of molecule, a steroid hormone. This leads to the assumption that the nuclear receptors have somehow a similar influence on the individual in each species, albeit there are only few annotated by this time.
-~~~~~~~\\
-~~~~~~~\\
-~~~~~~~\\
+Due to issues concerning the mapping of the mouse and human phenotypes relative to nuclear receptors, only two genes were found to have the same biological function in the mouse and in human - see Table~\ref{tab:compHuMoMe}. On the other hand, Table~\ref{tab:compHuMo} shows a list of nuclear receptors from publications found in both the mouse and human and which present a similar phenotype or share the same biological function.
 \begin{table}[H]
 \begin{tabulary}{\linewidth}{ LLL }
 \hline
@@ -211,33 +207,58 @@ As seen there are only a few phenotypes shared between these two species. The re
 	\hline \hline 
 	Nr2e1  & corticosterone, \textit{steroid hormone} & lathosterol, \textit{steroid hormone}\\
 	Essrg  & carnitine, \textit{lysine metabolism} & glutaroyl carnitine, \textit{lysine metabolism}\\
+	\hline
+\end{tabulary}
+\caption{\footnotesize{\textbf{Nuclear receptors in human and in the mouse} 
+~~~~~~~\\
+	Nuclear receptors in human and in the mouse which share a similar phenotype or biological function.}} 
+\label{tab:compHuMoMe}
+\end{table}
+\begin{table}[H]
+\begin{tabulary}{\linewidth}{ LLL }
+\hline
+	\textbf{Nuclear Receptor Gene} & \textbf{Mouse phenotype}  & \textbf{Human phenotype}
+	\\  
+	\hline \hline 
 	Thrb  & \textit{thyroid hormone resistance} & \textit{thyroid hormone resistance}\\
 	Nr0b1 & \textit{adrenal hypoplasia} & \textit{adrenal hypoplasia}\\
 	Vdr & \textit{osteoporosis} & \textit{osteoporosis}\\
 	Ar & \textit{spinal and bulbar muscular atrophy} & \textit{spinal and bulbar muscular atrophy}\\
 	\hline
 \end{tabulary}
-\caption{\footnotesize{\textbf{Nuclear receptors with their coding protein or phenotype} 
+\caption{\footnotesize{\textbf{Nuclear receptors in human and in the mouse} 
 ~~~~~~~\\
-Nuclear receptors in human and in the mouse which share a similar phenotype or biological function.}} 
+	Nuclear receptors in human and in the mouse which share a similar phenotype or biological function.}} 
 \label{tab:compHuMo}
 \end{table}
 
 %------------------------------------------------
 \section{Discussion and Outlook}
 
-Over the last year, the number of studies and publications involving the nuclear receptor variation has increased and scientist have been focusing on exploring the effects of nuclear receptors in different organisms, on various levels: in the cells, tissues, and even full-body impact. The goal hereby is to link their metabolic activity to possible human diseases and facilitate the drug development processes. In this regard, extensive experiments and studies have been performed on humans, as well as on laboratory mice, which are known to present a striking genomic resemblance to humans (up to 95\%) and and time and money-wise more advantageous. As a result, it has been proved that nuclear receptors have a great influence over the extreme phenotypes showcased in the mouse, as well as in human. 
+Over the last year, the number of studies and publications involving the nuclear receptor variation has increased and scientist have been focusing on exploring the effects of nuclear receptors in different organisms, on various levels: in the cells, tissues, and even full-body impact. The goal hereby is to link their metabolic activity to possible human diseases and facilitate the drug development processes. In this regard, extensive experiments and studies have been performed on humans, as well as on laboratory mice, which are known to present a striking genomic resemblance to humans (up to 95\%) and and time and money-wise more advantageous. As a result, it has been proved that nuclear receptors have a great influence over the extreme phenotypes showcased in the mouse, as well as in human.
+ 
+\subsection{MGI - MPD correlation}
+
+In spite of the ascending progress in this field of research, there annotation data provided in the mouse public databases - \textit{Mouse Genome Informatics} and \textit{Mouse Phenome Database} on nuclear receptors is still rather limited. However, the two databases provide complementary information: the phenotypes annotated in \textit{MGI} describe roughly the biological systems in which they occur rather than the description of differences between non-variants, as of \textit{MPD}. On the other hand, the nuclear receptor database for the human genome is far more detailed, comprising also information regarding the metabolic pathways associated with various phenotypes. 
 ~~~~~~~\\
 ~~~~~~~\\
-In spite of the ascending progress in this field of research, there annotation data provided in the mouse public databases - \textit{Mouse Genome Informatics} and \textit{Mouse Phenome Database} on nuclear receptors is still rather limited. However, the two databases provide complementary information: the phenotypes annotated in \textit{MGI} describe roughly the biological systems in which they occur rather than the description of differences between non-variants, as of \textit{MPD}. On the other hand, the UCSC database for the human genome is far more detailed, comprising also information regarding the metabolic pathways associated with various phenotypes. 
+According to the MGI database, as shown in Figures~\ref{fig:mgi_pheotypes_distribution} and~\ref{fig:mgi_pheotypes_nr}, the most prominent phenotype correlates with the homeostatic metabolic processes, such as temperature regulation, pH-balance as well as lipid and glucose homeostasis and is associated with mutations in the following genes: \textit{Esr1 - estrogen receptor 1 alpha}, \textit{Pparg - peroxisome proliferator-activated receptor gamma}, \textit{Thrb - thyroid hormone receptor, beta}, \textit{Thra - thyroid hormone receptor, alpha}, \textit{Vdr - vitamin D receptor gene}. The Esr1 - Estrogen receptor alpha gene is known to mediates effects of estrogen on glucose homeostasis~\cite{esr1_discussion}. Also the thyroid hormone, acting through thyroid hormone receptors has been proven to be a key regulator of metabolic homeostasis~\cite{thra_discussion}. 
 ~~~~~~~\\
 ~~~~~~~\\
-This research presents the most significant phenotypes found in the mouse, based on the 49 nuclear receptor variation, as well as a mapping of these phenotypes on the human phenotypic expression, providing insight into possible human disease conditions. Nevertheless, the mouse public databases are far less comprehensive than the UCSC, for instance, allowing for only a generalised comparison between the two species, relative to the phenotypic expression in case of a variation in one of the same nuclear receptors.
+Comparably, the MPD database presents rather different phenotypes, associated with an extreme Z-score. Therefore, Figures~\ref{fig:mpi_pheotypes_distribution_zscore2} and Figure~\ref{fig:mpi_pheotypes_distribution_zscore2_neg} illustrate extreme high and low phenotypes, respectively. Phenotypes presented with an extreme high effect include  \textit{body weight}, \textit{kidney weight} and \textit{cholesterol}, while those characterised by an extreme low effect on the organism depict blood phenotypes (e.g. \textit{lymphocyte differential}, \textit{red blood cell count}, \textit{haemoglobin}). Nevertheless, there are 4 genes associated with the extreme high and low phenotypes respectively, as following: \textit{Rora - RAR-related orphan receptor alpha}, \textit{Esr1 - estrogen receptor 1 alpha}, \textit{Esrrg - estrogen-related receptor gamma}, \textit{Thrb - thyroid hormone receptor, beta} and a fifth gene associated only with extreme low phenotypes - \textit{Nr3c2}, as supported by a recent review~\cite{blood_discussion}. Studies~\cite{esr12_discussion},~\cite{esrrg_discussion} have shown that the oestrogen receptor genes Esr1 and Esrrg are indeed involved in body growth processes, by playing an essential role in cell division and DNA recombination.  
+
+\subsection{Mouse - Human correlation}
+
+This research presents the most significant phenotypes found in the mouse, based on the 49 nuclear receptor variation, as well as a mapping of these phenotypes on the human phenotypic expression, providing insight into possible human disease conditions. Nevertheless, the mouse public databases are far less comprehensive than the HMDB, for instance, allowing for only a generalised comparison between the two species, relative to the phenotypic expression in case of a variation in one of the same nuclear receptors.
 ~~~~~~~\\
 ~~~~~~~\\
-The mapping of phenotype information between mouse and human showed that regardless if the genes are thomolog, their function can differ between these two species, at least with the information we have by this time on the human nuclear receptors. As long as the human nuclear receptors are not enough researched, mapping the nuclear receptor variatons from mouse on the human can only result in an indicator to get information about what protein the gene could code for or in which biological process is it likely to be involved.
+Tables~\ref{tab:compHuMoMe} and~\ref{tab:compHuMo} present genes which were found to have the same biological function in the mouse and in human. On the one hand, gene \textit{Nr2e1} regulates the expression for the same kind of molecule, a steroid hormone; this is consistent to the conclusions of several published studies\footnote{\url{http://www.phosphosite.org/proteinAction.do?id=2204525&showAllSites=true}, \today}, \footnote{\url{http://www.phosphosite.org/proteinAction.do?id=2204526&showAllSites=true}, \today}  and leads to the assumption that the nuclear receptors have somehow a similar influence on the individual in each species, although there are only few annotated by this time. On the other hand, the overly researched gene Essrg has also been found,~\cite{esrrg2_discussion} to play an important role in the lysine metabolism in both human and the mouse.
+~~~~~~~\\
+~~~~~~~\\
+The mapping of phenotype information between mouse and human showed that regardless if the genes are homolog, their function can differ between these two species, at least with the information we have by this time on the human nuclear receptors. As long as the human nuclear receptors are not enough researched, mapping the nuclear receptor variations from mouse on the human can only result in an indicator to get information about what protein the gene could code for or in which biological process is it likely to be involved.
 
 %------------------------------------------------
+
 \section{Acknowledgments} % The \section*{} command stops section numbering
 
 Our gratitude to Prof. Dr. H. W. Mewes for offering us the topic and the opportunity to work with the Helmholz Zentrum research centre in Munich. Many thanks to our supervisor, Dr. Desislava Boyanova for all the input and ideas, discussions, advices and foremost her useful and critical suggestions which motivated us a lot. Last but not least, we would like to thank our fellow colleagues for their support, as well as the entire \emph{Helmholz Zentrum} group. 

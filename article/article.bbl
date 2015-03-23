@@ -1,16 +1,9 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{intro1}
 Ali~J. Marian.
 \newblock Modeling human disease phenotype in model organisms.
 \newblock 2011.
-
-\bibitem{proteomic}
-Qiongming Liu, Chen Ding, Wanlin Liu, Lei Song, Mingwei Liu, Liang Qi, Tianyi
-  Fu, Anna Malovannaya, Yi~Wang, Jun Qin, and Bei Zhen.
-\newblock In-depth proteomic characterization of endogenous nuclear receptors
-  in mouse liver.
-\newblock 2013.
 
 \bibitem{mgi}
 Judith~A. Blake, Carol~J. Bult, Janan~T. Eppig, James~A. Kadin, and Joel~E.
@@ -23,5 +16,83 @@ Judith~A. Blake, Carol~J. Bult, Janan~T. Eppig, James~A. Kadin, and Joel~E.
 Terry~P. Maddatu, Stephen~C. Grubb, Carol~J. Bult, and Molly~A. Bogue.
 \newblock Mouse phenome database (mpd).
 \newblock 2011.
+
+\bibitem{hm1}
+Wishart DS, Tzur D, Knox C, Eisner R, and Guo~AC et~al.
+\newblock Hmdb: the human metabolome database.
+\newblock 2007.
+
+\bibitem{hm2}
+Wishart DS, Jewison T, Guo AC, Wilson M, and Knox~C et~al.
+\newblock Hmdb 3.0: the human metabolome database.
+\newblock 2013.
+
+\bibitem{hm3}
+Hao T, Ma~HW, Zhao XM, and Goryanin I.
+\newblock Compartmentalization of the edinburgh human metabolic network.
+\newblock 2010.
+
+\bibitem{hm4}
+Thiele I, Swainston N, Fleming RM, Hoppe A, and Sahoo~S et~al.
+\newblock A community-driven global reconstruction of human metabolism.
+\newblock 2013.
+
+\bibitem{hm5}
+Kanehisa M and Goto S.
+\newblock Kegg: kyoto encyclopedia of genes and genomes.
+\newblock 2000.
+
+\bibitem{hm6}
+Kanehisa M, Goto S, Sato Y, Kawashima M, and Furumichi~M et~al.
+\newblock Data, information, knowledge and principle: back to metabolism in
+  kegg.
+\newblock 2014.
+
+\bibitem{proteomic}
+Qiongming Liu, Chen Ding, Wanlin Liu, Lei Song, Mingwei Liu, Liang Qi, Tianyi
+  Fu, Anna Malovannaya, Yi~Wang, Jun Qin, and Bei Zhen.
+\newblock In-depth proteomic characterization of endogenous nuclear receptors
+  in mouse liver.
+\newblock 2013.
+
+\bibitem{esr1_discussion}
+Dahlman I, Vaxillaire M, Nilsson M, Lecoeur C, Gu~HF, Cavalcanti-Proença C,
+  Efendic S, Ostenson CG, Brismar K, Charpentier G, Gustafsson JA, Froguel P,
+  Dahlman-Wright K, and Steffensen KR.
+\newblock Estrogen receptor alpha gene variants associate with type 2 diabetes
+  and fasting plasma glucose.
+\newblock 2008.
+
+\bibitem{thra_discussion}
+Michael~L Goodson and Brenda~J Mengeling.
+\newblock The role of corepressors in thyroid hormone-regulated metabolic
+  homeostasis.
+\newblock 2014.
+
+\bibitem{blood_discussion}
+Luo JQ, Wang LY, He~FZ, Sun NL, Tang GF, Wen JG, Luo ZY, Liu ZQ, Zhou HH, Chen
+  XP, and Zhang W.
+\newblock Effect of nr3c2 genetic polymorphisms on the blood pressure response
+  to enalapril treatment.
+\newblock 2014.
+
+\bibitem{esr12_discussion}
+R~Kato and H~Ogawa.
+\newblock An essential gene, esr1, is required for mitotic cell growth, dna
+  repair and meiotic recombination in saccharomyces cerevisiae.
+\newblock 1994.
+
+\bibitem{esrrg_discussion}
+Michelle Percharde, Fabrice Lavial, Jia-Hui Ng, Vibhor Kumar, Rute~A Tomaz,
+  Nadine Martin, Jia-Chi Yeo, Jesús Gil, Shyam Prabhakar, Huck-Hui Ng,
+  Malcolm~G Parker, and Véronique Azuara.
+\newblock Ncoa3 functions as essential esrrb coactivator to sustain embryonic
+  stem cell self-renewal and reprogramming.
+\newblock 2002.
+
+\bibitem{esrrg2_discussion}
+Fellows FC and Lewis MH.
+\newblock Lysine metabolism in mammals.
+\newblock 1973.
 
 \end{thebibliography}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.1.4)  13 MAR 2015 11:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.1.4)  23 MAR 2015 15:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -926,18 +926,6 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 32.
 
-
-! Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.32 \thispagestyle
-                   {empty} % Removes page numbering from the first page
-? 
-
 Overfull \hbox (17.0pt too wide) in paragraph at lines 32--32
 [][][][] 
  []
@@ -949,11 +937,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--44
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--53
+
+ []
+
 [1
 
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 57.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 56.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -963,26 +956,16 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--65
+Underfull \hbox (badness 10000) in paragraph at lines 63--67
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 73.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 74.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 73.
-
-<pics/db.png, id=75, 951.555pt x 484.81125pt>
-File: pics/db.png Graphic file (type png)
- <use pics/db.png>
-Package pdftex.def Info: pics/db.png used on input line 84.
-(pdftex.def)             Requested size: 500.484pt x 254.99576pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 81--90
-
- []
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 74.
 
 
 Package Fancyhdr Warning: \headheight is too small (11.0pt): 
@@ -990,12 +973,22 @@ Package Fancyhdr Warning: \headheight is too small (11.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2] <pics/mgi_phenotypes_distribution.pdf, id=94, 1704.94534pt x 612.50761pt>
+[2] <pics/db.png, id=122, 951.555pt x 484.81125pt>
+File: pics/db.png Graphic file (type png)
+ <use pics/db.png>
+Package pdftex.def Info: pics/db.png used on input line 88.
+(pdftex.def)             Requested size: 500.484pt x 254.99576pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--94
+
+ []
+
+<pics/mgi_phenotypes_distribution.pdf, id=126, 1704.94534pt x 612.50761pt>
 File: pics/mgi_phenotypes_distribution.pdf Graphic file (type pdf)
 
 <use pics/mgi_phenotypes_distribution.pdf>
 Package pdftex.def Info: pics/mgi_phenotypes_distribution.pdf used on input lin
-e 100.
+e 104.
 (pdftex.def)             Requested size: 500.484pt x 179.8003pt.
 
 
@@ -1004,18 +997,12 @@ Package Fancyhdr Warning: \headheight is too small (11.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[3 <./pics/db.png> <./pics/mgi_phenotypes_distribution.pdf>]
-<pics/mgi_phenotypes_nr.pdf, id=116, 1445.4pt x 1445.4pt>
+[3 <./pics/db.png>] <pics/mgi_phenotypes_nr.pdf, id=139, 1445.4pt x 1445.4pt>
 File: pics/mgi_phenotypes_nr.pdf Graphic file (type pdf)
 
 <use pics/mgi_phenotypes_nr.pdf>
-Package pdftex.def Info: pics/mgi_phenotypes_nr.pdf used on input line 112.
+Package pdftex.def Info: pics/mgi_phenotypes_nr.pdf used on input line 115.
 (pdftex.def)             Requested size: 500.47206pt x 495.48763pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
-
- []
-
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1026,79 +1013,14 @@ Package Fancyhdr Warning: \headheight is too small (11.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[4 <./pics/mgi_phenotypes_nr.pdf>]
-<pics/mpi_phenotypes_distribution_zscore2.pdf, id=129, 1806.75pt x 867.24pt>
+[4 <./pics/mgi_phenotypes_distribution.pdf>]
+<pics/mpi_phenotypes_distribution_zscore2.pdf, id=158, 1806.75pt x 867.24pt>
 File: pics/mpi_phenotypes_distribution_zscore2.pdf Graphic file (type pdf)
 
 <use pics/mpi_phenotypes_distribution_zscore2.pdf>
 Package pdftex.def Info: pics/mpi_phenotypes_distribution_zscore2.pdf used on i
-nput line 124.
+nput line 128.
 (pdftex.def)             Requested size: 500.484pt x 240.23187pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 131--132
-
- []
-
-
-<pics/mpi_phenotypes_distribution_zscore2_neg.pdf, id=130, 1717.42886pt x 683.9
-2862pt>
-File: pics/mpi_phenotypes_distribution_zscore2_neg.pdf Graphic file (type pdf)
- <use pics/mpi_phenotypes_distribution_zscore2_neg.pdf>
-Package pdftex.def Info: pics/mpi_phenotypes_distribution_zscore2_neg.pdf used 
-on input line 135.
-(pdftex.def)             Requested size: 500.484pt x 199.30475pt.
-
-Overfull \hbox (9.8109pt too wide) in paragraph at lines 167--167
-[]\OT1/ptm/m/n/10.95 (-20) CAST/EiJ|  
- []
-
-
-Overfull \hbox (9.8109pt too wide) in paragraph at lines 167--167
-[]\OT1/ptm/m/n/10.95 (-20) CAST/EiJ|  
- []
-
-
-Overfull \hbox (12.19315pt too wide) in paragraph at lines 167--167
-[]\OT1/ptm/m/n/10.95 (-20) NZB/BlNJ|  
- []
-
-
-Overfull \hbox (12.19315pt too wide) in paragraph at lines 167--167
-[]\OT1/ptm/m/n/10.95 (-20) NZB/BlNJ|  
- []
-
-
-Overfull \hbox (7.31917pt too wide) in paragraph at lines 167--167
-[]\OT1/ptm/m/n/10.95 (-20) BUB/BnJ|  
- []
-
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 170.
-
-Underfull \hbox (badness 10000) in paragraph at lines 142--172
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 142--172
-
- []
-
-
-Package Fancyhdr Warning: \headheight is too small (11.0pt): 
- Make it at least 12.0pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[5 <./pics/mpi_phenotypes_distribution_zscore2.pdf> <./pics/mpi_phenotypes_dist
-ribution_zscore2_neg.pdf>]
-<pics/mpi_phenotypes_nr_zscore2.pdf, id=166, 1445.4pt x 1445.4pt>
-File: pics/mpi_phenotypes_nr_zscore2.pdf Graphic file (type pdf)
-
-<use pics/mpi_phenotypes_nr_zscore2.pdf>
-Package pdftex.def Info: pics/mpi_phenotypes_nr_zscore2.pdf used on input line 
-177.
-(pdftex.def)             Requested size: 500.484pt x 500.47206pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1109,17 +1031,41 @@ Package Fancyhdr Warning: \headheight is too small (11.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 184--185
+[5 <./pics/mgi_phenotypes_nr.pdf>]
+<pics/mpi_phenotypes_distribution_zscore2_neg.pdf, id=170, 1717.42886pt x 683.9
+2862pt>
+File: pics/mpi_phenotypes_distribution_zscore2_neg.pdf Graphic file (type pdf)
+ <use pics/mpi_phenotypes_distribution_zscore2_neg.pdf>
+Package pdftex.def Info: pics/mpi_phenotypes_distribution_zscore2_neg.pdf used 
+on input line 138.
+(pdftex.def)             Requested size: 500.484pt x 199.30475pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--144
 
  []
 
-<pics/mpi_phenotypes_nr_zscore2_neg.pdf, id=175, 1445.4pt x 1445.4pt>
+<pics/mpi_phenotypes_nr_zscore2.pdf, id=173, 1445.4pt x 1445.4pt>
+File: pics/mpi_phenotypes_nr_zscore2.pdf Graphic file (type pdf)
+
+<use pics/mpi_phenotypes_nr_zscore2.pdf>
+Package pdftex.def Info: pics/mpi_phenotypes_nr_zscore2.pdf used on input line 
+149.
+(pdftex.def)             Requested size: 500.484pt x 500.47206pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (11.0pt): 
+ Make it at least 12.0pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[6 <./pics/mpi_phenotypes_distribution_zscore2.pdf> <./pics/mpi_phenotypes_dist
+ribution_zscore2_neg.pdf>]
+<pics/mpi_phenotypes_nr_zscore2_neg.pdf, id=205, 1445.4pt x 1445.4pt>
 File: pics/mpi_phenotypes_nr_zscore2_neg.pdf Graphic file (type pdf)
 
 <use pics/mpi_phenotypes_nr_zscore2_neg.pdf>
 Package pdftex.def Info: pics/mpi_phenotypes_nr_zscore2_neg.pdf used on input l
-ine 188.
+ine 160.
 (pdftex.def)             Requested size: 500.484pt x 500.47206pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1132,24 +1078,35 @@ Package Fancyhdr Warning: \headheight is too small (11.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [7 <./pics/mpi_phenotypes_nr_zscore2.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 198--224
-
+Overfull \hbox (9.8109pt too wide) in paragraph at lines 188--188
+[]\OT1/ptm/m/n/10.95 (-20) CAST/EiJ|  
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--224
-
+Overfull \hbox (9.8109pt too wide) in paragraph at lines 188--188
+[]\OT1/ptm/m/n/10.95 (-20) CAST/EiJ|  
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--224
-
+Overfull \hbox (12.19315pt too wide) in paragraph at lines 188--188
+[]\OT1/ptm/m/n/10.95 (-20) NZB/BlNJ|  
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--224
-
+Overfull \hbox (12.19315pt too wide) in paragraph at lines 188--188
+[]\OT1/ptm/m/n/10.95 (-20) NZB/BlNJ|  
  []
+
+
+Overfull \hbox (7.31917pt too wide) in paragraph at lines 188--188
+[]\OT1/ptm/m/n/10.95 (-20) BUB/BnJ|  
+ []
+
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 191.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 
 Package Fancyhdr Warning: \headheight is too small (11.0pt): 
@@ -1158,19 +1115,13 @@ Package Fancyhdr Warning: \headheight is too small (11.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [8 <./pics/mpi_phenotypes_nr_zscore2_neg.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 229--239
+Underfull \hbox (badness 10000) in paragraph at lines 198--216
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 229--239
+Underfull \vbox (badness 1789) has occurred while \output is active []
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 229--239
-
- []
 
 
 Package Fancyhdr Warning: \headheight is too small (11.0pt): 
@@ -1179,12 +1130,25 @@ Package Fancyhdr Warning: \headheight is too small (11.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 249--253
+Underfull \hbox (badness 10000) in paragraph at lines 242--249
 
  []
 
-(./article.bbl) 
-AED: lastpage setting LastPage
+
+Underfull \hbox (badness 10000) in paragraph at lines 242--249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--259
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--259
+
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (11.0pt): 
  Make it at least 12.0pt.
@@ -1192,23 +1156,43 @@ Package Fancyhdr Warning: \headheight is too small (11.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 263.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 263.
+Underfull \hbox (badness 10000) in paragraph at lines 270--274
+
+ []
+
+(./article.bbl
+
+Package Fancyhdr Warning: \headheight is too small (11.0pt): 
+ Make it at least 12.0pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[11]) 
+AED: lastpage setting LastPage
+
+Package Fancyhdr Warning: \headheight is too small (11.0pt): 
+ Make it at least 12.0pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[12]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 284.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 284.
  (./article.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 263.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 263.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 284.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 284.
 Package rerunfilecheck Info: File `article.out' has not changed.
-(rerunfilecheck)             Checksum: 695AADDA37586AB7C2EE061A7836836E;768.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 263.
+(rerunfilecheck)             Checksum: BFF061C3EACC96A6CBA76C00BAE633F0;925.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 284.
  ) 
 Here is how much of TeX's memory you used:
- 11714 strings out of 493117
- 174516 string characters out of 6135434
- 319815 words of memory out of 5000000
- 14673 multiletter control sequences out of 15000+600000
- 71272 words of font info for 256 fonts, out of 8000000 for 9000
+ 11787 strings out of 493117
+ 175302 string characters out of 6135434
+ 323368 words of memory out of 5000000
+ 14691 multiletter control sequences out of 15000+600000
+ 72984 words of font info for 280 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,12n,45p,1503b,426s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,12n,45p,1489b,485s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
 xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
@@ -1219,10 +1203,10 @@ onts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/t
 ype1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/t
 imes/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri
 8a.pfb>
-Output written on article.pdf (10 pages, 248486 bytes).
+Output written on article.pdf (12 pages, 261088 bytes).
 PDF statistics:
- 261 PDF objects out of 1000 (max. 8388607)
- 219 compressed objects within 3 object streams
- 42 named destinations out of 1000 (max. 500000)
- 58508 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 330 PDF objects out of 1000 (max. 8388607)
+ 286 compressed objects within 3 object streams
+ 61 named destinations out of 1000 (max. 500000)
+ 58524 words of extra memory for PDF output out of 61914 (max. 10000000)
 
